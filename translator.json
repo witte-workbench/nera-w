@@ -1,0 +1,6829 @@
+[{
+    "parity":"",
+    "american_name":"Acacia Boat",
+    "java_file_path":"item/acacia_boat.png",
+    "bedrock_file_path":"item/boat_acacia.png",
+    "java_lang_id":"item.minecraft.acacia_boat",
+    "bedrock_lang_id":"item.boat.acacia.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Acacia Door",
+    "java_file_path":"item/acacia_door.png,block/acacia_door_bottom.png,block/acacia_door_top.png",
+    "bedrock_file_path":"item/door_acacia.png,block/door_acacia_lower.png,block/door_acacia_upper.png",
+    "java_lang_id":"block.minecraft.acacia_door",
+    "bedrock_lang_id":"item.acacia_door.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Acacia Leaves",
+    "java_file_path":"block/acacia_leaves.png",
+    "bedrock_file_path":"block/leaves_acacia.tga,block/leaves_acacia_opaque.png,block/leaves_acacia_carried.tga",
+    "java_lang_id":"block.minecraft.acacia_leaves",
+    "bedrock_lang_id":"tile.leaves.acacia.name,tile.leaves2.acacia.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Acacia Log",
+    "java_file_path":"block/acacia_log_top.png,block/acacia_log.png",
+    "bedrock_file_path":"block/log_acacia_top.png,block/log_acacia.png",
+    "java_lang_id":"block.minecraft.acacia_log",
+    "bedrock_lang_id":"tile.log.acacia.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Acacia Planks",
+    "java_file_path":"block/acacia_planks.png",
+    "bedrock_file_path":"block/planks_acacia.png",
+    "java_lang_id":"block.minecraft.acacia_planks",
+    "bedrock_lang_id":"tile.planks.acacia.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Acacia Sapling",
+    "java_file_path":"block/acacia_sapling.png",
+    "bedrock_file_path":"block/sapling_acacia.png",
+    "java_lang_id":"block.minecraft.acacia_sapling",
+    "bedrock_lang_id":"tile.sapling.acacia.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Acacia Sign",
+    "java_file_path":"item/acacia_sign.png",
+    "bedrock_file_path":"item/sign_acacia.png",
+    "java_lang_id":"block.minecraft.acacia_sign",
+    "bedrock_lang_id":"item.acacia_sign.name,tile.acacia_standing_sign.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Acacia Trapdoor",
+    "java_file_path":"block/acacia_trapdoor.png",
+    "bedrock_file_path":"block/acacia_trapdoor.png",
+    "java_lang_id":"block.minecraft.acacia_trapdoor",
+    "bedrock_lang_id":"tile.acacia_trapdoor.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Activator Rail",
+    "java_file_path":"block/activator_rail_on.png,block/activator_rail.png",
+    "bedrock_file_path":"block/rail_activator_powered.png,block/rail_activator.png",
+    "java_lang_id":"block.minecraft.activator_rail",
+    "bedrock_lang_id":"tile.activator_rail.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Allium",
+    "java_file_path":"block/allium.png",
+    "bedrock_file_path":"block/flower_allium.png",
+    "java_lang_id":"block.minecraft.potted_allium,block.minecraft.allium",
+    "bedrock_lang_id":"tile.red_flower.allium.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Ancient Debris",
+    "java_file_path":"block/ancient_debris_side.png,block/ancient_debris_top.png",
+    "bedrock_file_path":"block/ancient_debris_side.png,block/ancient_debris_top.png",
+    "java_lang_id":"block.minecraft.ancient_debris",
+    "bedrock_lang_id":"tile.ancient_debris.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Andesite",
+    "java_file_path":"block/andesite.png",
+    "bedrock_file_path":"block/stone_andesite.png",
+    "java_lang_id":"block.minecraft.andesite",
+    "bedrock_lang_id":"tile.stone.andesite.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Anvil (Chipped Anvil, Damaged Anvil)",
+    "java_file_path":"block/anvil.png,block/anvil_top.png,item/chipped_anvil_top.png,block/damaged_anvil_top.png",
+    "bedrock_file_path":"block/anvil_base.png,block/anvil_top_damaged_0.png,block/anvil_top_damaged_1.png,block/anvil_top_damaged_2.png",
+    "java_lang_id":"block.minecraft.anvil,block.minecraft.chipped_anvil,block.minecraft.damaged_anvil",
+    "bedrock_lang_id":"itemGroup.name.anvil,tile.anvil.intact.name,tile.anvil.name,tile.anvil.slightlyDamaged.name,tile.anvil.veryDamaged.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Apple",
+    "java_file_path":"item/apple.png",
+    "bedrock_file_path":"item/apple.png",
+    "java_lang_id":"item.minecraft.apple",
+    "bedrock_lang_id":"item.apple.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Armor Stand",
+    "java_file_path":"item/armor_stand.png",
+    "bedrock_file_path":"item/armor_stand.png",
+    "java_lang_id":"item.minecraft.armor_stand,entity.minecraft.armor_stand",
+    "bedrock_lang_id":"item.armor_stand.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Arrow",
+    "java_file_path":"item/arrow.png",
+    "bedrock_file_path":"item/arrow.png",
+    "java_lang_id":"item.minecraft.arrow,entity.minecraft.arrow",
+    "bedrock_lang_id":"item.arrow.name,entity.arrow.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Melon Stem (Attatched Melon Stem)",
+    "java_file_path":"block/melon_stem.png,block/attatched_melon_stem.png",
+    "bedrock_file_path":"block/melon_stem_disconnected.png,block/melon_stem_connected.png",
+    "java_lang_id":"block.minecraft.melon_stem,block.minecraft.attached_melon_stem",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pumpkin Stem (Attatched Pumpkin Stem)",
+    "java_file_path":"block/pumpkin_stem.png,block/attatched_pumpkin_stem.png",
+    "bedrock_file_path":"block/pumpkin_stem_disconnected.png,block/pumpkin_stem_connected.png",
+    "java_lang_id":"block.minecraft.pumpkin_stem,block.minecraft.attached_pumpkin_stem",
+    "bedrock_lang_id":"tile.pumpkin_stem.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Azure Bluet",
+    "java_file_path":"block/azure_bluet.png",
+    "bedrock_file_path":"block/flower_houstonia",
+    "java_lang_id":"block.minecraft.azure_bluet,block.minecraft.potted_azure_bluet",
+    "bedrock_lang_id":"tile.red_flower.houstonia",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Baked Potato",
+    "java_file_path":"item/baked_potato.png",
+    "bedrock_file_path":"item/baked_potato.png",
+    "java_lang_id":"item.minecraft.baked_potato",
+    "bedrock_lang_id":"item.baked_potato.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bamboo (Bamboo Shoot)",
+    "java_file_path":"item/bamboo.png,block/bamboo_stalk.png,block/bamboo_stage0.png,block/bamboo_large_leaves.png,block/bamboo_singleleaf.png,block/bamboo_small_leaves.png",
+    "bedrock_file_path":"item/bamboo.png,block/bamboo_stem.png,block/bamboo_sapling.png,block/bamboo_leaf.png,block/bamboo_singleleaf.png,block/bamboo_small_leaf.png",
+    "java_lang_id":"block.minecraft.bamboo,block.minecraft.bamboo_sapling,block.minecraft.potted_bamboo",
+    "bedrock_lang_id":"tile.bamboo.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Barrel",
+    "java_file_path":"block/barrel_top.png,block/barrel_top_open.png,block/barrel_side.png,block/barrel_bottom.png",
+    "bedrock_file_path":"block/barrel_top.png,block/barrel_top_open.png,block/barrel_side.png,block/barrel_bottom.png",
+    "java_lang_id":"block.minecraft.barrel,container.barrel",
+    "bedrock_lang_id":"tile.barrel.name,container.barrel",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Barrier",
+    "java_file_path":"item/barrier.png",
+    "bedrock_file_path":"block/barrier.png",
+    "java_lang_id":"block.minecraft.barrier",
+    "bedrock_lang_id":"tile.barrier.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Basalt",
+    "java_file_path":"block/basalt_side.png,block/basalt_top.png",
+    "bedrock_file_path":"block/basalt_side.png,block/basalt_top.png",
+    "java_lang_id":"block.minecraft.basalt",
+    "bedrock_lang_id":"tile.basalt.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Beacon",
+    "java_file_path":"block/beacon.png",
+    "bedrock_file_path":"block/beacon.png",
+    "java_lang_id":"block.minecraft.beacon,container.beacon",
+    "bedrock_lang_id":"tile.beacon.name,container.beacon",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bedrock",
+    "java_file_path":"block/bedrock.png",
+    "bedrock_file_path":"block/bedrock.png",
+    "java_lang_id":"block.minecraft.bedrock",
+    "bedrock_lang_id":"tile.bedrock.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bee Nest",
+    "java_file_path":"block/bee_nest_front.png,block/bee_nest_front_honey.png,block/bee_nest_side.png,block/bee_nest_bottom.png,block/bee_nest_top.png",
+    "bedrock_file_path":"block/bee_nest_front.png,block/bee_nest_front_honey.png,block/bee_nest_side.png,block/bee_nest_bottom.png,block/bee_nest_top.png",
+    "java_lang_id":"block.minecraft.bee_nest",
+    "bedrock_lang_id":"tile.bee_nest.nam",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Raw Beef",
+    "java_file_path":"item/beef.png",
+    "bedrock_file_path":"item/beef_raw.png",
+    "java_lang_id":"item.minecraft.beef",
+    "bedrock_lang_id":"item.beef.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Beehive",
+    "java_file_path":"block/beehive_front.png,block/beehive_front_honey.png,block/beehive_side.png,block/beehive_end.png",
+    "bedrock_file_path":"block/beehive_front.png,block/beehive_front_honey.png,block/beehive_end.png,block/beehive_end.png",
+    "java_lang_id":"block.minecraft.beehive",
+    "bedrock_lang_id":"tile.beehive",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Beetroot Seeds",
+    "java_file_path":"item/beetroot_seeds.png",
+    "bedrock_file_path":"item/seeds_beetroot.png",
+    "java_lang_id":"item.minecraft.beetroot_seeds",
+    "bedrock_lang_id":"item.beetroot_seeds.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Beetroot Soup",
+    "java_file_path":"item/beetroot_soup.png",
+    "bedrock_file_path":"item/beetroot_soup.png",
+    "java_lang_id":"item.minecraft.beetroot_soup",
+    "bedrock_lang_id":"item.beetroot_soup.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Beetroot (Beetroots)",
+    "java_file_path":"item/beetroot.png,block/beetroots_stage0.png,block/beetroots_stage1.png,block/beetroots_stage2.png,,block/beetroots_stage3.png",
+    "bedrock_file_path":"item/beetroot.png,block/beetroots_stage_0.png,block/beetroots_stage_1.png,block/beetroots_stage_2.png,,block/beetroots_stage_3.png",
+    "java_lang_id":"item.minecraft.beetroot,block.minecraft.beetroots",
+    "bedrock_lang_id":"item.beetroot.name,tile.beetroot.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bell",
+    "java_file_path":"item/bell.png,block/bell_side.png,block/bell_bottom.png,block/bell_top.png",
+    "bedrock_file_path":"item/villagebell.png,block/bell_side.png,block/bell_bottom.png,block/bell_top.png",
+    "java_lang_id":"block.minecraft.bell",
+    "bedrock_lang_id":"item.bell.name,tile.bell.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Birch Boat",
+    "java_file_path":"item/birch_boat.png",
+    "bedrock_file_path":"item/boat_birch.png",
+    "java_lang_id":"item.minecraft.birch_boat",
+    "bedrock_lang_id":"item.boat.birch.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Birch Door",
+    "java_file_path":"item/birch_door.png,block/birch_door_bottom.png,block/birch_door_top.png",
+    "bedrock_file_path":"item/door_birch.png,block/door_birch_lower.png,block/door_birch_upper.png",
+    "java_lang_id":"block.minecraft.birch_door",
+    "bedrock_lang_id":"item.birch_door.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Birch Leaves",
+    "java_file_path":"block/birch_leaves.png",
+    "bedrock_file_path":"block/leaves_birch.tga,block/leaves_birch_opaque.png,block/leaves_birch_carried.tga",
+    "java_lang_id":"block.minecraft.birch_leaves",
+    "bedrock_lang_id":"tile.leaves.birch.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Birch Log",
+    "java_file_path":"block/birch_log_top.png,block/birch_log.png",
+    "bedrock_file_path":"block/log_birch_top.png,block/log_birch.png",
+    "java_lang_id":"block.minecraft.birch_log",
+    "bedrock_lang_id":"tile.log.birch.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Birch Planks",
+    "java_file_path":"block/birch_planks.png",
+    "bedrock_file_path":"block/planks_birch.png",
+    "java_lang_id":"block.minecraft.birch_planks",
+    "bedrock_lang_id":"tile.birch_stairs.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Birch Sapling",
+    "java_file_path":"block/birch_sapling.png",
+    "bedrock_file_path":"block/sapling_birch.png",
+    "java_lang_id":"block.minecraft.birch_sapling",
+    "bedrock_lang_id":"tile.sapling.birch.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Birch Sign",
+    "java_file_path":"item/birch_sign.png",
+    "bedrock_file_path":"item/sign_birch.png",
+    "java_lang_id":"block.minecraft.birch_sign",
+    "bedrock_lang_id":"tile.birch_standing_sign.name,item.birch_sign.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Birch Trapdoor",
+    "java_file_path":"block/birch_trapdoor.png",
+    "bedrock_file_path":"block/birch_trapdoor.png",
+    "java_lang_id":"block.minecraft.birch_trapdoor",
+    "bedrock_lang_id":"tile.birch_trapdoor.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Black Concrte Powder",
+    "java_file_path":"block/black_concrete_powder.png",
+    "bedrock_file_path":"block/concrete_powder_black.png",
+    "java_lang_id":"block.minecraft.black_concrete_powder",
+    "bedrock_lang_id":"tile.concretePowder.black.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Black Concrete",
+    "java_file_path":"block/black_concrete.png",
+    "bedrock_file_path":"block/concrete_powder.png",
+    "java_lang_id":"block.minecraft.black_concrete",
+    "bedrock_lang_id":"tile.concrete.black.nam",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Black Dye",
+    "java_file_path":"item/black_dye.png",
+    "bedrock_file_path":"item/dye_powder_black.png",
+    "java_lang_id":"item.minecraft.black_dye",
+    "bedrock_lang_id":"item.dye.black_new.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Black Glazed Terracotta",
+    "java_file_path":"block/black_glazed_terracotta.png",
+    "bedrock_file_path":"block/glazed_terracotta_black.png",
+    "java_lang_id":"block.minecraft.black_glazed_terracotta",
+    "bedrock_lang_id":"tile.glazedTerracotta.black.name,tile.glazedTerracottaBlack.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Black Shulker Box",
+    "java_file_path":"block/black_shulker_box.png",
+    "bedrock_file_path":"block/shulker_top_black.png",
+    "java_lang_id":"block.minecraft.black_shulker_box",
+    "bedrock_lang_id":"tile.shulkerBoxBlack.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Black Stained Glass",
+    "java_file_path":"block/black_stained_glass.png,block/black_stained_glass_top.png",
+    "bedrock_file_path":"block/glass_black.png,block/glass_pane_top_black.png",
+    "java_lang_id":"block.minecraft.black_stained_glass,block.minecraft.black_stained_glass_pane",
+    "bedrock_lang_id":"tile.stained_glass.black.name,tile.stained_glass_pane.black.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Black Terracotta",
+    "java_file_path":"block/black_terracotta.png",
+    "bedrock_file_path":"block/glazed_terracotta_black.png",
+    "java_lang_id":"block.minecraft.black_terracotta",
+    "bedrock_lang_id":"tile.stained_hardened_clay.black.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Black Wool",
+    "java_file_path":"block/black_wool.png",
+    "bedrock_file_path":"block/wool_colored_black.png",
+    "java_lang_id":"block.minecraft.black_wool",
+    "bedrock_lang_id":"tile.wool.black.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blackstone",
+    "java_file_path":"block/blackstone_top.png,block/blackstone.png",
+    "bedrock_file_path":"block/blackstone_top.png,block/blackstone.png",
+    "java_lang_id":"block.minecraft.blackstone",
+    "bedrock_lang_id":"tile.blackstone.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blast Furnace",
+    "java_file_path":"block/blast_furnace_front.png,block/blast_furnace_front_on.png,block/blast_furnace_side.png,block/blast_furnace_top.png",
+    "bedrock_file_path":"block/blast_furnace_front.png,block/blast_furnace_front_on.png,block/blast_furnace_side.png,block/blast_furnace_top.png",
+    "java_lang_id":"block.minecraft.blast_furnace,container.blast_furnace",
+    "bedrock_lang_id":"tile.blast_furnace.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blaze Powder",
+    "java_file_path":"item/blaze_powder.png",
+    "bedrock_file_path":"item/blaze_powder.png",
+    "java_lang_id":"item.minecraft.blaze_powder",
+    "bedrock_lang_id":"item.blaze_powder.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blaze Rod",
+    "java_file_path":"item/blaze_rod.png",
+    "bedrock_file_path":"item/blaze_rod.png",
+    "java_lang_id":"item.minecraft.blaze_rod",
+    "bedrock_lang_id":"item.blaze_rod.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blue Concrete Powder",
+    "java_file_path":"block/blue_concrete_powder.png",
+    "bedrock_file_path":"block/concrete_powder_blue.png",
+    "java_lang_id":"block.minecraft.blue_concrete_powder",
+    "bedrock_lang_id":"tile.concretePowder.blue.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blue Concrete",
+    "java_file_path":"block/blue_concrete.png",
+    "bedrock_file_path":"block/concrete_blue.png",
+    "java_lang_id":"block.minecraft.blue_concrete",
+    "bedrock_lang_id":"tile.concrete.blue.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blue Dye",
+    "java_file_path":"item/blue_dye.png",
+    "bedrock_file_path":"item/dye_powder_blue_new.png",
+    "java_lang_id":"item.minecraft.blue_dye",
+    "bedrock_lang_id":"item.dye.blue_new.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blue Glazed Terracotta",
+    "java_file_path":"block/blue_glazed_terracotta.png",
+    "bedrock_file_path":"block/glazed_terracotta_blue.png",
+    "java_lang_id":"block.minecraft.blue_glazed_terracotta",
+    "bedrock_lang_id":"tile.glazedTerracotta.blue.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blue Ice",
+    "java_file_path":"block/blue_ice.png",
+    "bedrock_file_path":"block/blue_ice.png",
+    "java_lang_id":"block.minecraft.blue_ice",
+    "bedrock_lang_id":"tile.blue_ice.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blue Orchid",
+    "java_file_path":"block/blue_orchid.png",
+    "bedrock_file_path":"block/flower_blue_orchid.png",
+    "java_lang_id":"block.minecraft.blue_orchid,block.minecraft.potted_blue_orchid",
+    "bedrock_lang_id":"tile.red_flower.blueOrchid.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blue Shulker Box",
+    "java_file_path":"block/blue_shulker_box.png",
+    "bedrock_file_path":"block/shulker_box_blue.png",
+    "java_lang_id":"block.minecraft.blue_shulker_box",
+    "bedrock_lang_id":"tile.shulkerBoxBlue.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blue Stained Glass",
+    "java_file_path":"block/blue_stained_glass.png,block/blue_stained_glass_top.png",
+    "bedrock_file_path":"block/glass_blue.png,glass_pane_top_blue.png",
+    "java_lang_id":"block.minecraft.blue_stained_glass,block.minecraft.blue_stained_glass_pane",
+    "bedrock_lang_id":"tile.stained_glass.blue.name,tile.stained_glass_pane.blue.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blue Terracotta",
+    "java_file_path":"block/blue_terracotta.png",
+    "bedrock_file_path":"block/hardened_clay_stained_blue.png",
+    "java_lang_id":"block.minecraft.black_terracotta",
+    "bedrock_lang_id":"tile.stained_hardened_clay.blue.name",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Blue Wool",
+    "java_file_path":"block/blue_wool.png",
+    "bedrock_file_path":"block/wool_colored_blue.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bone Block",
+    "java_file_path":"block/bone_block_top.png,block/bone_block_side.png",
+    "bedrock_file_path":"block/bone_block_top.png,block/bone_block_side.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bone Meal",
+    "java_file_path":"item/bone_meal.png",
+    "bedrock_file_path":"item/dye_powder_white.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bone",
+    "java_file_path":"item/bone.png",
+    "bedrock_file_path":"item/bone.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Book",
+    "java_file_path":"item/book.png",
+    "bedrock_file_path":"item/book_normal.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bookshelf",
+    "java_file_path":"block/bookshelf.png",
+    "bedrock_file_path":"block/bookshelf.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bow",
+    "java_file_path":"item/bow.png,item/bow_pulling_0.png,item/bow_pulling_1.png,item/bow_pulling_2.png",
+    "bedrock_file_path":"item/bow_standby.png,item/bow_pulling_0.png,item/bow_pulling_1.png,item/bow_pulling_2.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bowl",
+    "java_file_path":"item/bowl.png",
+    "bedrock_file_path":"item/bowl.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brain Coral Block",
+    "java_file_path":"block/brain_coral_block.png",
+    "bedrock_file_path":"block/coral_pink.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brain Coral Fan",
+    "java_file_path":"block/brain_coral_fan.png",
+    "bedrock_file_path":"block/coral_fan_pink.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brain Coral",
+    "java_file_path":"block/brain_coral.png",
+    "bedrock_file_path":"block/coral_plant_pink.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bread",
+    "java_file_path":"item/bread.png",
+    "bedrock_file_path":"item/bread.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brewing Stand",
+    "java_file_path":"block/brewing_stand.png,item/brewing_stand.png,block/brewing_stand_base.png",
+    "bedrock_file_path":"block/brewing_stand.png,item/brewing_stand.png,block/brewing_stand_base.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brick",
+    "java_file_path":"item/brick.png",
+    "bedrock_file_path":"item/brick.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bricks",
+    "java_file_path":"block/bricks.png",
+    "bedrock_file_path":"block/brick.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Broken Elytra",
+    "java_file_path":"item/broken_elytra.png",
+    "bedrock_file_path":"item/broken_elytra.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brown Concrete Powder",
+    "java_file_path":"block/brown_concrete_powder.png",
+    "bedrock_file_path":"block/concrete_powder_brown.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brown Concrete",
+    "java_file_path":"block/brown_concrete.png",
+    "bedrock_file_path":"block/concrete_brown.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brown Dye",
+    "java_file_path":"item/brown_dye.png",
+    "bedrock_file_path":"item/dye_powder_brown_new.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brown Glazed Terracotta",
+    "java_file_path":"block/brown_glazed_terracotta.png",
+    "bedrock_file_path":"block/glazed_terracotta_brown.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brown Mushroom",
+    "java_file_path":"block/brown_mushroom.png",
+    "bedrock_file_path":"block/mushroom_brown.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brown Shulker Box",
+    "java_file_path":"block/brown_shulker_box.png",
+    "bedrock_file_path":"block/shulker_box_brown.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brown Stained Glass",
+    "java_file_path":"block/brown_stained_glass.png,block/brown_stained_glass_top.png",
+    "bedrock_file_path":"block/glass_brown.png,glass_pane_top_brown.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brown Terracotta",
+    "java_file_path":"block/brown_terracotta.png",
+    "bedrock_file_path":"block/terracotta_brown.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Brown Wool",
+    "java_file_path":"block/brown_wool.png",
+    "bedrock_file_path":"block/wool_colored_brown.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bubble Coral Block",
+    "java_file_path":"block/bubble_coral_block.png",
+    "bedrock_file_path":"block/coral_purple.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bubble Coral Fan",
+    "java_file_path":"block/bubble_coral_fan.png",
+    "bedrock_file_path":"block/coral_fan_purple.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bubble Coral",
+    "java_file_path":"block/bubble_coral.png",
+    "bedrock_file_path":"block/coral_plant_purple.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bucket",
+    "java_file_path":"item/bucket.png",
+    "bedrock_file_path":"item/bucket_empty.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cactus",
+    "java_file_path":"block/cactus_side.png,block/cactus_top.png,block/cactus_bottom.png",
+    "bedrock_file_path":"block/cactus_side.tga,block/cactus_top.tga,block/cactus_bottom.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cake",
+    "java_file_path":"item/cake.png,block/cake_bottom.png,block/cake_inner.png,block/cake_side.png,block/cake_top.png",
+    "bedrock_file_path":"item/cake.png,block/cake_bottom.png,block/cake_inner.png,block/cake_side.png,block/cake_top.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Campfire",
+    "java_file_path":"item/campfire.png,block/campfire_fire.png, block/campfire_log_lit.png,block/campfire_log.png",
+    "bedrock_file_path":"item/campfire.png,block/campfire.png, block/campfire_log_lit.png,block/campfire_log.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Carrot on a Stick",
+    "java_file_path":"item/carrot_on_a_stick.png",
+    "bedrock_file_path":"item/carrot_on_a_stick.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Carrot (Carrots)",
+    "java_file_path":"item/carrot.png,block/carrots_stage0.png,block/carrots_stage1.png,block/carrots_stage2.png,block/carrots_stage3.png",
+    "bedrock_file_path":"item/carrot.png,block/carrots_stage_0.png,block/carrots_stage_1.png,block/carrots_stage_2.png,block/carrots_stage_3.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cartography Table",
+    "java_file_path":"block/cartography_table_side1.png,block/cartography_table_side2.png,block/cartography_table_side3.png,block/cartography_table_top.png",
+    "bedrock_file_path":"block/cartography_table_side1.png,block/cartography_table_side2.png,block/cartography_table_side3.png,block/cartography_table_top.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Carved Pumpkin",
+    "java_file_path":"block/carved_pumpkin.png",
+    "bedrock_file_path":"block/pumpkin_face_off.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cauldron",
+    "java_file_path":"item/cauldron.png,block/cauldron_bottom.png,block/cauldron_inner.png,block/cauldron_side.png,block/cauldron_top.png",
+    "bedrock_file_path":"item/cauldron.png,block/cauldron_bottom.png,block/cauldron_inner.png,block/cauldron_side.png,block/cauldron_top.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chain",
+    "java_file_path":"item/chain.png,block/chain.png",
+    "bedrock_file_path":"item/chain.png,block/chain1.png,block/chain2.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chain Command Block",
+    "java_file_path":"block/chain_command_block_back.png,block/chain_command_block_conditional.png,block/chain_command_block_front.png,block/chain_command_block_side.png",
+    "bedrock_file_path":"block/chain_command_block_side.png,block/chain_command_block_side_mipmap.png,block/chain_command_block_front.png,block/chain_command_block_front_mipmap.png,block/chain_command_block_conditional.png,block/chain_command_block_conditional_mipmap.png,block/chain_command_block_back.png,block/chain_command_block_back_mipmap.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chainmail Boots",
+    "java_file_path":"item/chainmail_boots.png",
+    "bedrock_file_path":"item/chainmail_boots.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chainmail Chestplate",
+    "java_file_path":"item/chainmail_chestplate.png",
+    "bedrock_file_path":"item/chainmail_chestplate.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chainmail Helmet",
+    "java_file_path":"item/chainmail_helmet.png",
+    "bedrock_file_path":"item/chainmail_helmet.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chainmail Leggings",
+    "java_file_path":"item/chainmail_leggings.png",
+    "bedrock_file_path":"item/chainmail_leggings.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Charcoal",
+    "java_file_path":"item/charcoal.png",
+    "bedrock_file_path":"item/charcoal.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Minecart with Chest",
+    "java_file_path":"item/chest_minecart.png",
+    "bedrock_file_path":"item/minecart_chest.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Raw Chicken",
+    "java_file_path":"item/chicken.png",
+    "bedrock_file_path":"item/chicken_raw.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chiseled Nether Bricks",
+    "java_file_path":"block/chiseled_nether_bricks.png",
+    "bedrock_file_path":"block/chiseled_nether_bricks.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chiseled Polished Blackstone",
+    "java_file_path":"block/chiseled_polished_blackstone.png",
+    "bedrock_file_path":"block/chiseled_polished_blackstone.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chiseled Quartz Block",
+    "java_file_path":"block/chiseled_quartz_block.png,block/chiseled_quartz_block_top.png",
+    "bedrock_file_path":"block/chiseled_quartz_block.png,block/quartz_block_chiseled_top.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chiseled Red Sandstone",
+    "java_file_path":"block/chiseled_red_sandstone.png",
+    "bedrock_file_path":"block/red_sandstone_carved.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chiseled Stone Bricks",
+    "java_file_path":"block/chiseled_stone_bricks.png",
+    "bedrock_file_path":"block/stonebrick_carved.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chorus Fruit",
+    "java_file_path":"item/chorus_fruit.png",
+    "bedrock_file_path":"item/chorus_fruit.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chorus Flower",
+    "java_file_path":"block/chorus_flower.png,block/chorus_flower_dead.png",
+    "bedrock_file_path":"block/chorus_flower.png,block/chorus_flower_dead.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Chorus Plant",
+    "java_file_path":"block/chorus_plant.png",
+    "bedrock_file_path":"block/chorus_plant.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Clay Ball",
+    "java_file_path":"item/clay_ball.png",
+    "bedrock_file_path":"item/clay_ball.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Clay",
+    "java_file_path":"block/clay.png",
+    "bedrock_file_path":"block/clay.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Clock",
+    "java_file_path":"item/clock_00.png,item/clock_01.png,item/clock_02.png,item/clock_03.png,item/clock_04.png,item/clock_05.png,item/clock_06.png,item/clock_07.png,item/clock_08.png,item/clock_09.png,item/clock_10.png,item/clock_11.png,item/clock_12.png,item/clock_13.png,item/clock_14.png,item/clock_15.png,item/clock_16.png,item/clock_17.png,item/clock_18.png,item/clock_19.png,item/clock_20.png,item/clock_21.png,item/clock_22.png,item/clock_23.png,item/clock_24.png,item/clock_25.png,item/clock_26.png,item/clock_27.png,item/clock_28.png,item/clock_29.png,item/clock_30.png,item/clock_31.png,item/clock_32.png,item/clock_33.png,item/clock_34.png,item/clock_35.png,item/clock_36.png,item/clock_37.png,item/clock_38.png,item/clock_39.png,item/clock_40.png,item/clock_41.png,item/clock_42.png,item/clock_43.png,item/clock_44.png,item/clock_45.png,item/clock_46.png,item/clock_47.png,item/clock_48.png,item/clock_49.png,item/clock_50.png,item/clock_51.png,item/clock_52.png,item/clock_53.png,item/clock_54.png,item/clock_55.png,item/clock_56.png,item/clock_57.png,item/clock_58.png,item/clock_59.png,item/clock_60.png,item/clock_61.png,item/clock_62.png,item/clock_63.png",
+    "bedrock_file_path":"item/clock_item.png,item/watch_atlas.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Block of Coal",
+    "java_file_path":"block/coal_block.png",
+    "bedrock_file_path":"block/coal_block.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Coal Ore",
+    "java_file_path":"block/coal_ore.png",
+    "bedrock_file_path":"block/coal_ore.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Coal",
+    "java_file_path":"item/coal.png",
+    "bedrock_file_path":"item/coal.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Coarse Dirt",
+    "java_file_path":"block/coarse_dirt.png",
+    "bedrock_file_path":"block/coarse_dirt.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cobblestone",
+    "java_file_path":"block/cobblestone.png",
+    "bedrock_file_path":"block/cobblestone.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cobweb",
+    "java_file_path":"block/cobweb.png",
+    "bedrock_file_path":"block/web.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cocoa Beans",
+    "java_file_path":"item/cocoa_beans.png,block/cocoa_stage0.png,block/cocoa_stage1.png,block/cocoa_stage2.png",
+    "bedrock_file_path":"item/dye_powder_brown.png,block/cocoa_stage_0.png,block/cocoa_stage_1.png,block/cocoa_stage_2.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bucket of Cod",
+    "java_file_path":"item/cod_bucket.png",
+    "bedrock_file_path":"item/bucket_cod.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Raw Cod",
+    "java_file_path":"item/cod.png",
+    "bedrock_file_path":"item/fish_raw.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Command Block",
+    "java_file_path":"block/command_block_back.png,block/command_block_conditional.png,block/command_block_front.png,block/command_block_side.png",
+    "bedrock_file_path":"block/command_block.png,block/command_block_side.png,block/command_block_side_mipmap.png,block/command_block_front.png,block/command_block_front_mipmap.png,block/command_block_conditional.png,block/command_block_conditional_mipmap,block/command_block_back.png,block/command_block_back_mipmap.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Minecart with Command Block",
+    "java_file_path":"item/command_block_minecart.png",
+    "bedrock_file_path":"item/minecart_command_block.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Comparator",
+    "java_file_path":"item/comparator.png,block/comparator_on.png,block/comparator.png",
+    "bedrock_file_path":"item/comparator.png,block/comparator_on.png,block/comparator_off.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Compass",
+    "java_file_path":"item/compass_00.png,item/compass_01.png,item/compass_02.png,item/compass_03.png,item/compass_04.png,item/compass_05.png,item/compass_06.png,item/compass_07.png,item/compass_08.png,item/compass_09.png,item/compass_10.png,item/compass_11.png,item/compass_12.png,item/compass_13.png,item/compass_14.png,item/compass_15.png,item/compass_16.png,item/compass_17.png,item/compass_18.png,item/compass_19.png,item/compass_20.png,item/compass_21.png,item/compass_22.png,item/compass_23.png,item/compass_24.png,item/compass_25.png,item/compass_26.png,item/compass_27.png,item/compass_28.png,item/compass_29.png,item/compass_30.png,item/compass_31.png",
+    "bedrock_file_path":"item/compass_item.png,item/compass_atlas.png,item/lodestonecompass_item.png,item/lodestonecompass_atlas.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Composter",
+    "java_file_path":"block/composter_side.png,block/composter_bottom.png,block/composter_top.png,block/composter_compost.png,block/composter_ready.png",
+    "bedrock_file_path":"block/composter_side.png,block/composter_bottom.png,block/composter_top.png,block/compost.png,block/compost_ready.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Conduit",
+    "java_file_path":"block/conduit.png",
+    "bedrock_file_path":"block/conduit_base.png,block/conduit_cage.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cooked Beef",
+    "java_file_path":"item/cooked_beef.png",
+    "bedrock_file_path":"item/beef_cooked.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cooked Chicken",
+    "java_file_path":"item/cooked_chicken.png",
+    "bedrock_file_path":"item/chicken_cooked.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cooked Cod",
+    "java_file_path":"item/cooked_cod.png",
+    "bedrock_file_path":"item/fish_cooked.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cooked Mutton",
+    "java_file_path":"item/cooked_mutton.png",
+    "bedrock_file_path":"item/mutton_cooked.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cooked Porkchop",
+    "java_file_path":"item/cooked_porkchop.png",
+    "bedrock_file_path":"item/porkchop_cooked.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cooked Rabbit",
+    "java_file_path":"item/cooked_rabbit.png",
+    "bedrock_file_path":"item/rabbit_cooked.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cooked Salmon",
+    "java_file_path":"item/cooked_salmon.png",
+    "bedrock_file_path":"item/fish_salmon_cooked.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cookie",
+    "java_file_path":"item/cookie.png",
+    "bedrock_file_path":"item/cookie.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cornflower",
+    "java_file_path":"block/cornflower.png",
+    "bedrock_file_path":"block/flower_cornflower.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cracked Nether Brick",
+    "java_file_path":"block/cracked_nether_bricks.png",
+    "bedrock_file_path":"block/cracked_nether_bricks.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cracked Polished Blackstone Bricks",
+    "java_file_path":"block/cracked_polished_blackstone_bricks.png",
+    "bedrock_file_path":"block/cracked_polished_blackstone_bricks.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cracked Stone Bricks",
+    "java_file_path":"block/cracked_stone_bricks.png",
+    "bedrock_file_path":"block/stonebrick_cracked.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Crafting Table",
+    "java_file_path":"block/crafting_table_front.png,block/crafting_table_side.png,block/crafting_table_top.png",
+    "bedrock_file_path":"block/crafting_table_front.png,block/crafting_table_side.png,block/crafting_table_top.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Banner Pattern",
+    "java_file_path":"item/creeper_banner_pattern.png,item/flower_banner_pattern.png,item/globe_banner_pattern.png,item/mojang_banner_pattern.png,item/piglin_banner_pattern.png,item/skull_banner_pattern.png",
+    "bedrock_file_path":"item/banner_pattern.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Crimson Door",
+    "java_file_path":"item/crimson_door.png,block/crimson_door_bottom.png,block/crimson_door_top.png",
+    "bedrock_file_path":"item/cromson_door.png,block/crimson_door_lower.png,block/crimson_door_top.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Crimson Fungus",
+    "java_file_path":"block/crimson_fungus.png",
+    "bedrock_file_path":"block/crimson_fungus.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"Crimson Nylium",
+    "american_name":"",
+    "java_file_path":"block/crimson_nylium_side.png,block/crimson_nylium.png",
+    "bedrock_file_path":"block/crimson_nylium_side.png,block/crimson_nylium_top.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Crimson Planks",
+    "java_file_path":"block/crimson_planks.png",
+    "bedrock_file_path":"block/crimson_planks.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Crimson Roots",
+    "java_file_path":"block/crimson_roots.png,block/crimson_roots_pot.png",
+    "bedrock_file_path":"block/crimson_roots.png,block/crimson_roots_pot.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Crimson Sign",
+    "java_file_path":"item/crimson_sign.png",
+    "bedrock_file_path":"item/sign_crimson.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Crimson Stem",
+    "java_file_path":"block/crimson_stem_top.png,block/crimson_stem.png",
+    "bedrock_file_path":"block/crimson_log_top.png,block/crimson_log_side.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Crimson Trapdoor",
+    "java_file_path":"block/crimson_trapdoor.png",
+    "bedrock_file_path":"block/crimson_trapdoor.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Crossbow",
+    "java_file_path":"item/crossbow_standby.png,item/crossbow_arrow.png,item/crossbow_firework.png,item/crossbow_pulling_0.png,item/crossbow_pulling_1.png,item/crossbow_pulling_2.png",
+    "bedrock_file_path":"item/crossbow_standby.png,item/crossbow_arrow.png,item/crossbow_firework.png,item/crossbow_pulling_0.png,item/crossbow_pulling_1.png,item/crossbow_pulling_2.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Crying Obsidian",
+    "java_file_path":"block/crying_obsidian.png",
+    "bedrock_file_path":"block/crying_obsidian.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cut Red Sandstone",
+    "java_file_path":"block/cut_red_sandstone.png",
+    "bedrock_file_path":"block/red_sandstone_smooth.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cut Sandstone",
+    "java_file_path":"block/cut_sandstone.png",
+    "bedrock_file_path":"block/sandstone_smooth.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cyan Concrete Powder",
+    "java_file_path":"block/cyan_concrete_powder.png",
+    "bedrock_file_path":"block/concrete_powder_cyan.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cyan Concrete",
+    "java_file_path":"block/cyan_concrete.png",
+    "bedrock_file_path":"block/concrete_cyan.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cyan Dye",
+    "java_file_path":"item/cyan_dye.png",
+    "bedrock_file_path":"item/dye_powder_cyan.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cyan Glazed Terracotta",
+    "java_file_path":"block/cyan_glazed_terracotta.png",
+    "bedrock_file_path":"block/glazed_terracotta_cyan.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cyan Shulker Box",
+    "java_file_path":"block/cyan_shulker_box.png",
+    "bedrock_file_path":"block/shulker_top_cyan.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cyan Stained Glass",
+    "java_file_path":"block/cyan_stained_glass.png,block/cyan_stained_glass_top.png",
+    "bedrock_file_path":"block/glass_cyan.png,block/glass_pane_top_cyan.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cyan Terracotta",
+    "java_file_path":"block/cyan_terracotta.png",
+    "bedrock_file_path":"block/hardened_clay_stained_cyan.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Cyan Wool",
+    "java_file_path":"block/cyan_wool.png",
+    "bedrock_file_path":"block/wool_colored_cyan.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dandelion",
+    "java_file_path":"block/dandelion.png",
+    "bedrock_file_path":"block/flower_dandelion.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dark Oak Boat",
+    "java_file_path":"item/dark_oak_boat.png",
+    "bedrock_file_path":"item/boat_darkoak.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dark Oak Door",
+    "java_file_path":"item/dark_oak_door.png,block/dark_oak_door_bottom.png,block/dark_oak_door_top.png",
+    "bedrock_file_path":"item/door_dark_oak.png,block/door_dark_oak_lower.png,block/door_dark_oak_upper.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dark Oak Leaves",
+    "java_file_path":"block/dark_oak_leaves.png",
+    "bedrock_file_path":"block/leaves_big_oak_opaque.png,block/leaves_big_oak.tga,block/leaves_big_oak_carried.tga",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dark Oak Log",
+    "java_file_path":"block/dark_oak_log_top.png,block/dark_oak_log.png",
+    "bedrock_file_path":"block/log_big_oak_top.png,block/log_big_oak.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dark Oak Planks",
+    "java_file_path":"block/dark_oak_planks.png",
+    "bedrock_file_path":"block/planks_big_oak.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dark Oak Sapling",
+    "java_file_path":"block/dark_oak_sapling.png",
+    "bedrock_file_path":"block/sapling_roofed_oak.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dark Oak Sign",
+    "java_file_path":"item/dark_oak_sign.png",
+    "bedrock_file_path":"item/sign_darkoak.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dark Oak Trapdoor",
+    "java_file_path":"block/dark_oak_trapdoor.png",
+    "bedrock_file_path":"block/dark_oak_trapdoor.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dark Prismarine",
+    "java_file_path":"block/dark_prismarine.png",
+    "bedrock_file_path":"block/prismarine_dark.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Daylight Detector",
+    "java_file_path":"block/daylight_detector_top.png,block/daylight_detector_inverted.png,block/daylight_detector_side.png",
+    "bedrock_file_path":"block/daylight_detector_top.png,block/daylight_detector_inverted_top.png,block/daylight_detector_side.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Brain Coral Block",
+    "java_file_path":"block/dead_brain_coral_block.png",
+    "bedrock_file_path":"block/coral_pink_dead.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Brain Coral Fan",
+    "java_file_path":"block/dead_brain_coral_fan.png",
+    "bedrock_file_path":"block/coral_fan_pink_dead.png",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Brain Coral",
+    "java_file_path":"block/dead_brain_coral.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Bubble Coral Block",
+    "java_file_path":"block/dead_bubble_coral_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Bubble Coral Fan",
+    "java_file_path":"block/dead_bubble_coral_fan.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Bubble Coral",
+    "java_file_path":"block/dead_bubble_coral.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Bush",
+    "java_file_path":"block/dead_bush.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Fire Coral Block",
+    "java_file_path":"block/dead_fire_coral_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Fire Coral Fan",
+    "java_file_path":"block/dead_fire_coral_fan.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Fire Coral",
+    "java_file_path":"block/dead_fire_coral.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Horn Coral Block",
+    "java_file_path":"block/dead_horn_coral_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Horn Coral Fan",
+    "java_file_path":"block/dead_horn_coral_fan.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Horn Coral",
+    "java_file_path":"block/dead_horn_coral.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Tube Coral Block",
+    "java_file_path":"block/dead_tube_coral_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Tube Coral Fan",
+    "java_file_path":"block/dead_tube_coral_fan.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dead Tube Coral",
+    "java_file_path":"block/dead_tube_coral.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"[Debug]",
+    "java_file_path":"block/debug.png,block/debug2.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Mining Stages",
+    "java_file_path":"block/destroy_stage_0.png,block/destroy_stage_1.png,block/destroy_stage_2.png,block/destroy_stage_3.png,block/destroy_stage_4.png,block/destroy_stage_5.png,block/destroy_stage_6.png,block/destroy_stage_7.png,block/destroy_stage_8.png,block/destroy_stage_9.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Detector Rail",
+    "java_file_path":"block/detector_rail_on.png,block/detector_rail.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diamond Axe",
+    "java_file_path":"item/diamond_axe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diamond Block",
+    "java_file_path":"block/diamond_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diamond Boots",
+    "java_file_path":"item/diamond_boots.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diamond Chestplate",
+    "java_file_path":"item/diamond_chestplate.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diamond Helmet",
+    "java_file_path":"item/diamond_helmet.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diamond Hoe",
+    "java_file_path":"item/diamond_hoe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diamond Horse Armor",
+    "java_file_path":"item/diamond_horse_armor.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diamond Leggings",
+    "java_file_path":"item/diamond_leggings.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diamond Ore",
+    "java_file_path":"block/diamond_ore.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diamond Pickaxe",
+    "java_file_path":"item/diamond_pickaxe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diamond Shovel",
+    "java_file_path":"item/diamond_shovel.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diamond Sword",
+    "java_file_path":"item/diamond_sword.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diamond",
+    "java_file_path":"item/diamond.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Diorite",
+    "java_file_path":"block/diorite.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dirt",
+    "java_file_path":"block/dirt.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dispenser",
+    "java_file_path":"block/dispenser_front_vertical.png,block/dispenser_front.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dragon's Breath",
+    "java_file_path":"item/dragon_breath.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dragon Egg",
+    "java_file_path":"block/dragon_egg.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dried Kelp Block",
+    "java_file_path":"block/dried_kelp_side.png,block/dried_kelp_bottom.png,block/dried_kelp_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dried Kelp",
+    "java_file_path":"item/dried_kelp.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dropper",
+    "java_file_path":"block/dropper_front_vertical.png,block/dropper_front.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Egg",
+    "java_file_path":"item/egg.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Elytra",
+    "java_file_path":"item/elytra.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Emerald Block",
+    "java_file_path":"block/emerald_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Emerald Ore",
+    "java_file_path":"block/emerald_ore.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Emerald",
+    "java_file_path":"item/emerald.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Empty Boots Slot",
+    "java_file_path":"item/empty_armor_slot_boots.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Empty Chestplate Slot",
+    "java_file_path":"item/empty_armor_slot_chestplate.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Empty Helmet Slot",
+    "java_file_path":"item/empty_armor_slot_helmet.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Empty Leggings Slot",
+    "java_file_path":"item/empty_armor_slot_leggings.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Empty Shield Slot (Offhand Slot)",
+    "java_file_path":"item/empty_armor_slot_shield.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Enchanted Book",
+    "java_file_path":"item/enchanted_book.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Enchanting Table",
+    "java_file_path":"block/enchanting_table_top.png,block/enchanting_table_bottom.png,block/enchanting_table_side.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"End Crystal",
+    "java_file_path":"item/end_crystal.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"End Portal Frame",
+    "java_file_path":"block/end_portal_frame_top.png,block/end_portal_frame_eye.png,block/end_portal_frame_side.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"End Rod",
+    "java_file_path":"block/end_rod.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"End Stone Bricks",
+    "java_file_path":"block/end_stone_bricks.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"End Stone",
+    "java_file_path":"block/end_stone.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Eye of Ender",
+    "java_file_path":"item/ender_eye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Ender Pearl",
+    "java_file_path":"item/ender_pearl.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bottle o' Enchanting",
+    "java_file_path":"item/experience_bottle.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Farmland",
+    "java_file_path":"block/farmland_moist.png,block/farmland.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Feather",
+    "java_file_path":"item/feather.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Fermented Spider Eye",
+    "java_file_path":"item/fermented_spider_eye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Fern",
+    "java_file_path":"block/fern.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Map",
+    "java_file_path":"item/filled_map_marking.png,item/filled_map.png,item/map.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Fire",
+    "java_file_path":"block/fire_0.png,block/fire_1.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Fire Charge",
+    "java_file_path":"item/fire_charge.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Fire Coral Block",
+    "java_file_path":"block/fire_coral_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Fire Coral Fan",
+    "java_file_path":"block/fire_coral_fan.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Fire Coral",
+    "java_file_path":"block/fire_coral.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Firework Rocket",
+    "java_file_path":"item/firework_rocket.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Firework Star",
+    "java_file_path":"item/firework_star.png,item/firework_star_overlay.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Fishing Rod",
+    "java_file_path":"item/fishing_rod.png,item/fishing_rod_cast.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Fletching Table",
+    "java_file_path":"block/fletching_table_side.png,block/fletching_table_front.png,block/fletching_table_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Flint and Steel",
+    "java_file_path":"item/flint_and_steel.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Flint",
+    "java_file_path":"item/flint.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Flower Pot",
+    "java_file_path":"item/flower_pot.png,block/flower_pot.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Frosted Ice",
+    "java_file_path":"block/frosted_ice_0.png,block/frosted_ice_1.png,block/frosted_ice_2.png,block/frosted_ice_3.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Furnace",
+    "java_file_path":"block/furnace_front.png,block/furnace_front_on.png,block/furnace_side.png,block/furnace_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Minecart with Furnace",
+    "java_file_path":"item/furnace_minecart.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Ghast Tear",
+    "java_file_path":"item/ghast_tear.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gilded Blackstone",
+    "java_file_path":"block/gilded_blackstone.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Glass Bottle",
+    "java_file_path":"item/glass_bottle.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Glass (Glass Pane)",
+    "java_file_path":"block/glass.png,block/glass_pane_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Glistering Melon Slice",
+    "java_file_path":"item/glistering_melon_slice.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Glowstone Dust",
+    "java_file_path":"item/glowstone_dust.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Glowstone",
+    "java_file_path":"block/glowstone.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gold Block",
+    "java_file_path":"block/gold_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gold Ingot",
+    "java_file_path":"item/gold_ingot.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gold Nugget",
+    "java_file_path":"item/gold_nugget.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gold Ore",
+    "java_file_path":"block/gold_ore.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Golden Apple",
+    "java_file_path":"item/golden_apple.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Golden Axe",
+    "java_file_path":"item/golden_axe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Golden Boots",
+    "java_file_path":"item/golden_boots.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Golden Carrot",
+    "java_file_path":"item/golden_carrot.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Golden Chestplate",
+    "java_file_path":"item/golden_chestplate.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Golden Helmet",
+    "java_file_path":"item/golden_helmet.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Golden Hoe",
+    "java_file_path":"item/golden_hoe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Golden Horse Armor",
+    "java_file_path":"item/golden_horse_armor.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Golden Leggings",
+    "java_file_path":"item/golden_leggings.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Golden Pickaxe",
+    "java_file_path":"item/golden_pickaxe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Golden Shovel",
+    "java_file_path":"item/golden_shovel.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Golden Sword",
+    "java_file_path":"item/golden_sword.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Granite",
+    "java_file_path":"block/granite.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Grass Block",
+    "java_file_path":"block/grass.png,block/grass_block_side.png,block/grass_block_side_overlay.png,block/grass_block_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Snowy Grass Block",
+    "java_file_path":"block/grass_block_snow.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Dirt Path",
+    "java_file_path":"block/grass_path_side.png,block/grass_path_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gravel",
+    "java_file_path":"block/gravel.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gray Concrete Powder",
+    "java_file_path":"block/gray_concrete_powder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gray Concrete",
+    "java_file_path":"block/gray_concrete.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gray Dye",
+    "java_file_path":"item/gray_dye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gray Glazed Terracotta",
+    "java_file_path":"block/gray_glazed_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gray Shulker Box",
+    "java_file_path":"block/gray_shulker_box.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gray Stained Glass",
+    "java_file_path":"block/gray_stained_glass.png,block/gray_stained_glass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gray Terracotta",
+    "java_file_path":"block/gray_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gray Wool",
+    "java_file_path":"block/gray_wool.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Green Concrete Powder",
+    "java_file_path":"block/green_concrete_powder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Green Concrete",
+    "java_file_path":"block/green_concrete.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Green Dye",
+    "java_file_path":"item/green_dye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Green Glazed Terracotta",
+    "java_file_path":"block/green_glazed_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Green Shulker Box",
+    "java_file_path":"block/green_shulker_box.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Green Stained Glass",
+    "java_file_path":"block/green_stained_glass.png,block/green_stained_glass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Green Terracotta",
+    "java_file_path":"block/green_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Green Wool",
+    "java_file_path":"block/green_wool.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Grindstone",
+    "java_file_path":"block/grindstone_round.png,block/grindstone_side.png,block/grindstone_pivot.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Gunpowder",
+    "java_file_path":"item/gunpowder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Hay Block",
+    "java_file_path":"block/hay_block_side.png,block/hay_block_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Heart of the Sea",
+    "java_file_path":"item/heart_of_the_sea.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Honey Block",
+    "java_file_path":"block/honey_block_bottom.png,block/honey_block_side.png,block/honey_block_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Honey Bottle",
+    "java_file_path":"item/honey_bottle.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Honeycomb Block",
+    "java_file_path":"block/honeycomb_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Honeycomb",
+    "java_file_path":"item/honeycomb.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Hopper",
+    "java_file_path":"item/hopper.png,block/hopper_inside.png,block/hopper_outside.png,block/hopper_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Minecart with Hopper",
+    "java_file_path":"item/hopper_minecart.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Horn Coral Block",
+    "java_file_path":"block/horn_coral_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Horn Coral Fan",
+    "java_file_path":"block/horn_coral_fan.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Horn Coral",
+    "java_file_path":"block/horn_coral.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Ice",
+    "java_file_path":"block/ice.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Ink Sac",
+    "java_file_path":"item/ink_sac.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Axe",
+    "java_file_path":"item/iron_axe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Bars",
+    "java_file_path":"block/iron_bars.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Block",
+    "java_file_path":"block/iron_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Boots",
+    "java_file_path":"item/iron_boots.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Chestplate",
+    "java_file_path":"item/iron_chestplate.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Door",
+    "java_file_path":"item/iron_door.png,block/iron_door_bottom.png,block/iron_door_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Helmet",
+    "java_file_path":"item/iron_helmet.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Hoe",
+    "java_file_path":"item/iron_hoe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Horse Armor",
+    "java_file_path":"item/iron_horse_armor.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Ingot",
+    "java_file_path":"item/iron_ingot.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Leggings",
+    "java_file_path":"item/iron_leggings.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Nugget",
+    "java_file_path":"item/iron_nugget.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Ore",
+    "java_file_path":"block/iron_ore.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Pickaxe",
+    "java_file_path":"item/iron_pickaxe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Shovel",
+    "java_file_path":"item/iron_shovel.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Sword",
+    "java_file_path":"item/iron_sword.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Iron Trapdoor",
+    "java_file_path":"block/iron_trapdoor.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Item Frame",
+    "java_file_path":"item/item_frame.png,block/item_frame.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Jack o' Lantern",
+    "java_file_path":"block/jack_o_lantern.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Jigsaw Block",
+    "java_file_path":"block/jigsaw_bottom.png,block/jigsaw_lock.png,block/jigsaw_side.png,block/jigsaw_top.png,block/jukebox_side.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Jukebox",
+    "java_file_path":"block/jukebox_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Jungle Boat",
+    "java_file_path":"item/jungle_boat.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Jungle Door",
+    "java_file_path":"item/jungle_door.png,block/jungle_door_bottom.png,block/jungle_door_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Jungle Leaves",
+    "java_file_path":"block/jungle_leaves.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Jungle Log",
+    "java_file_path":"block/jungle_log_top.png,block/jungle_log.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Jungle Planks",
+    "java_file_path":"block/jungle_planks.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Jungle Sapling",
+    "java_file_path":"block/jungle_sapling.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Jungle Sign",
+    "java_file_path":"item/jungle_sign.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Jungle Trapdoor",
+    "java_file_path":"block/jungle_trapdoor.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Kelp",
+    "java_file_path":"item/kelp.png,block/kelp_plant.png,block/kelp.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Knowledge Book",
+    "java_file_path":"item/knowledge_book.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Ladder",
+    "java_file_path":"block/ladder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lantern",
+    "java_file_path":"item/lantern.png,block/lantern.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lapis Lazuli Block",
+    "java_file_path":"block/lapis_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lapis Lazuli",
+    "java_file_path":"item/lapis_lazuli.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lapis Lazuli Ore",
+    "java_file_path":"block/lapis_ore.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Large Fern",
+    "java_file_path":"block/large_fern_bottom.png,block/large_fern_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lava Bucket",
+    "java_file_path":"item/lava_bucket.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lava",
+    "java_file_path":"block/lava_flow.png,block/lava_still.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lead",
+    "java_file_path":"item/lead.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Leather Boots",
+    "java_file_path":"item/leather_boots_overlay.png,item/leather_boots.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Leather Tunic",
+    "java_file_path":"item/leather_chestplate_overlay.png,item/leather_chestplate.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Leather Helmet",
+    "java_file_path":"item/leather_helmet_overlay.png,item/leather_helmet.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Leather Horse Armor",
+    "java_file_path":"item/leather_horse_armor.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Leather Pants",
+    "java_file_path":"item/leather_leggings_overlay.png,item/leather_leggings.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Leather",
+    "java_file_path":"item/leather.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lectern",
+    "java_file_path":"block/lectern_base.png,block/lectern_front.png,block/lectern_sides.png,block/lectern_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lever",
+    "java_file_path":"block/lever.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Blue Concrete Powder",
+    "java_file_path":"block/light_blue_concrete_powder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Blue Concrete",
+    "java_file_path":"block/light_blue_concrete.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Blue Dye",
+    "java_file_path":"item/light_blue_dye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Blue Glazed Terracotta",
+    "java_file_path":"block/light_blue_glazed_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Blue Shulker Box",
+    "java_file_path":"block/light_blue_shulker_box.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Blue Stained Glass",
+    "java_file_path":"block/light_blue_stained_glass.png,block/light_blue_stained_glass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Blue Terracotta",
+    "java_file_path":"block/light_blue_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Blue Wool",
+    "java_file_path":"block/light_blue_wool.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Gray Concrete Powder",
+    "java_file_path":"block/light_gray_concrete_powder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Gray Concrete",
+    "java_file_path":"block/light_gray_concrete.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Gray Dye",
+    "java_file_path":"item/light_gray_dye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Gray Glazed Terracotta",
+    "java_file_path":"block/light_gray_glazed_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Gray Shulker Box",
+    "java_file_path":"block/light_gray_shulker_box.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Gray Stained Glass",
+    "java_file_path":"block/light_gray_stained_glass.png,block/light_gray_stained_glass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Gray Terracotta",
+    "java_file_path":"block/light_gray_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Light Gray Wool",
+    "java_file_path":"block/light_gray_wool.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lilac",
+    "java_file_path":"block/lilac_bottom.png,block/lilac_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lily of the Valley",
+    "java_file_path":"block/lily_of_the_valley.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lily Pad",
+    "java_file_path":"block/lily_pad.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lime Concrete Powder",
+    "java_file_path":"block/lime_concrete_powder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lime Concrete",
+    "java_file_path":"block/lime_concrete.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lime Dye",
+    "java_file_path":"item/lime_dye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lime Glazed Terracotta",
+    "java_file_path":"block/lime_glazed_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lime Shulker Box",
+    "java_file_path":"block/lime_shulker_box.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lime Stained Glass",
+    "java_file_path":"block/lime_stained_glass.png,block/lime_stained_glass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lime Terracotta",
+    "java_file_path":"block/lime_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lime Wool",
+    "java_file_path":"block/lime_wool.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lingering Potion",
+    "java_file_path":"item/lingering_potion.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Lodestone",
+    "java_file_path":"block/lodestone_side.png,block/lodestone_top.png,block/loom_bottom.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Loom",
+    "java_file_path":"block/loom_front.png,block/loom_side.png,block/loom_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Magenta Concrete Powder",
+    "java_file_path":"block/magenta_concrete_powder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Magenta Concrete",
+    "java_file_path":"block/magenta_concrete.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Magenta Dye",
+    "java_file_path":"item/magenta_dye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Magenta Glazed Terracotta",
+    "java_file_path":"block/magenta_glazed_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Magenta Shulker Box",
+    "java_file_path":"block/magenta_shulker_box.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Magenta Stained Glass",
+    "java_file_path":"block/magenta_stained_glass.png,block/magenta_stained_glass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Magenta Terracotta",
+    "java_file_path":"block/magenta_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Magenta Wool",
+    "java_file_path":"block/magenta_wool.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Magma Cream",
+    "java_file_path":"item/magma_cream.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Magma Block",
+    "java_file_path":"block/magma.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Melon Seeds",
+    "java_file_path":"item/melon_seeds.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Melon",
+    "java_file_path":"block/melon_side.png,block/melon_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Melon Slice",
+    "java_file_path":"item/melon_slice.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Milk Bucket",
+    "java_file_path":"item/milk_bucket.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Minecart",
+    "java_file_path":"item/minecart.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Mossy Cobblestone",
+    "java_file_path":"block/mossy_cobblestone.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Mossy Stone Bricks",
+    "java_file_path":"block/mossy_stone_bricks.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Mushroom Block",
+    "java_file_path":"block/mushroom_block_inside.png,block/red_mushroom_block.png,block/brown_mushroom_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Mushroom Stem",
+    "java_file_path":"block/mushroom_stem.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Mushroom Stew",
+    "java_file_path":"item/mushroom_stew.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Music Disc 11",
+    "java_file_path":"item/music_disc_11.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Music Disc 13",
+    "java_file_path":"item/music_disc_13.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Music Disc Blocks",
+    "java_file_path":"item/music_disc_blocks.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Music Disc Cat",
+    "java_file_path":"item/music_disc_cat.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Music Disc Chirp",
+    "java_file_path":"item/music_disc_chirp.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Music Disc Far",
+    "java_file_path":"item/music_disc_far.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Music Disc Mall",
+    "java_file_path":"item/music_disc_mall.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Music Disc Mellohi",
+    "java_file_path":"item/music_disc_mellohi.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Music Disc Pigstep",
+    "java_file_path":"item/music_disc_pigstep.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Music Disc Stal",
+    "java_file_path":"item/music_disc_stal.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Music Disc Strad",
+    "java_file_path":"item/music_disc_strad.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Music Disc Wait",
+    "java_file_path":"item/music_disc_wait.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Music Disc Ward",
+    "java_file_path":"item/music_disc_ward.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Raw Mutton",
+    "java_file_path":"item/mutton.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Mycelium",
+    "java_file_path":"block/mycelium_side.png,block/mycelium_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Name Tag",
+    "java_file_path":"item/name_tag.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Nautilus Shell",
+    "java_file_path":"item/nautilus_shell.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Nether Brick",
+    "java_file_path":"item/nether_brick.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Nether Bricks",
+    "java_file_path":"block/nether_bricks.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Nether Gold Ore",
+    "java_file_path":"block/nether_gold_ore.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Nether Portal",
+    "java_file_path":"block/nether_portal.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Nether Quartz Ore",
+    "java_file_path":"block/nether_quartz_ore.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Nether Sprouts",
+    "java_file_path":"item/nether_sprouts.png,block/nether_sprouts.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Nether Star",
+    "java_file_path":"item/nether_star.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Nether Wart Block",
+    "java_file_path":"block/nether_wart_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Nether Wart",
+    "java_file_path":"item/nether_wart.png,block/nether_wart_stage0.png,block/nether_wart_stage1.png,block/nether_wart_stage2.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Netherite Axe",
+    "java_file_path":"item/netherite_axe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Block of Netherite",
+    "java_file_path":"block/netherite_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Netherite Boots",
+    "java_file_path":"item/netherite_boots.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Netherite Chestplate",
+    "java_file_path":"item/netherite_chestplate.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Netherite Helmet",
+    "java_file_path":"item/netherite_helmet.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Netherite Hoe",
+    "java_file_path":"item/netherite_hoe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Netherite Ingot",
+    "java_file_path":"item/netherite_ingot.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Netherite Leggings",
+    "java_file_path":"item/netherite_leggings.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Netherite Pickaxe",
+    "java_file_path":"item/netherite_pickaxe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Netherite Scrap",
+    "java_file_path":"item/netherite_scrap.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Netherite Shovel",
+    "java_file_path":"item/netherite_shovel.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Netherite Sword",
+    "java_file_path":"item/netherite_sword.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Netherrack",
+    "java_file_path":"block/netherrack.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Note Block",
+    "java_file_path":"block/note_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Oak Boat",
+    "java_file_path":"item/oak_boat.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Oak Door",
+    "java_file_path":"item/oak_door.png,block/oak_door_bottom.png,block/oak_door_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Oak Leaves",
+    "java_file_path":"block/oak_leaves.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Oak Log",
+    "java_file_path":"block/oak_log_top.png,block/oak_log.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Oak Planks",
+    "java_file_path":"block/oak_planks.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Oak Sapling",
+    "java_file_path":"block/oak_sapling.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Oak Sign",
+    "java_file_path":"item/oak_sign.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Oak Trapdoor",
+    "java_file_path":"block/oak_trapdoor.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Observer",
+    "java_file_path":"block/observer_back_on.png,block/observer_back.png,block/observer_front.png,block/observer_side.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Obsidian",
+    "java_file_path":"block/obsidian.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Orange Concrete Powder",
+    "java_file_path":"block/orange_concrete_powder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Orange Concrete",
+    "java_file_path":"block/orange_concrete.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Orange Dye",
+    "java_file_path":"item/orange_dye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Orange Glazed Terracotta",
+    "java_file_path":"block/orange_glazed_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Orange Shulker Box",
+    "java_file_path":"block/orange_shulker_box.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Orange Stained Glass",
+    "java_file_path":"block/orange_stained_glass.png,block/orange_stained_glass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Orange Terracotta",
+    "java_file_path":"block/orange_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Orange Tulip",
+    "java_file_path":"block/orange_tulip.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Orange Wool",
+    "java_file_path":"block/orange_wool.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Oxeye Daisy",
+    "java_file_path":"block/oxeye_daisy.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Packed Ice",
+    "java_file_path":"block/packed_ice.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Painting",
+    "java_file_path":"item/painting.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Paper",
+    "java_file_path":"item/paper.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Peony",
+    "java_file_path":"block/peony_bottom.png,block/peony_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Phantom Membrane",
+    "java_file_path":"item/phantom_membrane.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pink Concrete Powder",
+    "java_file_path":"block/pink_concrete_powder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pink Concrete",
+    "java_file_path":"block/pink_concrete.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pink Dye",
+    "java_file_path":"item/pink_dye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pink Glazed Terracotta",
+    "java_file_path":"block/pink_glazed_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pink Shulker Box",
+    "java_file_path":"block/pink_shulker_box.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pink Stained Glass",
+    "java_file_path":"block/pink_stained_glass.png,block/pink_stained_glass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pink Terracotta",
+    "java_file_path":"block/pink_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pink Tulip",
+    "java_file_path":"block/pink_tulip.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pink Wool",
+    "java_file_path":"block/pink_wool.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Piston",
+    "java_file_path":"block/piston_bottom.png,block/piston_inner.png,block/piston_side.png,block/piston_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Sticky Piston",
+    "java_file_path":"block/piston_top_sticky.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Podzol",
+    "java_file_path":"block/podzol_side.png,block/podzol_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Poisonous Potato",
+    "java_file_path":"item/poisonous_potato.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Polished Andesite",
+    "java_file_path":"block/polished_andesite.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Polished Basalt",
+    "java_file_path":"block/polished_basalt_side.png,block/polished_basalt_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Polished Blackstone Bricks",
+    "java_file_path":"block/polished_blackstone_bricks.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Polished Blackstone",
+    "java_file_path":"block/polished_blackstone.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Polished Diorite",
+    "java_file_path":"block/polished_diorite.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Polished Granite",
+    "java_file_path":"block/polished_granite.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Popped Chorus Fruit",
+    "java_file_path":"item/popped_chorus_fruit.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Poppy",
+    "java_file_path":"block/poppy.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Raw Porkchop",
+    "java_file_path":"item/porkchop.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Potato",
+    "java_file_path":"item/potato.png,block/potatoes_stage0.png,block/potatoes_stage1.png,block/potatoes_stage2.png,block/potatoes_stage3.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Potion",
+    "java_file_path":"item/potion.png,item/potion_overlay.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Powered Rail",
+    "java_file_path":"block/powered_rail.png,block/powered_rail_on.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Prismarine Bricks",
+    "java_file_path":"block/prismarine_bricks.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Prismarine Crystals",
+    "java_file_path":"item/prismarine_crystals.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Prismarine Shard",
+    "java_file_path":"item/prismarine_shard.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Prismarine",
+    "java_file_path":"block/prismarine.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bucket of Pufferfish",
+    "java_file_path":"item/pufferfish_bucket.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pufferfish",
+    "java_file_path":"item/pufferfish.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pumpkin Pie",
+    "java_file_path":"item/pumpkin_pie.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pumpkin Seeds",
+    "java_file_path":"item/pumpkin_seeds.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Pumpkin",
+    "java_file_path":"block/pumpkin_side.png,block/pumpkin_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Purple Concrete Powder",
+    "java_file_path":"block/purple_concrete_powder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Purple Concrete",
+    "java_file_path":"block/purple_concrete.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Purple Dye",
+    "java_file_path":"item/purple_dye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Purple Glazed Terracotta",
+    "java_file_path":"block/purple_glazed_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Purple Shulker Box",
+    "java_file_path":"block/purple_shulker_box.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Purple Stained Glass",
+    "java_file_path":"block/purple_stained_glass.png,block/purple_stained_glass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Purple Terracotta",
+    "java_file_path":"block/purple_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Purple Wool",
+    "java_file_path":"block/purple_wool.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Purpur Block",
+    "java_file_path":"block/purpur_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Purpur Pillar",
+    "java_file_path":"block/purpur_pillar.png,block/purpur_pillar_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Quartz Block",
+    "java_file_path":"block/quartz_block_bottom.png,block/quartz_block_side.png,block/quartz_block_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Quartz Bricks",
+    "java_file_path":"block/quartz_bricks.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Quartz Pillar",
+    "java_file_path":"block/quartz_pillar_top.png,block/quartz_pillar.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Quartz",
+    "java_file_path":"item/quartz.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Rabbit's Foot",
+    "java_file_path":"item/rabbit_foot.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Rabbit Hide",
+    "java_file_path":"item/rabbit_hide.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Rabbit Stew",
+    "java_file_path":"item/rabbit_stew.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Raw Rabbit",
+    "java_file_path":"item/rabbit.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Rail",
+    "java_file_path":"block/rail.png,block/rail_corner.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Concrete Powder",
+    "java_file_path":"block/red_concrete_powder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Concrete",
+    "java_file_path":"block/red_concrete.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Dye",
+    "java_file_path":"item/red_dye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Glazed Terracotta",
+    "java_file_path":"block/red_glazed_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Mushroom",
+    "java_file_path":"block/red_mushroom.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Nether Bricks",
+    "java_file_path":"block/red_nether_bricks.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Sand",
+    "java_file_path":"block/red_sand.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Sandstone",
+    "java_file_path":"block/red_sandstone.png,block/red_sandstone_bottom.png,block/red_sandstone_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Shulker Box",
+    "java_file_path":"block/red_shulker_box.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Stained Glass",
+    "java_file_path":"block/red_stained_glass.png,block/red_stained_glass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Terracotta",
+    "java_file_path":"block/red_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Tulip",
+    "java_file_path":"block/red_tulip.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Wool",
+    "java_file_path":"block/red_wool.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Redstone Block",
+    "java_file_path":"block/redstone_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Redstone Dust",
+    "java_file_path":"item/redstone.png,block/redstone_dust_dot.png,block/redstone_dust_line0.png,block/redstone_dust_line1.png,block/redstone_dust_overlay.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Redstone Lamp",
+    "java_file_path":"block/redstone_lamp_on.png,block/redstone_lamp.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Redstone Ore",
+    "java_file_path":"block/redstone_ore.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Redstone Torch",
+    "java_file_path":"block/redstone_torch_off.png,block/redstone_torch.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Repeater",
+    "java_file_path":"item/repeater.png,block/repeater_on.png,block/repeater.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Repeating Command Block",
+    "java_file_path":"block/repeating_command_block_back.png,block/repeating_command_block_conditional.png,block/repeating_command_block_front.png,block/repeating_command_block_side.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Respawn Anchor",
+    "java_file_path":"block/respawn_anchor_top_off.png,block/respawn_anchor_bottom.png,block/respawn_anchor_top.png,block/respawn_anchor_side0.png,block/respawn_anchor_side1.png,block/respawn_anchor_side2.png,block/respawn_anchor_side3.png,block/respawn_anchor_side4.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Red Rose Bush",
+    "java_file_path":"block/rose_bush_bottom.png,block/rose_bush_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Rotten Flesh",
+    "java_file_path":"item/rotten_flesh.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Saddle",
+    "java_file_path":"item/saddle.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bucket of Salmon",
+    "java_file_path":"item/salmon_bucket.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Raw Salmon",
+    "java_file_path":"item/salmon.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Sand",
+    "java_file_path":"block/sand.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Sandstone",
+    "java_file_path":"block/sandstone.png,block/sandstone_bottom.png,block/sandstone_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Scaffolding",
+    "java_file_path":"block/scaffolding_bottom.png,block/scaffolding_side.png,block/scaffolding_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Scute",
+    "java_file_path":"item/scute.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Sea Lantern",
+    "java_file_path":"block/sea_lantern.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Sea Pickle",
+    "java_file_path":"block/sea_pickle.png,item/sea_pickle.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Seagrass",
+    "java_file_path":"item/seagrass.png,block/seagrass.png,block/tall_seagrass_bottom.png,block/tall_seagrass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Shears",
+    "java_file_path":"item/shears.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Shroomlight",
+    "java_file_path":"block/shroomlight.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Shulker Box",
+    "java_file_path":"block/shulker_box.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Shulker Shell",
+    "java_file_path":"item/shulker_shell.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Slime Ball",
+    "java_file_path":"item/slime_ball.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Slime Block",
+    "java_file_path":"block/slime_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Smithing Table",
+    "java_file_path":"block/smithing_table_bottom.png,block/smithing_table_front.png,block/smithing_table_side.png,block/smithing_table_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Smoker",
+    "java_file_path":"block/smoker_bottom.png,block/smoker_front_on.png,block/smoker_front.png,block/smoker_side.png,block/smoker_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Smooth Stone (Smooth Stone Slab)",
+    "java_file_path":"block/smooth_stone_slab_side.png,block/smooth_stone.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Snow Block",
+    "java_file_path":"block/snow.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Snowball",
+    "java_file_path":"item/snowball.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Soul Campfire",
+    "java_file_path":"block/soul_campfire_fire.png,block/soul_campfire_log_lit.png,item/soul_campfire.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Soul Fire",
+    "java_file_path":"block/soul_fire_0.png,block/soul_fire_1.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Soul Lantern",
+    "java_file_path":"item/soul_lantern.png,block/soul_lantern.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Soul Sand",
+    "java_file_path":"block/soul_sand.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Soul Soil",
+    "java_file_path":"block/soul_soil.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Soul Torch",
+    "java_file_path":"block/soul_torch.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Spawn Egg",
+    "java_file_path":"item/spawn_egg_overlay.png,item/spawn_egg.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Spawner",
+    "java_file_path":"block/spawner.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Spectral Arrow",
+    "java_file_path":"item/spectral_arrow.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Spider Eye",
+    "java_file_path":"item/spider_eye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Splash Potion",
+    "java_file_path":"item/splash_potion.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Sponge",
+    "java_file_path":"block/sponge.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Spruce Boat",
+    "java_file_path":"item/spruce_boat.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Spruce Door",
+    "java_file_path":"item/spruce_door.png,block/spruce_door_bottom.png,block/spruce_door_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Spruce Leaves",
+    "java_file_path":"block/spruce_leaves.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Spruce Log",
+    "java_file_path":"block/spruce_log.png,block/spruce_log_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Spruce Planks",
+    "java_file_path":"block/spruce_planks.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Spruce Sapling",
+    "java_file_path":"block/spruce_sapling.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Spruce Sign",
+    "java_file_path":"item/spruce_sign.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Spruce Trapdoor",
+    "java_file_path":"block/spruce_trapdoor.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stick",
+    "java_file_path":"item/stick.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stone Axe",
+    "java_file_path":"item/stone_axe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stone Bricks",
+    "java_file_path":"block/stone_bricks.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stone Hoe",
+    "java_file_path":"item/stone_hoe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stone Pickaxe",
+    "java_file_path":"item/stone_pickaxe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stone Shovel",
+    "java_file_path":"item/stone_shovel.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stone Sword",
+    "java_file_path":"item/stone_sword.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stone",
+    "java_file_path":"block/stone.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stonecutter",
+    "java_file_path":"block/stonecutter_top.png,block/stonecutter_bottom.png,block/stonecutter_saw.png,block/stonecutter_side.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"String",
+    "java_file_path":"item/string.png,block/tripwire.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stripped Acacia Log",
+    "java_file_path":"block/stripped_acacia_log.png,block/stripped_acacia_log_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stripped Birch Log",
+    "java_file_path":"block/stripped_birch_log.png,block/stripped_birch_log_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stripped Crimson Stem",
+    "java_file_path":"block/stripped_crimson_stem.png,block/stripped_crimson_stem_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stripped Dark Oak Log",
+    "java_file_path":"block/stripped_dark_oak_log.png,block/stripped_dark_oak_log_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stripped Jungle Log",
+    "java_file_path":"block/stripped_jungle_log.png,block/stripped_jungle_log_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stripped Oak Log",
+    "java_file_path":"block/stripped_oak_log.png,block/stripped_oak_log_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stripped Spruce Log",
+    "java_file_path":"block/stripped_spruce_log.png,block/stripped_spruce_log_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Stripped Warped Stem",
+    "java_file_path":"block/stripped_warped_stem.png,block/stripped_warped_stem_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Structure Block",
+    "java_file_path":"block/structure_block.png,block/structure_block_corner.png,block/structure_block_data.png,block/structure_block_load.png,block/structure_block_save.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Structure Void",
+    "java_file_path":"item/structure_void.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Sugar Cane",
+    "java_file_path":"item/sugar_cane.png,block/sugar_cane.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Sugar",
+    "java_file_path":"item/sugar.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Sunflower",
+    "java_file_path":"block/sunflower_back.png,block/sunflower_bottom.png,block/sunflower_front.png,block/sunflower_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Suspicious Stew",
+    "java_file_path":"item/suspicious_stew.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Sweet Berries",
+    "java_file_path":"item/sweet_berries.png,block/sweet_berry_bush_stage0.png,block/sweet_berry_bush_stage1.png,block/sweet_berry_bush_stage2.png,block/sweet_berry_bush_stage3.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Tall Grass",
+    "java_file_path":"block/tall_grass_bottom.png,block/tall_grass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Target Block",
+    "java_file_path":"block/target_side.png,block/taget_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Terracotta",
+    "java_file_path":"block/terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Tipped Arrow",
+    "java_file_path":"item/tipped_arrow_base.png,item/tipped_arrow_head.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"TNT",
+    "java_file_path":"block/tnt_bottom.png,block/tnt_side.png,block/tnt_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Minecart with TNT",
+    "java_file_path":"item/tnt_minecart.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Torch",
+    "java_file_path":"block/torch.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Totem of Undying",
+    "java_file_path":"item/totem_of_undying.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Trident",
+    "java_file_path":"item/trident.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Tripwire Hook",
+    "java_file_path":"block/tripwire_hook.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Bucket of Tropical Fish",
+    "java_file_path":"item/tropical_fish_bucket.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Tropical Fish",
+    "java_file_path":"item/tropical_fish.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Tube Coral Block",
+    "java_file_path":"block/tube_coral_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Tube Coral Fan",
+    "java_file_path":"block/tube_coral_fan.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Tube Coral",
+    "java_file_path":"block/tube_coral.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Turtle Egg",
+    "java_file_path":"item/turtle_egg.png,block/turtle_egg_slightly_cracked.png,block/turtle_egg_very_cracked.png,block/turtle_egg.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Turtle Helmet",
+    "java_file_path":"item/turtle_helmet.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Twisting Vines",
+    "java_file_path":"block/twisting_vines_plant.png,block/twisting_vines.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Vines",
+    "java_file_path":"block/vine.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Warped Door",
+    "java_file_path":"item/warped_door.png,block/warped_door_bottom.png,block/warped_door_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Warped Fungus on a Stick",
+    "java_file_path":"item/warped_fungus_on_a_stick.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Warped Fungus",
+    "java_file_path":"block/warped_fungus.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Warped Nylium",
+    "java_file_path":"block/warped_nylium_side.png,block/warped_nylium.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Warped Planks",
+    "java_file_path":"block/warped_planks.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Warped Roots",
+    "java_file_path":"block/warped_roots.png,block/warped_roots_pot.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Warped Sign",
+    "java_file_path":"item/warped_sign.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Warped Stem",
+    "java_file_path":"block/warped_stem.png,block/warped_stem_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Warped Trapdoor",
+    "java_file_path":"block/warped_trapdoor.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Warped Wart Block",
+    "java_file_path":"block/warped_wart_block.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Water Bucket",
+    "java_file_path":"item/water_bucket.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Water",
+    "java_file_path":"block/water_flow.png,block/water_overlay.png,block/water_still.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Weeping Vines",
+    "java_file_path":"block/weeping_vines_plant.png,block/weeping_vines.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Wet Sponge",
+    "java_file_path":"block/wet_sponge.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Wheat Seeds",
+    "java_file_path":"item/wheat_seeds.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Wheat",
+    "java_file_path":"item/wheat.png,block/wheat_stage0.png,block/wheat_stage1.png,block/wheat_stage2.png,block/wheat_stage3.png,block/wheat_stage4.png,block/wheat_stage5.png,block/wheat_stage6.png,block/wheat_stage6.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"White Concrete Powder",
+    "java_file_path":"block/white_concrete_powder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"White Concrete",
+    "java_file_path":"block/white_concrete.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"White Dye",
+    "java_file_path":"item/white_dye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"White Glazed Terracotta",
+    "java_file_path":"block/white_glazed_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"White Shulker Box",
+    "java_file_path":"block/white_shulker_box.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"White Stained Glass",
+    "java_file_path":"block/white_stained_glass.png,block/white_stained_glass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"White Terracotta",
+    "java_file_path":"block/white_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"White Tulip",
+    "java_file_path":"block/white_tulip.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"White Wool",
+    "java_file_path":"block/white_wool.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Wither Rose",
+    "java_file_path":"block/wither_rose.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Wooden Axe",
+    "java_file_path":"item/wooden_axe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Wooden Hoe",
+    "java_file_path":"item/wooden_hoe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Wooden Pickaxe",
+    "java_file_path":"item/wooden_pickaxe.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Wooden Shovel",
+    "java_file_path":"item/wooden_shovel.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Wooden Sword",
+    "java_file_path":"item/wooden_sword.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Book and Quill",
+    "java_file_path":"item/writable_book.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Written Book",
+    "java_file_path":"item/written_book.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Yellow Concrete Powder",
+    "java_file_path":"block/yellow_concrete_powder.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Yellow Concrete",
+    "java_file_path":"block/yellow_concrete.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Yellow Dye",
+    "java_file_path":"item/yellow_dye.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Yellow Glazed Terracotta",
+    "java_file_path":"block/yellow_glazed_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Yellow Shulker Box",
+    "java_file_path":"block/yellow_shulker_box.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Yellow Stained Glass",
+    "java_file_path":"block/yellow_stained_glass.png,block/yellow_stained_glass_top.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Yellow Terracotta",
+    "java_file_path":"block/yellow_terracotta.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+},
+{
+    "parity":"",
+    "american_name":"Yellow Wool",
+    "java_file_path":"block/yellow_wool.png",
+    "bedrock_file_path":"",
+    "java_lang_id":"",
+    "bedrock_lang_id":"",
+    "java_id":"",
+    "bedrock_id":""
+}]

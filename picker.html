@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>nerawoowty</title>
+        <style>
+            body {
+                --backcolor:#262626;
+                --midcolor:#333333;
+                --lightcolor:#6B6B6B;
+                --selectedcolor:#036A96;
+                --textcolor:white;
+                background-color:var(--backcolor);
+                margin:0px;
+            }
+            #wrapper {
+                width: 100%;
+            }
+            #top-nav {
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 60px;
+                width: 100%;
+            }
+            #left-nav, #right-nav {
+                position: fixed;
+                height:calc(100vh - 70px);
+                padding:0px 10px 10px 10px;
+                top: 60px;
+                overflow-y: scroll;
+            }
+            #left-nav {
+                width: calc(66vw - 20px);
+            }
+            #right-nav {
+                right: 0;
+                width:calc(34vw - 20px);
+            }
+            
+            #logo {
+                padding:10px 10px 10px 15px;
+                height:40px;
+            }
+            a {
+                text-decoration:none;
+                color:inherit;
+            }
+            #navtext {
+                color:var(--textcolor);
+                font:20px "Courier New";
+                position:absolute;
+                top:0px;
+                left:65px;
+            }
+            .dropcontent {
+                color:var(--textcolor);
+                border-radius:0px 0px 10px 10px;
+                margin-top:-5px;
+                padding:0px 5px 0px 5px;
+                background-color: var(--lightcolor);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+            }
+            button {
+                color:var(--textcolor);
+                font:20px "Courier New";
+                text-align:left;
+                padding:10px 10px 10px 0px;
+                background-color:var(--midcolor);
+                border: 5px solid var(--lightcolor);
+                outline:none;
+                cursor:pointer;
+                width:100%;
+                margin-top:10px;
+            }
+            button>img {
+                height:20px;
+                position:relative;
+                left:calc(100% - 20px);
+            }
+            .selectable {
+                background-color:var(--midcolor);
+                display:inline-block;
+                margin:5px;
+                border-radius:10px;
+                border:5px solid var(--backcolor);
+                padding:10px;
+                width:calc(12.5% - 40px);
+                vertical-align:top;
+                cursor:pointer;
+            }
+            .minithumb {
+                border-radius:10px;
+                width:100%;
+                image-rendering:pixelated;
+            }
+            .subselect {
+                display:inline-block;
+                width:100px;
+                color:var(--textcolor);
+                font:15px "Courier New";
+                text-align:center;
+                padding:5px;
+            }
+            .subimage {
+                width:100%;
+                image-rendering:pixelated;
+                border-radius:10px;
+                cursor:pointer;
+                background-color:var(--midcolor);
+                border: 0px solid var(--lightcolor);
+                border-radius:10px;
+            }
+            .tippy-box {
+                border: 5px solid var(--backcolor);
+                background-color:var(--lightcolor);
+                border-radius:15px;
+            }
+            .tippy-arrow {
+                color: var(--lightcolor);
+            }
+        </style>
+        <link rel="icon" href="https://nerawoowty.github.io/neralogo.png">
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    </head>
+    <body id="body">
+        <div id="wrapper">
+            <div id="top-nav">
+                <img id="logo" src="https://nerawoowty.github.io/neralogo.png">
+                <p id="navtext"><a href="https://nerawoowty.github.io/help.html">help</a> | <a href="https://nerawoowty.github.io/diy.html">diy</a> | <a href="https://nerawoowty.github.io/about.html">about</a></p>
+            </div>
+            <div id="left-nav">
+                
+            </div>
+            <div id="right-nav">
+                <button type="button" id="downloadbtn"><img src="https://nerawoowty.github.io/thumbnails/downloadarrow.png" id="downloadarrow"> download</button>
+                <p id="selectedhead"></p>
+                <p id="selectedlist"></p>
+            </div>
+        </div>
+        
+        <script>
+        var items = [];
+        var mappings = [];
+		if (getCookie("mode") == "light") {
+			lightMode();
+		}
+        // fetch list of packs
+        fetch('https://nerawoowty.github.io/packlist.txt')
+    	.then(response => response.text())
+    	.then(function(data) {
+    		data = data.slice(0, -1).split("\n-").slice(1);
+    		let output = "";
+    		for (let section of data) {
+    			// add data to html
+    			section = section.split("\n");
+    			output += '<button type="button" class="dropbutton"><img src="https://nerawoowty.github.io/thumbnails/droparrow.png">' + section[0] + '</button><div class="dropcontent">';
+    			for (let current of section.slice(1)) {
+    				if (current.indexOf(": ") != -1) {
+    					// create reference arrays for what variations are available
+    					items.push(current.split(": ")[0]);
+    					mappings.push(["vanilla"].concat(current.split(": ")[1].split(" ")));
+    				} else {
+    					items.push(current);
+    					mappings.push(["vanilla"]);
+    				}
+    				output += '<div class="selectable"><img class="minithumb" id="name-' + items[items.length - 1] + '" src="https://nerawoowty.github.io/thumbnails/vanilla/' + items[items.length - 1] + '.png"></div>';
+    			}
+    			output += '</div>';
+    		}
+    		document.getElementById("left-nav").innerHTML = output;
+    		collapsableSetup();
+    		tippySetup();
+    	});
+        function collapsableSetup() {
+        	try {
+        		//w3schools collapsable
+        		let coll = document.getElementsByClassName("dropbutton");
+        		for (let ci = 0; ci < coll.length; ci++) {
+        			coll[ci].addEventListener("click", function() {
+        				this.classList.toggle("active");
+        				var content = this.nextElementSibling;
+        				if (content.style.maxHeight) {
+        					content.style.maxHeight = null;
+        				} else {
+        					content.style.maxHeight = content.scrollHeight + "px";
+        				}
+        			});
+        		}
+        	} catch {
+        		alert("Err1");
+        	}
+        }
+        function tippySetup() {
+        	tippy.setDefaultProps({
+        		trigger: 'click',
+        		allowHTML: true,
+        		interactive: true,
+        		maxWidth: "none"
+        	});
+        	for (let current of document.getElementsByClassName('selectable')) {
+        		//popup creation
+        		let ct = current.innerHTML.split(".png")[0].split("/").pop(); //name of item
+        		let inr = '';
+        		for (let sub of mappings[items.indexOf(ct)]) {
+        			inr += '<div class="subselect"><img class="subimage" onclick="selectClick(this.src);" src="https://nerawoowty.github.io/thumbnails/' + sub + '/' + ct + '.png"><p>' + sub + '</p></div>'
+        		}
+        		tippy(current, {
+        			content: inr
+        		});
+        	}
+        }
+        function selectClick(src) {
+        	document.getElementById("name-" + src.split("/").pop().split(".png").join("")).src = src;
+        	if (src.indexOf("/vanilla/") == -1) {
+        		document.getElementById("name-" + src.split("/").pop().split(".png").join("")).parentElement.style.borderColor = "var(--selectedcolor)";
+        	} else {
+        		document.getElementById("name-" + src.split("/").pop().split(".png").join("")).parentElement.style.borderColor = "var(--backcolor)";
+        	}
+        }
+        
+        var keys = "";
+        document.body.addEventListener("keydown", function(event) {
+        	// key events
+        	if (event.code.indexOf("Key") != -1) {
+        		keys += event.key.toLowerCase();
+        	}
+        	if (keys.indexOf("light") != -1) {
+        		if (getCookie("mode") != "light") {
+        			setCookie("mode", "light", 100);
+        			lightMode();
+        			keys = "";
+        		}
+        	}
+        	if (keys.indexOf("dark") != -1) {
+        		if (getCookie("mode") != "dark") {
+        			setCookie("mode", "dark", 100);
+        			darkMode();
+        			keys = "";
+        		}
+        	}
+        });
+        function darkMode() {
+            document.body.style.setProperty('--backcolor', '#262626');
+            document.body.style.setProperty('--midcolor', '#333333');
+            document.body.style.setProperty('--lightcolor', '#6B6B6B');
+            document.body.style.setProperty('--textcolor', 'white');
+        }
+        function lightMode() {
+            document.body.style.setProperty('--backcolor', '#737373');
+            document.body.style.setProperty('--midcolor', '#8B8B8B');
+            document.body.style.setProperty('--lightcolor', '#C6C6C6');
+            document.body.style.setProperty('--textcolor', 'black');
+        }
+        
+        function getCookie(name) {
+            var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+            return v ? v[2] : null;
+        }
+        function setCookie(name, value, days) { 
+            var d = new Date;
+            d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * days);
+            document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+        }
+        
+        document.getElementById("downloadbtn").addEventListener("click", function tempoDownload() {
+            alert("Downloading is not available yet. If you know how to implement it, then please contact Nera!");
+        });
+        </script>
+    </body>
+</html>

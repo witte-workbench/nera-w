@@ -1,0 +1,410 @@
+
+-food
+item/apple_golden: pastel outlined consistent
+item/apple: pastel outlined consistent
+item/beef_cooked: pastel outlined
+item/beef_raw: pastel outlined
+item/beetroot_soup: pastel outlined consistent
+item/beetroot: pastel outlined
+item/bread: pastel outlined
+item/cake: pastel outlined consistent
+item/carrot_golden: pastel outlined consistent
+item/carrot: pastel outlined
+item/chicken_cooked: pastel outlined
+item/chicken_raw: pastel outlined
+item/cookie: pastel outlined consistent
+item/fish_cooked: pastel outlined
+item/fish_raw: pastel outlined
+item/fish_salmon_cooked: pastel outlined
+item/fish_salmon_raw: pastel outlined
+item/fish_pufferfish_raw: pastel outlined
+item/melon: pastel outlined consistent
+item/mushroom_stew: pastel outlined consistent
+item/mutton_cooked: pastel outlined
+item/mutton_raw: pastel outlined
+item/porkchop_cooked: pastel outlined
+item/porkchop_raw: pastel outlined
+item/potato_baked: pastel outlined
+item/potato: pastel outlined
+item/potato_poisonous: pastel outlined consistent
+item/potion_bottle_absorption: pastel outlined consistent
+item/potion_bottle_lingering_waterBreathing: pastel outlined consistent
+item/potion_bottle_splash_absorption: pastel outlined consistent
+item/pumpkin_pie: pastel outlined consistent
+item/rabbit_cooked: pastel outlined
+item/rabbit_raw: pastel outlined
+item/rabbit_stew: pastel outlined consistent
+item/rotten_flesh: pastel outlined consistent
+item/spider_eye: pastel outlined
+item/suspicious_stew: pastel outlined consistent
+item/sweet_berries: pastel outlined consistent
+item/honey_bottle: pastel outlined consistent
+-tools
+item/wood_pickaxe: pastel outlined consistent
+item/wood_hoe: pastel outlined consistent
+item/wood_sword: pastel outlined consistent
+item/wood_shovel: pastel outlined consistent
+item/wood_axe: pastel outlined consistent
+item/stone_pickaxe: pastel outlined consistent
+item/stone_hoe: pastel outlined consistent
+item/stone_sword: pastel outlined consistent
+item/stone_shovel: pastel outlined consistent
+item/stone_axe: pastel outlined consistent
+item/gold_pickaxe: pastel outlined consistent
+item/gold_hoe: pastel outlined consistent
+item/gold_sword: pastel outlined consistent
+item/gold_shovel: pastel outlined consistent
+item/gold_axe: pastel outlined consistent
+item/iron_pickaxe: pastel outlined consistent
+item/iron_hoe: pastel outlined consistent
+item/iron_sword: pastel outlined consistent
+item/iron_shovel: pastel outlined consistent
+item/iron_axe: pastel outlined consistent
+item/diamond_pickaxe: pastel outlined consistent
+item/diamond_hoe: pastel outlined consistent
+item/diamond_sword: pastel outlined consistent
+item/diamond_shovel: pastel outlined consistent
+item/diamond_axe: pastel outlined consistent
+item/netherite_pickaxe: pastel outlined consistent
+item/netherite_hoe: pastel outlined consistent
+item/netherite_sword: pastel outlined consistent
+item/netherite_shovel: pastel outlined consistent
+item/netherite_axe: pastel outlined consistent
+item/fishing_rod_uncast: pastel outlined consistent
+item/warped_fungus_on_a_stick: pastel outlined consistent
+item/carrot_on_a_stick: pastel outlined consistent
+item/trident: pastel outlined consistent
+item/bow_standby: pastel outlined consistent
+item/crossbow_standby: pastel outlined consistent
+item/arrow: pastel outlined consistent
+item/tipped_arrow_fireres: pastel outlined consistent
+item/fireworks: pastel outlined consistent
+item/bucket_empty: pastel outlined consistent
+item/bucket_lava: pastel outlined consistent
+item/bucket_water: pastel outlined consistent
+item/clock_item: pastel outlined consistent
+item/compass_item: pastel outlined consistent
+item/flint_and_steel: pastel outlined consistent
+item/map_empty: pastel outlined consistent
+item/map_filled: pastel outlined consistent
+item/map_locked: pastel outlined consistent
+item/lead: pastel outlined consistent
+item/name_tag: pastel outlined consistent
+item/shears: pastel outlined consistent
+item/totem: pastel outlined
+-armor
+item/leather_helmet: pastel outlined
+item/leather_chestplate: pastel outlined
+item/leather_leggings: pastel outlined
+item/leather_boots: pastel outlined
+item/chainmail_helmet: pastel outlined consistent
+item/chainmail_chestplate: pastel outlined consistent
+item/chainmail_leggings: pastel outlined consistent
+item/chainmail_boots: pastel outlined consistent
+item/gold_helmet: pastel outlined consistent
+item/gold_chestplate: pastel outlined consistent
+item/gold_leggings: pastel outlined consistent
+item/gold_boots: pastel outlined consistent
+item/iron_helmet: pastel outlined consistent
+item/iron_chestplate: pastel outlined consistent
+item/iron_leggings: pastel outlined consistent
+item/iron_boots: pastel outlined consistent
+item/diamond_helmet: pastel outlined consistent
+item/diamond_chestplate: pastel outlined consistent
+item/diamond_leggings: pastel outlined consistent
+item/diamond_boots: pastel outlined consistent
+item/netherite_helmet: pastel outlined consistent
+item/netherite_chestplate: pastel outlined consistent
+item/netherite_leggings: pastel outlined consistent
+item/netherite_boots: pastel outlined consistent
+item/leather_horse_armor: pastel outlined
+item/gold_horse_armor: pastel outlined consistent
+item/iron_horse_armor: pastel outlined consistent
+item/diamond_horse_armor: pastel outlined consistent
+item/elytra: pastel outlined consistent
+item/turtle_helmet: pastel outlined consistent
+item/empty_armor_slot_chestplate: pastel consistent
+-woods
+block/planks_oak
+block/planks_acacia
+block/planks_big_oak
+block/planks_birch
+block/planks_jungle
+block/planks_spruce
+block/crimson_planks
+block/warped_planks
+block/log_oak
+block/log_acacia
+block/log_big_oak
+block/log_birch
+block/log_jungle
+block/log_spruce
+block/crimson_log_side
+block/warped_stem_side
+block/stripped_log_oak: consistent
+block/stripped_log_acacia: consistent
+block/stripped_log_big_oak: consistent
+block/stripped_log_birch: consistent
+block/stripped_log_jungle: consistent
+block/stripped_log_spruce: consistent
+block/stripped_crimson_stem_side: consistent
+block/stripped_warped_stem_side: consistent
+item/door: pastel consistent
+item/door_acacia: pastel consistent
+item/door_big_oak: pastel consistent
+item/door_birch: pastel consistent
+item/door_jungle: pastel consistent
+item/door_spruce: pastel consistent
+item/crimson_door: pastel consistent
+item/warped_door: pastel consistent
+block/trapdoor: consistent
+block/trapdoor_acacia: consistent
+block/trapdoor_big_oak: consistent
+block/trapdoor_birch: consistent
+block/trapdoor_jungle: consistent
+block/trapdoor_spruce: consistent
+block/crimson_trapdoor: consistent
+block/warped_trapdoor: consistent
+block/sapling_oak: consistent
+block/sapling_acacia: consistent
+block/sapling_roofed_oak: consistent
+block/sapling_birch: consistent
+block/sapling_jungle: consistent
+block/sapling_spruce: consistent
+block/crimson_fungus: consistent
+block/warped_fungus: consistent
+item/boat_oak: consistent
+item/boat_acacia: consistent
+item/boat_darkoak: consistent
+item/boat_birch: consistent
+item/boat_jungle: consistent
+item/boat_spruce: consistent
+item/sign: consistent
+item/sign_acacia: consistent
+item/sign_darkoak: consistent
+item/sign_birch: consistent
+item/sign_jungle: consistent
+item/sign_spruce: consistent
+item/stick: pastel outlined
+-workbenches
+block/crafting_table_front: consistent
+block/smithing_table_front: consistent
+block/enchanting_table_side: consistent
+block/cartography_table_top: consistent
+block/fletching_table_side1: consistent
+block/furnace_front_off: consistent
+block/blast_furnace_off: consistent
+block/smoker_front_off: consistent
+item/brewing_stand: consistent
+block/composter_side: consistent
+item/cauldron: consistent
+block/respawn_anchor_side_2: consistent
+block/stonecutter2_side: consistent
+block/command_block
+block/loom_front: consistent
+block/lectern: consistent
+block/jukebox_side: consistent
+block/anvil_top_damaged_1: consistent
+block/beacon: consistent
+block/bed_head_side: consistent
+item/campfire: pastel outlined consistent
+item/soul_campfire: pastel outlined consistent
+block/grindstone-round: consistent
+-storage
+block/chest_front: consistent
+block/ender_chest_front
+block/barrel_top: consistent
+block/shulker_top_undyed: consistent
+block/shulker_top_white
+-plants/farms
+item/bamboo: pastel outlined consistent
+item/chorus_fruit_popped: pastel outlined
+item/dye_powder_brown: pastel outlined
+item/kelp: pastel outlined consistent
+item/nether_wart: pastel outlined consistent
+item/reeds: pastel outlined consistent
+item/wheat: pastel outlined consistent
+item/nether_sprouts: consistent
+block/melon_stem_connected: consistent
+block/melon_top: consistent
+block/pumpkin_top: consistent
+block/bee_nest_front_honey: consistent
+block/compost_ready: consistent
+block/mob_spawner: consistent
+block/crimson_roots: consistent
+block/dried_kelp_side_a: consistent
+-mobs
+item/egg_cave_spider: pastel outlined consistent
+item/blaze_rod: pastel outlined
+item/bone: pastel outlined
+item/bucket_milk: pastel outlined consistent
+item/bucket_cod: pastel outlined consistent
+item/bucket_pufferfish: pastel outlined consistent
+item/bucket_salmon: pastel outlined consistent
+item/bucket_tropical: pastel outlined consistent
+item/dragon_fireball: pastel outlined consistent
+item/dragons_breath: pastel outlined consistent
+item/dye_powder_black: pastel outlined
+item/egg: pastel outlined consistent
+item/ender_pearl: pastel outlined
+item/feather: pastel outlined
+item/fireball: pastel outlined consistent
+item/fish_clownfish_raw: pastel outlined
+item/ghast_tear: pastel outlined
+item/gunpowder: pastel outlined
+item/honeycomb: pastel outlined consistent
+item/leather: pastel outlined
+item/magma_cream: pastel outlined consistent
+item/phantom_membrane: pastel outlined consistent
+item/prismarine_crystals: pastel outlined consistent
+item/prismarine_shard: pastel outlined consistent
+item/rabbit_foot: pastel outlined
+item/rabbit_hide: pastel outlined
+item/sea_pickle: pastel outlined consistent
+item/seeds_beetroot: pastel outlined consistent
+item/seeds_melon: pastel outlined consistent
+item/seeds_pumpkin: pastel outlined consistent
+item/seeds_wheat: pastel outlined consistent
+item/shulker_shell: pastel outlined consistent
+item/slimeball: pastel outlined
+item/string: pastel outlined
+item/turtle_egg: pastel outlined consistent
+item/turtle_shell_piece: pastel outlined consistent
+-valuables
+item/charcoal: pastel outlined
+item/coal: pastel outlined
+item/dye_powder_blue: pastel outlined
+item/emerald: pastel outlined
+item/heartofthesea_closed: pastel outlined consistent
+item/nether_star: pastel outlined consistent
+item/diamond: pastel outlined
+item/iron_ingot: pastel outlined
+item/iron_nugget: pastel outlined consistent
+item/gold_ingot: pastel outlined
+item/gold_nugget: pastel outlined consistent
+item/netherite_ingot: pastel outlined
+item/netherite_scrap: pastel outlined
+item/quartz: pastel outlined consistent
+block/iron_block: consistent
+block/coal_ore: consistent
+block/diamond_block: consistent
+block/beacon: consistent
+block/emerald_block: consistent
+block/gold_block: consistent
+block/netherite_block: consistent
+-redstone
+item/comparator: pastel outlined consistent
+item/hopper: pastel outlined consistent
+item/lever: pastel outlined consistent
+item/minecart_normal: pastel outlined consistent
+item/minecart_chest: pastel outlined consistent
+item/minecart_command_block: pastel outlined consistent
+item/minecart_furnace: pastel outlined consistent
+item/minecart_hopper: pastel outlined consistent
+item/minecart_tnt: pastel outlined consistent
+item/redstone_dust: pastel outlined
+item/repeater: pastel outlined consistent
+block/noteblock: consistent
+block/observer_front: consistent
+-decoration/building
+item/armor_stand: pastel outlined consistent
+item/chain: pastel outlined consistent
+item/flower_pot: pastel outlined consistent
+item/item_frame: pastel outlined consistent
+item/lantern: pastel outlined consistent
+item/soul_lantern: pastel outlined consistent
+item/painting: pastel outlined consistent
+block/redstone_lamp_on: consistent
+block/glazed_terracotta_blue: consistent
+block/hardened_clay_stained_blue: consistent
+block/deadbush: consistent
+block/red_sandstone_normal: consistent
+block/red_sandstone_carved: consistent
+block/concrete_light_blue: consistent
+block/concrete_powder_light_blue: consistent
+block/end_rod: consistent
+block/ladder: consistent
+block/redstone_torch_on: consistent
+block/sandstone_normal: consistent
+block/glass: consistent
+-misc
+item/banner_pattern: pastel outlined consistent
+item/blaze_powder: pastel outlined consistent
+item/book_normal: pastel outlined consistent
+item/book_enchanted: pastel outlined consistent
+item/book_writable: pastel outlined consistent
+item/bowl: pastel outlined consistent
+item/brick: pastel outlined consistent
+item/clay_ball: pastel outlined consistent
+item/dye_powder_black_new: pastel outlined consistent
+item/dye_powder_blue_new: pastel outlined consistent
+item/dye_powder_brown_new: pastel outlined consistent
+item/dye_powder_cyan: pastel outlined consistent
+item/dye_powder_gray: pastel outlined consistent
+item/dye_powder_green: pastel outlined consistent
+item/dye_powder_light_blue: pastel outlined consistent
+item/dye_powder_lime: pastel outlined consistent
+item/dye_powder_magenta: pastel outlined consistent
+item/dye_powder_orange: pastel outlined consistent
+item/dye_powder_pink: pastel outlined consistent
+item/dye_powder_purple: pastel outlined consistent
+item/dye_powder_red: pastel outlined consistent
+item/dye_powder_silver: pastel outlined consistent
+item/dye_powder_white_new: pastel outlined consistent
+item/dye_powder_yellow: pastel outlined
+item/dye_powder_white: pastel outlined consistent
+item/end_crystal: pastel outlined consistent
+item/ender_eye: pastel outlined
+item/experience_bottle: pastel outlined consistent
+item/flint: pastel outlined
+item/glowstone_dust: pastel outlined consistent
+item/melon_speckled: pastel outlined consistent
+item/nautilus: pastel outlined
+item/netherbrick: pastel outlined consistent
+item/paper: pastel outlined
+item/record_11: pastel outlined consistent
+item/record_13: pastel outlined consistent
+item/record_blocks: pastel outlined consistent
+item/record_cat: pastel outlined consistent
+item/record_chirp: pastel outlined consistent
+item/record_far: pastel outlined consistent
+item/record_mall: pastel outlined consistent
+item/record_mellohi: pastel outlined consistent
+item/record_pigstep: pastel outlined consistent
+item/record_stal: pastel outlined consistent
+item/record_strad: pastel outlined consistent
+item/record_wait: pastel outlined consistent
+item/record_ward: pastel outlined consistent
+item/saddle: pastel outlined consistent
+item/snowball: pastel outlined consistent
+item/spider_eye_fermented: pastel outlined consistent
+item/sugar: pastel outlined consistent
+item/villagebell: pastel outlined consistent
+block/red_wool: consistent
+block/jukebox_top: consistent
+block/soul_torch: consistent
+block/torch: consistent
+-nether
+block/lava_placeholder: consistent
+block/red_nether_brick: consistent
+block/magma: consistent
+block/crimson_nylium_side: consistent
+block/warped_nylium_side: consistent
+block/gilded_blackstone
+block/portal: consistent
+-end
+block/dragon_egg: consistent
+-nature
+block/stone_andesite: consistent
+block/coarse_dirt: consistent
+block/cobblestone_mossy: consistent
+block/bedrock: consistent
+block/web: consistent
+-ocean
+block/sea_lantern: consistent
+block/prismarine_bricks
+-unobtainable/admin
+block/reactor_core_stage_0: consistent
+block/build_allow: consistent
+block/border: consistent
+block/barrier: consistent
