@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>nerawoowty</title>
+        <style>
+            body {
+                background-color:#000000;
+                margin:0px;
+            }
+            #wrapper {
+                width: 100%;
+                background-color: #fff;
+            }
+            #top-nav {
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 60px;
+                width: 100%;
+            }
+            #main-nav {
+                position: fixed;
+                right: 0;
+                height:calc(100vh - 60px);
+                padding:0px 10px 10px 15px;
+                top: 60px;
+                width: 100%;
+                left: 0;
+                overflow-y: scroll;
+            }
+            #logo {
+                padding:10px 10px 10px 15px;
+                height:40px;
+                width:auto;
+            }
+            a {
+                text-decoration:none;
+                color:inherit;
+            }
+            #navtext {
+                color:white;
+                font:20px "Courier New";
+                position:absolute;
+                top:0px;
+                left:65px;
+            }
+            p, ol {
+                color:white;
+                font:20px "Courier New";
+            }
+        </style>
+        <link rel="icon" href="https://nerawoowty.github.io/neralogo.png">
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="top-nav">
+                <img id="logo" src="https://nerawoowty.github.io/neralogo.png">
+                <p id="navtext"><a href="https://nerawoowty.github.io/help.html">help</a> | <a href="https://nerawoowty.github.io/diy.html">diy</a></p>
+            </div>
+            <div id="main-nav">
+                <p>
+                    how to create a texture pack using my website:
+                    <ol>
+                        <li>click through categories to find the items/blocks you would like to change</li>
+                        <li>click on those items/blocks, which will bring up a popup</li>
+                        <li>click on the variant texture that you would like</li>
+                        <li>repeat until you're satisfied</li>
+                        <li>click download, and your texture pack will be processed</li>
+                    </ol>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

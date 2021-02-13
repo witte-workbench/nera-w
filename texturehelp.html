@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>nerawoowty</title>
+        <style>
+            body {
+                background-color:#000000;
+                margin:0px;
+            }
+            #wrapper {
+                width: 100%;
+                background-color: #fff;
+            }
+            #top-nav {
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 60px;
+                width: 100%;
+            }
+            #main-nav {
+                position: fixed;
+                right: 0;
+                height:calc(100vh - 60px);
+                padding:0px;
+                top: 60px;
+                width: 100%;
+                overflow-y: scroll;
+            }
+            
+            #logo {
+                padding:10px 10px 10px 15px;
+                height:40px;
+                width:auto;
+            }
+            a {
+                text-decoration:none;
+                color:inherit;
+            }
+            #navtext {
+                color:white;
+                font:20px "Courier New";
+                position:absolute;
+                top:0px;
+                left:65px;
+            }
+            p {
+                text-align:center;
+                font:30px "Courier New";
+                color:gray;
+            }
+            .resultimg {
+                width:calc(10vw - 30px);
+                height:calc(10vw - 30px);
+                object-fit:cover;
+                image-rendering:pixelated;
+                vertical-align:bottom;
+                margin:10px;
+                border-radius:6px;
+                border:5px solid #6B6B6B;
+                background-color:#333333;
+            }
+            .resultmini {
+                width:calc(10vw - 30px);
+                height:calc(10vw - 30px);
+                object-fit:cover;
+                image-rendering:pixelated;
+                vertical-align:bottom;
+                border-radius:6px;
+                border:5px solid #6B6B6B;
+                background-color:#333333;
+            }
+        </style>
+        <link rel="icon" href="https://nerawoowty.github.io/neralogo.png">
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="top-nav">
+                <img id="logo" src="https://nerawoowty.github.io/neralogo.png">
+                <p id="navtext"><a href="https://nerawoowty.github.io/help.html">help</a> | <a href="https://nerawoowty.github.io/diy.html">diy</a></p>
+            </div>
+            <div id="main-nav">
+                <p id="input">type a keyword</p><br>
+                <div id="resultsdiv"></div>
+            </div>
+        </div>
+        
+        <script>
+            document.getElementById("input").style.color="gray";//initiate so you can check
+            var list = [];
+            if (window.navigator.userAgent.indexOf("MSIE")!=-1) {
+                alert("you're using internet explorer. screw you! more seriously though, please just use a different browser.");
+            }
+            // fetch list of packs
+            fetch('http://nerawoowty.github.io/translator.json')
+            .then(response => response.json())
+            .then(function(data){list=data;})
+            .catch(function(err){alert(err);});
+            
+            function find(term) {
+                let results = [];
+                for (current of list) {
+                    for (prop in current) {
+                        if (current[prop].indexOf(term)!=-1) {
+                            results.push(current);
+                            break;
+                        }
+                    }
+                }
+                return(results);
+            }
+            
+            window.addEventListener("keydown",function(event) {
+                if (event.key=="Backspace") {
+                    if (document.getElementById("input").innerHTML.length==1) {
+                        document.getElementById("input").style.color="gray";
+                        document.getElementById("input").innerHTML="type a keyword";
+                    } else if (document.getElementById("input").style.color=="white") {
+                        document.getElementById("input").innerHTML=document.getElementById("input").innerHTML.slice(0,-1);
+                    }
+                } else if (event.key=="Enter") {
+                    let results = find(document.getElementById("input").innerHTML.split("_").join("").split(" ").join(""));
+                    document.getElementById("resultsdiv").innerHTML="";
+                    if (results.length==list.length) {
+                        alert("All items match this search. Please narrow your terms!");
+                    } else if (results.length<150 || confirm(results.length+" items ("+Math.floor(results.length/list.length*100)+"% of all items) matched your search. Would you still like to show them?")) {
+                        for (current of results) {
+                            document.getElementById("resultsdiv").innerHTML+='<img class="resultimg" data-tippy-content="<img class=\'resultmini\' src=\'https://github.com/InventivetalentDev/minecraft-assets/blob/21w03a/assets/minecraft/textures/'+(current.java_file_path.split(",").join('?raw=true\'><img class=\'resultmini\' src=\'https://github.com/InventivetalentDev/minecraft-assets/blob/21w03a'))+'?raw=true\'>" src="https://github.com/InventivetalentDev/minecraft-assets/blob/21w03a'+current.java_file_path.split(",")[0]+'?raw=true">';
+                        }
+                        if (results.length==0) {
+                            document.getElementById("resultsdiv").innerHTML="no results!";
+                        }
+                    }
+                    tippySetup();
+                } else if (event.code.indexOf("Key")!=-1||event.code.indexOf("Digit")!=-1||event.code.indexOf("key")!=-1||[" ","_","."].indexOf(event.key)!=-1) {
+                    if (document.getElementById("input").style.color=="gray") {
+                        document.getElementById("input").style.color="white";
+                        document.getElementById("input").innerHTML=event.key;
+                    } else {
+                        document.getElementById("input").innerHTML+=event.key;
+                    }
+                }
+            });
+            function tippySetup() {
+            	tippy.setDefaultProps({
+            		trigger: 'click',
+            		allowHTML: true,
+            		interactive: true,
+            		maxWidth: "none",
+            		placement: "right"
+            	});
+            	for (let current of document.getElementsByClassName('resultimg')) {
+            		tippy(current, {
+            			content: 'Global content'
+            		});
+            	}
+            }
+        </script>
+    </body>
+</html>
