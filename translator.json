@@ -395,7 +395,7 @@
 	"bedrock_id": "minecraft:bed 15,355"
 }, {
 	"hotswap": "?",
-	"jv_us_name": "Black Concrete Powder",
+	"jv_us_name": "Black Cocrete Powder",
 	"java": "block/black_concrete_powder.png",
 	"bedrock": "blocks/concrete_powder_black.png",
 	"java_lang_id": "block.minecraft.black_concrete_powder",
