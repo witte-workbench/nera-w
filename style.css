@@ -1,0 +1,40 @@
+body {
+    background-color:#262626;
+    margin:0px;
+    color:white;
+}
+a {
+    color:white;
+    text-decoration:underline;
+    cursor:pointer;
+}
+p {
+    color:white;
+    font:40px "Courier New";
+    text-align:center;
+}
+t {
+    font:30px "Courier New";
+}
+#top-nav {
+    height:20vh;
+    width:100vw;
+    background-color:#333333;
+    border-radius:0 0 80px 80px;
+}
+#logo {
+    height:16vh;
+    position:absolute;
+    top:2vh;
+    left:calc(50vw - 8vh);
+}
+#small-nav {
+    width:33vw;
+    height:20vh;
+    display:inline-block;
+}
+#big-nav {
+    width:calc(100% - 60px);
+    padding:30px;
+    display:inline-block;
+}
