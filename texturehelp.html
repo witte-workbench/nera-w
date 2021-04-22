@@ -96,7 +96,7 @@
                 alert("you're using internet explorer. screw you! more seriously though, please just use a different browser.");
             }
             // fetch list of packs
-            fetch('http://nerawoowty.github.io/translator.json')
+            fetch('https://nerawoowty.github.io/translator.json')
             .then(response => response.json())
             .then(function(data){list=data;})
             .catch(function(err){alert(err);});
@@ -105,12 +105,10 @@
                 let results = [];
                 for (current of list) {
                     for (prop in current) {
-                        try{
                         if (current[prop].toString().indexOf(term)!=-1) {
                             results.push(current);
                             break;
                         }
-                        }catch(e){alert(prop);}
                     }
                 }
                 return(results);
