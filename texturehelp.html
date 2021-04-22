@@ -105,10 +105,12 @@
                 let results = [];
                 for (current of list) {
                     for (prop in current) {
-                        if (current[prop].indexOf(term)!=-1) {
+                        try{
+                        if (current[prop].toString().indexOf(term)!=-1) {
                             results.push(current);
                             break;
                         }
+                        }catch(e){alert(prop);}
                     }
                 }
                 return(results);
@@ -129,7 +131,7 @@
                         alert("All items match this search. Please narrow your terms!");
                     } else if (results.length<150 || confirm(results.length+" items ("+Math.floor(results.length/list.length*100)+"% of all items) matched your search. Would you still like to show them?")) {
                         for (current of results) {
-                            document.getElementById("resultsdiv").innerHTML+='<img class="resultimg" data-tippy-content="<img class=\'resultmini\' src=\'https://github.com/InventivetalentDev/minecraft-assets/blob/21w03a/assets/minecraft/textures/'+(current.java_file_path.split(",").join('?raw=true\'><img class=\'resultmini\' src=\'https://github.com/InventivetalentDev/minecraft-assets/blob/21w03a'))+'?raw=true\'>" src="https://github.com/InventivetalentDev/minecraft-assets/blob/21w03a'+current.java_file_path.split(",")[0]+'?raw=true">';
+                            document.getElementById("resultsdiv").innerHTML+='<img class="resultimg" data-tippy-content="<img class=\'resultmini\' src=\'https://github.com/InventivetalentDev/minecraft-assets/blob/21w03a/assets/minecraft/textures/'+(current.java.split(",").join('?raw=true\'><img class=\'resultmini\' src=\'https://github.com/InventivetalentDev/minecraft-assets/blob/21w03a/assets/minecraft/textures/'))+'?raw=true\'>" src="https://github.com/InventivetalentDev/minecraft-assets/blob/21w03a/assets/minecraft/textures/'+current.java.split(",")[0]+'?raw=true">';
                         }
                         if (results.length==0) {
                             document.getElementById("resultsdiv").innerHTML="no results!";
