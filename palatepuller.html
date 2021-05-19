@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palate Puller</title>
+    <link rel="icon" href="neralogo.png">
+    <style>
+        body {
+            background-color:#8B8B8B;
+            font:50px 'Nanum Gothic', sans-serif;
+            margin:0px;
+            padding:0px;
+        }
+        #imgCanvas {
+            border:10px solid #373737;
+            border-bottom:10px solid white;
+            border-right:10px solid white;
+            image-rendering:pixelated;
+            width:50vh;
+            height:50vh;
+        }
+        #paletteCanvas {
+            position:fixed;
+            right:100vw;
+            top:100vh;
+        }
+        p {
+            font:50px 'Nanum Gothic', sans-serif;
+            padding:0px;
+            margin:0px;
+        }
+        input, input::file-selector-button, #downloadbtn {
+            padding:0 5px 3px 5px;
+            font: 20px 'Nanum Gothic', sans-serif;
+        }
+        #inputdiv, #outputdiv {
+            width:calc(50vw - 20px);
+            height:calc(100vh - 20px);
+            padding:20px 10px 0px 10px;
+            text-align:center;
+            float:left;
+        }
+        #inputdiv {
+            overflow:hidden;
+        }
+        #outputdiv {
+            overflow:scroll;
+        }
+        #paletteCanvas {
+            background-color:orange;
+        }
+        #downloadbtn {
+            text-decoration:none;
+            color:black;
+            background-color:#EFEFEF;
+            border:2px solid #767676;
+            border-radius:3px;
+        }
+        #downloadbtn:hover {
+            background-color: #E5E5E5;
+            border:2px solid #4F4F4F;
+        }
+        #downloadbtn:active {
+            background-color:#F5F5F5;
+            border:2px solid #F5F5F5;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="inputdiv">
+<canvas id="imgCanvas" width="256" height="256">Your browser does not support the HTML5 canvas tag.</canvas><br>
+<input type="file" id="imageLoader" name="imageLoader"/><br>
+<a download="download" href="" id="downloadbtn">Download Palette</a><br>
+<canvas id="paletteCanvas" width="0" height="1"></canvas>
+</div>
+<div id="outputdiv"></div>
+
+<script>
+var c = document.getElementById("imgCanvas");
+var ctx = c.getContext("2d");
+var pc = document.getElementById("paletteCanvas");
+var pctx = pc.getContext("2d");
+var downloadbtn = document.getElementById("downloadbtn");
+var colors = [];
+
+function go() {
+    document.getElementById("outputdiv").innerHTML = "";
+    if (c.width>300 || c.height>300) {
+        alert("Image is too large! (Max res of 300x300)");
+    } else {
+        colors = [];
+        for (var x=0;x<c.width;x++) {
+            for (var y=0;y<c.height;y++) { // loop through x and y of image
+                let imgData = ctx.getImageData(x, y, 1, 1);
+                let pickedColor = (imgData.data[0]+imgData.data[1]+imgData.data[2]) +"|"+ rgbToHex(imgData.data[0],imgData.data[1],imgData.data[2],imgData.data[3]);
+                if (pickedColor.slice(-2)=="ff") { // remove full opacity suffix
+                    pickedColor = pickedColor.slice(0,-2);
+                }
+                if (colors.indexOf(pickedColor)==-1 && imgData.data[3]!=0) {
+                    colors.push(pickedColor);
+                }
+            }
+        }
+        
+        colors.sort(function(a, b) {return parseInt(b) - parseInt(a);});
+        pc.width = colors.length;
+        for (var i=0;i<colors.length;i++) {
+            let sel = colors[i];
+            document.getElementById("outputdiv").innerHTML += '<p style="color:'+sel.split("|")[1]+'; !important">▣'+sel.split("|")[1]+'</p>';
+            // set download canvas
+            pctx.fillStyle = sel.split("|")[1];
+            pctx.fillRect(i,0,1,1);
+        }
+        // set download button
+        let name = document.getElementById('imageLoader').value.split("\\");
+        name = name[name.length-1].split(".").slice(0,-1).join(".") + "_palette.png";
+        downloadbtn.download = name;
+        downloadbtn.href = pc.toDataURL();
+    }
+}
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+function rgbToHex(r, g, b, a) {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b) + componentToHex(a);
+}
+function stringColor(r,g,b,a) {
+    return(rgbToHex(r,g,b)+" ("+(a/2.55)+"%)");
+}
+
+document.getElementById('imageLoader').addEventListener('change', function(e){ //image upload handling
+    var reader = new FileReader();
+    reader.onload = function(event){
+        var img = new Image();
+        img.onload = function(){
+            c.width = img.width;
+            c.height = img.height;
+            ctx.drawImage(img,0,0);
+            go();
+        }
+        img.src = event.target.result;
+    }
+    reader.readAsDataURL(e.target.files[0]);
+}, false);
+</script>
+
+</body>
+</html>
