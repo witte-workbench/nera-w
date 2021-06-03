@@ -213,6 +213,7 @@ document.getElementById("paletteCanvas").addEventListener('mouseup',function(e){
         let sel = colors[i].split("|")[1];
         document.getElementById("outputdiv").innerHTML += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
     }
+    downloadbtn.href = pc.toDataURL();
 });
 </script>
 </body>
