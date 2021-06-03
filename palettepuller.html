@@ -14,14 +14,11 @@
             border:10px solid #373737;
             border-bottom:10px solid white;
             border-right:10px solid white;
-            image-rendering:pixelated;
-            width:50vh;
-            height:50vh;
         }
-        #paletteCanvas {
-            position:fixed;
-            right:100vw;
-            top:100vh;
+        canvas {
+            width:50vh;
+            height:auto;
+            image-rendering:pixelated;
         }
         p {
             font:50px 'Nanum Gothic', sans-serif;
@@ -44,9 +41,6 @@
         }
         #outputdiv {
             overflow:scroll;
-        }
-        #paletteCanvas {
-            background-color:orange;
         }
         #downloadbtn {
             text-decoration:none;
@@ -85,6 +79,56 @@ var downloadbtn = document.getElementById("downloadbtn");
 var colors = [];
 
 function go() {
+    function getScore(r,g,b) {
+        r /= 255;
+        g /= 255;
+        b /= 255;
+        let cmin = Math.min(r,g,b),
+            cmax = Math.max(r,g,b),
+            delta = cmax - cmin,
+            h = 0,
+            s = 0,
+            f = 0,
+            l = 0;
+        if (delta == 0)
+            h = 0;
+        else if (cmax == r)
+            h = ((g - b) / delta) % 6;
+        else if (cmax == g)
+            h = (b - r) / delta + 2;
+        else
+            h = (r - g) / delta + 4;
+        h = Math.round(h * 60);
+        if (h < 0)
+            h += 360;
+        l = (cmax + cmin) / 2;
+        s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+        s = +(s * 100).toFixed(1);
+        l = +(l * 100).toFixed(1);
+        if (h>15 && h<40) {
+            f=2;
+        } else if (h<70) {
+            f=3;
+        } else if (h<150) {
+            f=4;
+        } else if (h<190) {
+            f=5;
+        } else if (h<215) {
+            f=6;
+        } else if (h<260) {
+            f=7;
+        } else if (h<285) {
+            f=8;
+        } else if (h<330) {
+            f=9;
+        } else {
+            f=1;
+        }
+        if (s==0) {
+            f=11;
+        }
+        return(f+l.toString());
+    }
     document.getElementById("outputdiv").innerHTML = "";
     if (c.width>300 || c.height>300) {
         alert("Image is too large! (Max res of 300x300)");
@@ -93,7 +137,7 @@ function go() {
         for (var x=0;x<c.width;x++) {
             for (var y=0;y<c.height;y++) { // loop through x and y of image
                 let imgData = ctx.getImageData(x, y, 1, 1);
-                let pickedColor = (imgData.data[0]+imgData.data[1]+imgData.data[2]) +"|"+ rgbToHex(imgData.data[0],imgData.data[1],imgData.data[2],imgData.data[3]);
+                let pickedColor = getScore(imgData.data[0],imgData.data[1],imgData.data[2]) +"|"+ rgbToHex(imgData.data[0],imgData.data[1],imgData.data[2],imgData.data[3]);
                 if (pickedColor.slice(-2)=="ff") { // remove full opacity suffix
                     pickedColor = pickedColor.slice(0,-2);
                 }
@@ -106,10 +150,10 @@ function go() {
         colors.sort(function(a, b) {return parseInt(b) - parseInt(a);});
         pc.width = colors.length;
         for (var i=0;i<colors.length;i++) {
-            let sel = colors[i];
-            document.getElementById("outputdiv").innerHTML += '<p style="color:'+sel.split("|")[1]+'; !important">▣'+sel.split("|")[1]+'</p>';
+            let sel = colors[i].split("|")[1];
+            document.getElementById("outputdiv").innerHTML += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
             // set download canvas
-            pctx.fillStyle = sel.split("|")[1];
+            pctx.fillStyle = sel;
             pctx.fillRect(i,0,1,1);
         }
         // set download button
@@ -145,7 +189,31 @@ document.getElementById('imageLoader').addEventListener('change', function(e){ /
     }
     reader.readAsDataURL(e.target.files[0]);
 }, false);
+
+var down;
+var downIdx;
+//moving colors
+document.getElementById("paletteCanvas").addEventListener('mousedown',function(e){
+    let x = Math.floor((e.x-this.offsetLeft)/(window.innerHeight*0.5)*this.width);
+    down = this.getContext("2d").getImageData(x, 0, 1, 1);
+    downIdx = x;
+});
+document.getElementById("paletteCanvas").addEventListener('mouseup',function(e){
+    let x = Math.floor((e.x-this.offsetLeft)/(window.innerHeight*0.5)*this.width);
+    let holder = this.getContext("2d").getImageData(x, 0, 1, 1);
+    this.getContext("2d").clearRect(downIdx, 0, 1, 1);
+    this.getContext("2d").fillStyle = rgbToHex(holder.data[0],holder.data[1],holder.data[2],holder.data[3]);
+    this.getContext("2d").fillRect(downIdx,0,1,1);
+    this.getContext("2d").clearRect(x, 0, 1, 1);
+    this.getContext("2d").fillStyle = rgbToHex(down.data[0],down.data[1],down.data[2],down.data[3]);
+    this.getContext("2d").fillRect(x,0,1,1);
+    [colors[x], colors[downIdx]] = [colors[downIdx], colors[x]];
+    document.getElementById("outputdiv").innerHTML="";
+    for (var i=0;i<colors.length;i++) {
+        let sel = colors[i].split("|")[1];
+        document.getElementById("outputdiv").innerHTML += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
+    }
+});
 </script>
-<img src="http://bit.ly/nerastats" width="0" height="0">
 </body>
 </html>
