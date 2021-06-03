@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palette Puller</title>
+    <link rel="icon" href="neralogo.png">
+    <style>
+    body {
+        background-color:#8B8B8B;
+        font:50px 'Nanum Gothic', sans-serif;
+        margin:0px;
+        padding:0px;
+    }
+    canvas {
+        width:35vw;
+        height:auto;
+        image-rendering:pixelated;
+    }
+    div {
+        float:left;
+        text-align:center;
+    }
+    .half {
+        width:50%;
+        overflow:scroll;
+    }
+    .top {
+        height:5vh;
+        width:33vw;
+    }
+    #canvasOne, #canvasTwo {
+        border:10px solid #373737;
+        border-bottom:10px solid white;
+        border-right:10px solid white;
+    }
+    p {
+        font:20px 'Nanum Gothic', sans-serif;
+        padding:0px;
+        margin:0px;
+    }
+    input, input::file-selector-button, button {
+        padding:0 5px 3px 5px;
+        font: 20px 'Nanum Gothic', sans-serif;
+    }
+    button {
+        position:absolute;
+        top:2px;
+        left:calc(50vw - 30px);
+    }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="top">
+    <p>Reference</p>
+</div>
+<div class="top">
+    <button id="swapButton">Swap</button>
+</div>
+<div class="top">
+    <p>Output</p>
+</div>
+<div class="half">
+    <canvas id="canvasOne" width="16" height="16">Your browser does not support the HTML5 canvas tag.</canvas><br>
+    <input type="file" id="One" name="loaderOne" class="loader"><br>
+    <canvas id="paletteCanvasOne" width="0" height="1" oncontextmenu="return false;"></canvas>
+    <p id="outOne"></p>
+</div>
+<div class="half">
+    <canvas id="canvasTwo" width="16" height="16">Your browser does not support the HTML5 canvas tag.</canvas><br>
+    <input type="file" id="Two" name="loaderTwo" class="loader"><br>
+    <canvas id="paletteCanvasTwo" width="0" height="1" oncontextmenu="return false;"></canvas>
+    <p id="outTwo"></p>
+</div>
+
+<script>
+var colorsOne = [];
+var colorsTwo = [];
+var imghold;
+
+function go(suffix,img) {
+    function getScore(r,g,b) {
+        r /= 255;
+        g /= 255;
+        b /= 255;
+        let cmin = Math.min(r,g,b),
+            cmax = Math.max(r,g,b),
+            delta = cmax - cmin,
+            h = 0,
+            s = 0,
+            f = 0,
+            l = 0;
+        if (delta == 0)
+            h = 0;
+        else if (cmax == r)
+            h = ((g - b) / delta) % 6;
+        else if (cmax == g)
+            h = (b - r) / delta + 2;
+        else
+            h = (r - g) / delta + 4;
+        h = Math.round(h * 60);
+        if (h < 0)
+            h += 360;
+        l = (cmax + cmin) / 2;
+        s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+        s = +(s * 100).toFixed(1);
+        l = +(l * 100).toFixed(1);
+        if (h<15) {
+            f=1;
+        } else if (h<40) {
+            f=2;
+        } else if (h<70) {
+            f=3;
+        } else if (h<150) {
+            f=4;
+        } else if (h<190) {
+            f=5;
+        } else if (h<215) {
+            f=6;
+        } else if (h<260) {
+            f=7;
+        } else if (h<285) {
+            f=8;
+        } else if (h<330) {
+            f=9;
+        } else {
+            f=10;
+        }
+        if (s==0) {
+            f=11;
+        }
+        return(f+l.toString());
+    }
+    let c = $("canvas"+suffix);
+    let ctx = c.getContext("2d");
+    let pc = $("paletteCanvas"+suffix);
+    let pctx = pc.getContext("2d");
+    let colors = [];
+    if (img.width*img.height>300*300) {
+        alert("Image is too large! (Max res of 300x300)");
+    } else {
+        ctx.clearRect(0, 0, c.width, c.height);
+        c.width = img.width;
+        c.height = img.height;
+        ctx.drawImage(img,0,0);
+        for (var x=0;x<c.width;x++) {
+            for (var y=0;y<c.height;y++) { // loop through x and y of image
+                let imgData = ctx.getImageData(x, y, 1, 1);
+                let score = getScore(imgData.data[0],imgData.data[1],imgData.data[2]);
+                let pickedColor = score +"|"+ rgbToHex(imgData.data[0],imgData.data[1],imgData.data[2],imgData.data[3]);
+                if (colors.indexOf(pickedColor)==-1 && imgData.data[3]!=0) {
+                    colors.push(pickedColor);
+                }
+            }
+        }
+        
+        colors.sort(function(a, b) {return parseInt(b) - parseInt(a);});
+        renderPalette(pc,colors);
+    }
+    return(colors);
+}
+function renderPalette(pc,colors) {
+    let pctx = pc.getContext("2d");
+    pc.getContext("2d").clearRect(0, 0, pc.width, pc.height);
+    pc.width = colors.length;
+    for (var i=0;i<colors.length;i++) {
+        if (colors[i].indexOf("|")!=-1) {
+            colors[i] = colors[i].split("|")[1];
+        }
+        // set download canvas
+        pctx.fillStyle = colors[i];
+        pctx.fillRect(i,0,1,1);
+    }
+}
+
+for (iter of document.getElementsByClassName('loader')) {
+    iter.addEventListener('change', function(e){ //image upload handling
+        var id = this.id;
+        var reader = new FileReader();
+        reader.onload = function(event){
+            var img = new Image();
+            img.onload = function(){
+                eval("colors"+id+" = go(id,img);");
+                $("outOne").innerHTML = colorsOne.join(", ");
+                $("outTwo").innerHTML = colorsTwo.join(", ");
+                if (id=="Two") {
+                    imghold=img;
+                }
+            }
+            img.src = event.target.result;
+        }
+        reader.readAsDataURL(e.target.files[0]);
+    }, false);
+}
+
+function rgbToHex(r,g,b,a) {
+    r = Math.floor(r).toString(16);
+    g = Math.floor(g).toString(16);
+    b = Math.floor(b).toString(16);
+    a = Math.round(a).toString(16);
+    if (r.length == 1)
+        r = "0" + r;
+    if (g.length == 1)
+        g = "0" + g;
+    if (b.length == 1)
+        b = "0" + b;
+    if (a.length == 1)
+        a = "0" + a;
+    return("#" + r + g + b + a);
+}
+function mid(h,ah) {
+    let r = 0, g = 0, b = 0, a = 0;
+    r = parseInt("0x" + h[1] + h[2]);
+    g = parseInt("0x" + h[3] + h[4]);
+    b = parseInt("0x" + h[5] + h[6]);
+    a = parseInt("0x" + h[7] + h[8]);
+    let ar = 0, ag = 0, ab = 0, aa = 0;
+    ar = parseInt("0x" + ah[1] + ah[2]);
+    ag = parseInt("0x" + ah[3] + ah[4]);
+    ab = parseInt("0x" + ah[5] + ah[6]);
+    aa = parseInt("0x" + ah[7] + ah[8]);
+    r = (r+ar)/2;
+    g = (g+ag)/2;
+    b = (b+ab)/2;
+    a = (a+aa)/2;
+    return(rgbToHex(r,g,b,a));
+}
+//palette swapping
+
+$("swapButton").addEventListener('click',function() {
+    let c = $("canvasTwo");
+    let ctx = c.getContext("2d");
+    if (colorsOne.length!=colorsTwo.length) {
+        alert("Cannot replace! Palettes are different sizes.");
+    } else {
+        //reset canvas two
+        ctx.clearRect(0, 0, c.width, c.height);
+        ctx.drawImage(imghold,0,0);
+        for (var x=0;x<c.width;x++) {
+            for (var y=0;y<c.height;y++) { // loop through x and y of image
+                let imgData = ctx.getImageData(x, y, 1, 1);
+                let pickedColor = rgbToHex(imgData.data[0],imgData.data[1],imgData.data[2],imgData.data[3]);
+                if (colorsTwo.indexOf(pickedColor)!=-1) { // draw over image
+                    ctx.clearRect(x, y, 1, 1);
+                    ctx.fillStyle = colorsOne[colorsTwo.indexOf(pickedColor)];
+                    ctx.fillRect(x,y,1,1);
+                }
+            }
+        }
+    }
+});
+
+var downOneIdx;
+var downTwoIdx;
+//moving colors
+$("paletteCanvasOne").addEventListener('mousedown',function(e){
+    let x = Math.floor((e.x-this.offsetLeft)/(window.innerWidth*0.35)*this.width);
+    downOneIdx = x;
+});
+$("paletteCanvasOne").addEventListener('mouseup',function(e){
+    let x = Math.floor((e.x-this.offsetLeft)/(window.innerWidth*0.35)*this.width);
+    [colorsOne[x], colorsOne[downOneIdx]] = [colorsOne[downOneIdx], colorsOne[x]];
+    if (e.button==2) {
+        try{
+        colorsOne.splice(x+1,0,mid(colorsOne[x],colorsOne[x+1]));
+        }catch{}
+    } else if (e.button==1) {
+        colorsOne.splice(x,1);
+    }
+    renderPalette($("paletteCanvasOne"),colorsOne);
+});
+$("paletteCanvasTwo").addEventListener('mousedown',function(e){
+    let x = Math.floor((e.x-this.offsetLeft)/(window.innerWidth*0.35)*this.width);
+    downTwoIdx = x;
+});
+$("paletteCanvasTwo").addEventListener('mouseup',function(e){
+    let x = Math.floor((e.x-this.offsetLeft)/(window.innerWidth*0.35)*this.width);
+    [colorsTwo[x], colorsTwo[downTwoIdx]] = [colorsTwo[downTwoIdx], colorsTwo[x]];
+    if (e.button==1) {
+        colorsTwo.splice(x,1);
+    }
+    renderPalette($("paletteCanvasTwo"),colorsTwo);
+});
+document.addEventListener('keyup',function(e){
+    if (e.key=="a") {
+        let cl = prompt("Color: ");
+        if (cl.length==7) {
+            cl+="ff";
+        }
+        colorsOne.push(cl);
+        renderPalette($("paletteCanvasOne"),colorsOne);
+    }
+});
+function $(id) {
+    return(document.getElementById(id));
+}
+</script>
+</body>
+</html>
