@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MCpaint Help</title>
+    <link rel="icon" href="neralogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <style>
+    body {
+        margin:30px;
+        background-color:#bdf2fc;
+    }
+    * {
+        font-family: 'Rubik', sans-serif;
+    }
+    </style>
+</head>
+<body>
+    <a href="https://nerawoowty.github.io/mcpaint.html"><h1>Back To MCpaint</h1></a>
+    <h1>Importing Texture Packs</h1>
+    <p>You can upload texture packs with the upload button on the bottom of the page. They may take some time to load, and require a reload button click. To import the default 1.17 texture pack, click "Import Default Textures" (But they are loaded at the very start as well).</p>
+    <h1>Choosing Textures</h1>
+    <p>To choose a new block to draw with, type in the "Texture Name: " field. Exclude the path and extensions. For example, if you want the soul fire texture, you would type "soul_fire_0"</p>
+    <h1>Drawing looks wrong/not fully loaded</h1>
+    <p>Click the reload assets button. This will rerender everything, and clear up any graphic glitches.</p>
+    <h1>Schematics</h1>
+    <p>Schematics are lists of texture placements. They mean you can draw something, copy it to your clipboard by clicking "Copy Schematic", then send it to another person. 
+    They can import the schematic by clicking "Import Schematic" and pasting the code. This will import your drawing, but using the other person's chosen texture pack.</p>
+    <h1>Default Showcase</h1>
+    <p>By clicking "Load Showcase", you will load up a default schematic, showcasing lots of textures! This is perfect for putting in your PMC description. Keep in mind you may need to reload the assets after a while.</p>
+    <h1>Generating an Atlas</h1>
+    <p>This will showcase every 1.17 block texture in an array, and may require assets to reload.</p>
+    <h1>Animated Textures</h1>
+    <p>MCpaint doesn't support animated textures, but does crop them to be 16x16 size.</p>
+    <h1>HD Packs</h1>
+    <p>As of now, MCpaint only supports 16x texture packs, but other resolutions will come in another update!</p>
+    <h1>Fog Codes</h1>
+    <p>Fog is the solid horizontal color bands in the background. This could represent the nether fog, sky, end void, or whatever you want! To add fog, use a JSON format. 
+    That's fancy wording for a key+value language. Here's how to use it:<br>
+    Start with a { and end with a }. This will tell the computer when your code begins and ends<br>
+    Add a color/coordinate combo. The color must be in quotes, and so do the coordinates. The coordinates are in the format of "distance from top,how tall it is"<br>
+    Add commas between the pairs you make<br>
+    <br>
+    Here's an example: {"orange":"0,10","blue":"10,15"}<br>
+    This example would have an orange stripe from the very top, and 10 blocks tall, as well as a blue stripe from 10 blocks down to 25 blocks down (a 15 block height)</p>
+    <h1>Hue Overlays</h1>
+    <p>Hue Overlays are for grey textures which would usually be given color by a colormap in-game, like grass or water. To give a gray texture color, type a hex code in the Hue Overlay Hex field, with #RRGGBBAA format. For beginners, I suggest just picking a hex color, and adding "AA" to the end. But, you can create a custom code below.</p>
+    <input type="color" id="color">
+    <label>
+        Transparency:
+        <input type="range" min="0" max="255" value="255" id="slider">
+    </label>
+    <p id="colorcreate">#FFFFFFFF</p>
+    <script>
+        function check() {
+            let g = parseInt(document.getElementById('slider').value).toString(16);
+            if (g.length==1) {
+                g+=g;
+            }
+            document.getElementById('colorcreate').innerHTML = (document.getElementById('color').value+g).toUpperCase();
+        }
+        document.getElementById('color').onchange = check;
+        document.getElementById('slider').onchange = check;
+    </script>
+</body>
+</html>
