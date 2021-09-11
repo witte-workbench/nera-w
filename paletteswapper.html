@@ -64,6 +64,7 @@
     <div class="small">
         <button id="swapButton">Swap</button>
         <p id="bigarrow">→</p>
+        <button id="addButton">Add Color</button>
     </div>
     <div class="half">
         <canvas id="canvasTwo" width="16" height="16">Your browser does not support the HTML5 canvas tag.</canvas><br>
@@ -281,15 +282,13 @@
         }
         renderPalette($("paletteCanvasTwo"),colorsTwo);
     });
-    document.addEventListener('keyup',function(e){
-        if (e.key=="a") {
-            let cl = prompt("Color: ");
-            if (cl.length==7) {
-                cl+="ff";
-            }
-            colorsOne.push(cl);
-            renderPalette($("paletteCanvasOne"),colorsOne);
+    $('addButton').addEventListener('click',function(){
+        let cl = prompt("Color: ");
+        if (cl.length==7) {
+            cl+="ff";
         }
+        colorsOne.push(cl);
+        renderPalette($("paletteCanvasOne"),colorsOne);
     });
     function $(id) {
         return(document.getElementById(id));
