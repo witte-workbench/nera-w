@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MC Wallpaper</title>
+    <link rel="icon" href="neralogo.png">
+    <style>
+    body {
+        margin:0px;
+        padding:0px;
+        width:100vw;
+        overflow:hidden;
+        background-color:#1f1f1f;
+    }
+    #input {
+        display:none;
+    }
+    .center {
+        position:fixed;
+        left:50%;
+        transform: translate(-50%, 0);
+    }
+    button {
+        border:3px solid #f0f0f0;
+        border-radius:5px;
+        background-color:#2e2e2e;
+        color:#f0f0f0;
+    }
+    #fakeinput {
+        top:5px;
+    }
+    #downloadj {
+        bottom:5px;
+    }
+    #canvas {
+        image-rendering:pixelated;
+        position:fixed;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+        margin:auto;
+    }
+    #overlay {
+        image-rendering:pixelated;
+        position:fixed;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+        margin:auto;
+        display:none;
+    }
+    #hidden {
+        display:none;
+    }
+    </style>
+</head>
+<body>
+    <img src="http://bit.ly/nerastats" class="hidden">
+    <canvas id="canvas"></canvas>
+    <img src="menuoverlay.png" id='overlay'>
+    <button onclick="$('input').click()" id="fakeinput" class="center">Upload Wallpaper</button>
+    <button onclick="download()" id="downloadj" class="center">Download Java Pack</button>
+    <input type="file" id="input" accept="image/png, image/jpeg, image/jpg">
+    
+    <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
+    <script>
+    var c = $('canvas');
+    var ctx = c.getContext('2d');
+    var filename = "defaultname";
+    
+    function fixfit() {
+        if (window.innerWidth/16<window.innerHeight/9) { // display is taller than 16:9
+            $('canvas').style.width = "100vw";
+            $('canvas').style.height = "calc(100vw/16*9)";
+        } else {
+            $('canvas').style.width = "calc(100vh/9*16)";
+            $('canvas').style.height = "100vh";
+        }
+        $('overlay').style.width = $('canvas').style.width;
+        $('overlay').style.height = $('canvas').style.height;
+    }
+    window.onresize = fixfit;
+    window.onload = fixfit;
+    
+    
+    document.getElementById("input").onchange = function(e){ //image upload handling
+        $('overlay').style.display = "block";
+        var reader = new FileReader();
+        reader.onload = function(event){
+            var img = new Image();
+            img.onload = function(){
+                ctx.clearRect(0, 0, c.width, c.height);
+                if (img.width/16<img.height/9) { // height is too big
+                    c.width = img.width;
+                    c.height = img.width/16*9;
+                } else { // width is too big or fine
+                    c.width = img.height/9*16;
+                    c.height = img.height;
+                }
+                ctx.fillStyle = "#1f1f1f";
+                ctx.fillRect(0, 0, c.width, c.height);
+                ctx.drawImage(img,(img.width-c.width)/(-2),(img.height-c.height)/(-2));
+            }
+            img.src = event.target.result;
+        }
+        filename = e.target.files[0].name.split('.').slice(0,-1).join('.');
+        reader.readAsDataURL(e.target.files[0]);
+    }
+    
+    function download() {
+        var bgdata = c.toDataURL().split(',')[1]; // canvas to base64
+        
+        var zip = new JSZip(); // set up zip files
+        zip.file("pack.mcmeta", '{"pack":{"pack_format":7,"description":[{"text":"'+filename+'","color":"blue"},{"text":"\\nWallpapers by Nera","color":"green"}]}}');
+        zip.file("assets/minecraft/textures/gui/title/background/panorama_overlay.png", bgdata, {base64: true});
+        zip.file("pack.png", "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAfElEQVQ4T2NMmfLwPwMVASPIwN3ddlQx0rX0EAPtDQTZguxiZD6IjQ7Q1WK4EKYJpBCZDTII3TJ0w7F6GaYJnR58BsK8gx6G+FIEXi/jMpDkSKEkQQ7hdIgvYeOSgyUrrAkblqiRaZgGkiNlaCRskLeolpcHZzqkxFXoegEAGez1V4I26AAAAABJRU5ErkJggg==", {base64: true});
+        
+        zip.generateAsync({type:"base64"}).then(function (base64) { // download zip
+            var element = document.createElement('a');
+            element.setAttribute('href', "data:application/zip;base64,"+base64);
+            element.setAttribute('download', filename+'-background.zip');
+            element.click();
+        });
+    }
+    function $(id) {
+        return(document.getElementById(id));
+    }
+    </script>
+</body>
+</html>
