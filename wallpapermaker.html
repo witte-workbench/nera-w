@@ -20,17 +20,20 @@
         left:50%;
         transform: translate(-50%, 0);
     }
-    button {
+    button{
         border:3px solid #f0f0f0;
         border-radius:5px;
         background-color:#2e2e2e;
         color:#f0f0f0;
         cursor:pointer;
     }
+    label {
+        color:#f0f0f0;
+    }
     #fakeinput {
         top:5px;
     }
-    #downloadj {
+    #downloaddiv {
         bottom:5px;
     }
     #canvas {
@@ -60,9 +63,12 @@
 <body>
     <img src="http://bit.ly/nerastats" class="hidden">
     <canvas id="canvas"></canvas>
-    <img src="menuoverlay.png" id='overlay'>
+    <img src="javaoverlay.png" id='overlay'>
     <button onclick="$('input').click()" id="fakeinput" class="center">Upload Wallpaper</button>
-    <button onclick="download()" id="downloadj" class="center">Download Java Pack</button>
+    <div class="center" id='downloaddiv'>
+        <button onclick="download()" id="download">Download Pack</button>
+        <input type="checkbox" id="bedrock" name="bedrock" value="bedrock" onchange="changever(this.checked)"><label for="bedrock">Bedrock Edition</label>
+    </div>
     <input type="file" id="input" accept="image/png, image/jpeg, image/jpg">
     
     <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
@@ -114,15 +120,48 @@
         var bgdata = c.toDataURL().split(',')[1]; // canvas to base64
         
         var zip = new JSZip(); // set up zip files
-        zip.file("pack.mcmeta", '{"pack":{"pack_format":7,"description":[{"text":"'+filename+'","color":"blue"},{"text":"\\nWallpapers by Nera","color":"green"}]}}');
-        zip.file("assets/minecraft/textures/gui/title/background/panorama_overlay.png", bgdata, {base64: true});
-        zip.file("pack.png", "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAfElEQVQ4T2NMmfLwPwMVASPIwN3ddlQx0rX0EAPtDQTZguxiZD6IjQ7Q1WK4EKYJpBCZDTII3TJ0w7F6GaYJnR58BsK8gx6G+FIEXi/jMpDkSKEkQQ7hdIgvYeOSgyUrrAkblqiRaZgGkiNlaCRskLeolpcHZzqkxFXoegEAGez1V4I26AAAAABJRU5ErkJggg==", {base64: true});
+        if (ver=="j") {
+            zip.file("pack.mcmeta", '{"pack":{"pack_format":7,"description":[{"text":"'+filename+'","color":"blue"},{"text":"\\nWallpapers by Nera","color":"green"}]}}');
+            zip.file("assets/minecraft/textures/gui/title/background/panorama_overlay.png", bgdata, {base64: true});
+            zip.file("pack.png", "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAfElEQVQ4T2NMmfLwPwMVASPIwN3ddlQx0rX0EAPtDQTZguxiZD6IjQ7Q1WK4EKYJpBCZDTII3TJ0w7F6GaYJnR58BsK8gx6G+FIEXi/jMpDkSKEkQQ7hdIgvYeOSgyUrrAkblqiRaZgGkiNlaCRskLeolpcHZzqkxFXoegEAGez1V4I26AAAAABJRU5ErkJggg==", {base64: true});
+        } else if (ver=="b") {
+            zip.file("manifest.json", '{"format_version":2,"header":{"description":"Wallpapers by @NeraW","name":"'+filename+'","uuid":"'+uuidv4()+'","version":[0,0,1],"min_engine_version": [ 1, 14, 0 ]},"modules":[{"description":"Wallpapers by @NeraW","type":"resources","uuid":"'+uuidv4()+'","version":[0, 0, 1]}]}');
+            zip.file("textures/ui/BACKGROUND/MENU_BG.png", bgdata, {base64: true});
+            zip.file("pack_icon.png", "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAfElEQVQ4T2NMmfLwPwMVASPIwN3ddlQx0rX0EAPtDQTZguxiZD6IjQ7Q1WK4EKYJpBCZDTII3TJ0w7F6GaYJnR58BsK8gx6G+FIEXi/jMpDkSKEkQQ7hdIgvYeOSgyUrrAkblqiRaZgGkiNlaCRskLeolpcHZzqkxFXoegEAGez1V4I26AAAAABJRU5ErkJggg==", {base64: true});
+            zip.file("ui/adhoc_inprogress_screen.json", '{"namespace":"adhoc_inprogress","adhoc_inprogress_screen@common.base_screen":{"$screen_bg_content":"RPC_BGDATA.UI2","$dialog_size":[200,100],"$screen_content":"adhoc_inprogress.adhoc_inprogress_screen_content"}}');
+            zip.file("ui/adhoc_screen.json", '{"namespace":"adhoc","adhoc_screen@common.base_screen":{"$screen_bg_content":"RPC_BGDATA.UI2","$dialog_size":[200,159],"button_mappings":[{"from_button_id":"button.menu_cancel","to_button_id":"button.menu_exit","mapping_type":"global"}],"$screen_content":"adhoc.adhoc_screen_content"}}');
+            zip.file("ui/progress_screen.json", '{"namespace":"progress","progress_screen@common.base_screen":{"$screen_bg_content":"RPC_BGDATA.UI2","force_render_below":"$force_render_below","$screen_animations":["@common.screen_exit_animation_push_fade","@common.screen_exit_animation_pop_fade"],"button_mappings":[{"from_button_id":"button.menu_cancel","to_button_id":"button.menu_exit","mapping_type":"global"}]}}');
+            zip.file("ui/start_screen.json", '{"namespace":"start","start_screen@common.base_screen":{"$screen_bg_content":"RPC_BGDATA.UI2","$screen_animations":["@common.screen_exit_animation_push_fade","@common.screen_exit_animation_pop_fade","@common.screen_entrance_animation_push_fade","@common.screen_entrance_animation_pop_fade"],"button_mappings":[{"ignored":"(not$can_quit)","from_button_id":"button.menu_cancel","to_button_id":"button.menu_exit","mapping_type":"global"},{"ignored":"(not$nx_os)","from_button_id":"button.controller_select","to_button_id":"button.menu_offline","mapping_type":"global"},{"ignored":"(not$can_swap_vr_mode)","from_button_id":"button.controller_secondary_select","to_button_id":"button.menu_swap_vr_mode","mapping_type":"global"}],"$screen_content":"start.start_screen_content"}}');
+            zip.file("ui/_ui_defs.json", '{"ui_defs":["ui/MENU/comps/RPC_BGCOMP.uicomponent","ui/MENU/data/RPC_BGDATA.uidata"]}');
+            zip.file("ui/play_screen.json", '{"namespace":"play","play_screen@common.base_screen":{"$screen_bg_content":"RPC_BGDATA.UI2","button_mappings":[{"from_button_id":"button.menu_cancel","to_button_id":"button.menu_exit","mapping_type":"global"},{"from_button_id":"button.menu_tab_left","to_button_id":"button.menu_tab_left","mapping_type":"global","scope":"view"},{"from_button_id":"button.menu_tab_right","to_button_id":"button.menu_tab_right","mapping_type":"global","scope":"view"}],"$screen_content":"play.play_screen_content","$world_picker_screen":false}}');
+            zip.file("ui/MENU/data/RPC_BGDATA.uidata", '{"namespace":"RPC_BGDATA","UI2":{"type":"image","anchor_from":"center","anchor_to":"center","size":["100%","100%"],"uv":"","controls":[{"MENU_BG@RPC_BGCOMP.UI1":{}}]}');
+            zip.file("ui/MENU/comps/RPC_BGCOMP.uicomponent", '{"namespace":"RPC_BGCOMP","UI1":{"type":"image","fill":true,"texture":"textures/ui/BACKGROUND/MENU_BG","uv_size":["100%c","100%"]}}');
+        }
         
         zip.generateAsync({type:"base64"}).then(function (base64) { // download zip
             var element = document.createElement('a');
             element.setAttribute('href', "data:application/zip;base64,"+base64);
-            element.setAttribute('download', filename+'-background.zip');
+            if (ver=='j') {
+                element.setAttribute('download', filename+'-background.zip');
+            } else if (ver=='b') {
+                element.setAttribute('download', filename+'-background.mcpack');
+            }
             element.click();
+        });
+    }
+    function changever(val) {
+        if (val===true) { // bedrock on
+            $('overlay').src='bedrockoverlay.png';
+            ver = 'b';
+        } else { // java on
+            $('overlay').src='javaoverlay.png';
+            ver = 'j';
+        }
+    }
+    function uuidv4() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
         });
     }
     function $(id) {
