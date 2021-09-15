@@ -12,9 +12,6 @@
         overflow:hidden;
         background-color:#1f1f1f;
     }
-    #input {
-        display:none;
-    }
     .center {
         position:fixed;
         left:50%;
@@ -30,7 +27,7 @@
     label {
         color:#f0f0f0;
     }
-    #fakeinput {
+    #input {
         top:5px;
     }
     #downloaddiv {
@@ -64,12 +61,11 @@
     <img src="http://bit.ly/nerastats" class="hidden">
     <canvas id="canvas"></canvas>
     <img src="javaoverlay.png" id='overlay'>
-    <button onclick="$('input').click()" id="fakeinput" class="center">Upload Wallpaper</button>
+    <input type="file" id="input" accept="image/png, image/jpeg, image/jpg" class="center">
     <div class="center" id='downloaddiv'>
         <button onclick="download()" id="download">Download Pack</button>
         <input type="checkbox" id="bedrock" name="bedrock" value="bedrock" onchange="changever(this.checked)"><label for="bedrock">Bedrock Edition</label>
     </div>
-    <input type="file" id="input" accept="image/png, image/jpeg, image/jpg">
     
     <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
     <script>
