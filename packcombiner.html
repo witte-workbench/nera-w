@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pack Combiner</title>
+    <link rel="icon" href="neralogo.png">
+    <style>
+    .hidden {
+        display:none;
+    }
+    input, input *{
+        cursor:pointer;
+    }
+    </style>
+</head>
+<body>
+    <label for="name" id="namelabel">Your Name (For pack title): <input type="text" id="name" value=""></label><br><br>
+    <input type="file" id="input" multiple autocomplete="off"><br><br>
+    <input type="button" onclick="combine()" value="Combine & Automatically Download">
+    <img src="https://bit.ly/nerastats" class="hidden">
+    
+    <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
+    <script>
+    var nzip = new JSZip();
+    var packs = [];
+    var files = {};
+    
+    document.getElementById("input").addEventListener("change", function(e) { // handle zip uploads
+    	packs = packs.concat(...e.target.files); // add zips to array
+    }, false);
+    
+    function combine() { // run to combine packs
+        try {
+    		var ctr = [];
+    		packs.forEach(function(f, idx) { //iter through packs
+                
+    			JSZip.loadAsync(f).then(function(zip) { // unzip pack
+    			    
+    				if (!ctr.includes(idx)) ctr.push(idx);
+    				let mctr = 0;
+    				zip.forEach(function(relativePath, zipEntry) { // loop thruogh files
+    				    
+    					if (zipEntry.name.slice(-1) != "/" && !zipEntry.name.includes("_MACOSX")) { // if not folder or zip extra
+    					    
+    						zip.file(zipEntry.name).async("base64").then(data => {
+    							mctr++;
+    							nzip.file(zipEntry.name, data, {
+    								base64: true
+    							});
+    							if (mctr == Object.keys(zip.files).length && ctr.length == packs.length) {
+    								nzip.file("pack.mcmeta", '{"pack":{"pack_format":7,"description":[{"text":"' + $('name').value + ' Combined Pack","color":"blue"},{"text":"\\Combined by Nera","color":"green"}]}}');
+    								download();
+    							}
+    						});
+    						
+    					} else { // if unaccepted file
+    						mctr++;
+    					}
+    					
+    				});
+                
+    			}, e => alert(e));
+    
+    		}, e => alert(e));
+        }catch(e){alert(e);}
+    }
+    
+    function download() {
+    	nzip.generateAsync({
+    		type: "base64"
+    	}).then(function(base64) { // download zip
+    		var element = document.createElement('a');
+    		element.setAttribute('href', "data:application/zip;base64," + base64);
+    		element.setAttribute('download', 'temp.zip');
+    		element.click();
+    	}, function(e) {
+    		alert(e);
+    	});
+    }
+    var $ = i => document.getElementById(i);
+    </script>
+</body>
+</html>
