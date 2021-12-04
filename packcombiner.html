@@ -22,12 +22,14 @@
     #packholder{
         width:100%;
         height:100%;
-        overflow:scroll;
+        overflow-y:scroll;
+        overflow-x:hidden;
         background-color:black;
     }
     #downloadholder{
         display:flex;
         align-items:center;
+        overflow:hidden;
         width:100%;
         height:100%;
         background-color:black;
@@ -79,6 +81,18 @@
     }
     .hidden{
         display:none;
+    }
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+        background: black;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: white;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #ddd;
     }
     </style>
 </head>
