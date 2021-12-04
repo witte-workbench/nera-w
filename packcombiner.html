@@ -4,79 +4,279 @@
     <title>Pack Combiner</title>
     <link rel="icon" href="neralogo.png">
     <style>
-    .hidden {
-        display:none;
+    body{
+        background-image:url(bg32.png);
+        image-rendering:pixelated;
+        color:white;
+        margin:0;
+        padding:0;
+        width:100vw;
+        overflow:hidden;
     }
-    input, input *{
+    .half{
+        padding:8vh 8vw 8vh 8vw;
+        width:34vw;
+        height:84vh;
+        float:left;
+    }
+    #packholder{
+        width:100%;
+        height:100%;
+        overflow:scroll;
+        background-color:black;
+    }
+    #downloadholder{
+        display:flex;
+        align-items:center;
+        width:100%;
+        height:100%;
+        background-color:black;
+    }
+    #newpack,.onepack{
+        color:white;
+        height:14vh;
+        margin-bottom:2vh;
+        display:flex;
+        align-items:center;
+    }
+    .onepack{
+        cursor:grab;
+    }
+    .packicon{
+        image-rendering:pixelated;
+        height:calc(14vh - 10px);
+        width:calc(14vh - 10px);
+        padding:5px;
+    }
+    #fakebutton{
+        width:calc(100% - 30px);
+        margin:15px;
         cursor:pointer;
+    }
+    #newnameinput{
+        background-color:black;
+        border:1px solid white;
+        padding:2px;
+        outline:0;
+        color:white;
+        width:calc(100% - 6px);
+        float:left;
+    }
+    #downloadbutton,#newiconbutton{
+        background-color:white;
+        border:1px solid black;
+        padding:2px;
+        outline:0;
+        color:black;
+        width:100%;
+        float:left;
+    }
+    #newpacktext{
+        width:calc(34vw - 14vh - 5px);
+    }
+    input[type=button]{
+        cursor:pointer;
+    }
+    .hidden{
+        display:none;
     }
     </style>
 </head>
-<body>
-    <label for="name" id="namelabel">Your Name (For pack title): <input type="text" id="name" value=""></label><br><br>
-    <input type="file" id="input" multiple autocomplete="off"><br><br>
-    <input type="button" onclick="combine()" value="Combine & Automatically Download">
+<body ondrop="dropHandler(event);" ondragover="event.preventDefault();" ondragenter="event.preventDefault();">
+    <input type="file" multiple id="packupload" class="hidden" onchange="handleZips(event.target.files)">
+    <input type="file" id="newiconupload" class="hidden" onchange="newIcon(event.target.files[0])">
+    <div class="half">
+        <div id="packholder">
+            <input type="button" id="fakebutton" onclick="$('packupload').click()" value="Upload Packs">
+            <div id="uploadedholder">
+                
+            </div>
+        </div>
+    </div>
+    <div class="half">
+        <div id="downloadholder">
+            <div id="newpack">
+                <img src="" class="packicon" id="newpackicon">
+                <div id="newpacktext">
+                    <input type="text" id="newnameinput" placeholder="(New Pack Name)"><br><br>
+                    <input type="button" value="Download Pack" onclick="download()" id="downloadbutton">
+                    <input type="button" value="Custom Icon" onclick="$('newiconupload').click()" id="newiconbutton">
+                </div>
+            </div>
+        </div>
+    </div>
     <img src="https://bit.ly/nerastats" class="hidden">
     
     <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
     <script>
-    var nzip = new JSZip();
+    var dragging, draggedOver;
     var packs = [];
-    var files = {};
+    var customicon = "";
     
-    document.getElementById("input").addEventListener("change", function(e) { // handle zip uploads
-    	packs = packs.concat(...e.target.files); // add zips to array
-    }, false);
+    function dropHandler(e) { // handle drag and drop files
+        e.preventDefault();
+        if (e.dataTransfer.items) {
+            var filteredFiles = [];
+            for (let i = 0; i < e.dataTransfer.items.length; i++) {
+                if (e.dataTransfer.items[i].kind === 'file') {
+                    filteredFiles.push(e.dataTransfer.items[i].getAsFile());
+                }
+            }
+            handleZips(filteredFiles);
+        } else {
+            handleZips(e.dataTransfer.files);
+        }
+    }
     
-    function combine() { // run to combine packs
+    async function handleZips(files) {
+        var i = packs.length - 1;
+        for (let k of files) {
+            if (['zip', 'mcpack'].includes(k.name.split('.').pop())) {
+                $('uploadedholder').innerHTML += k.name + " Started...<br>";
+                i++;
+                packs[i] = new Pack(k.name, {});
+                await JSZip.loadAsync(k).then(function(zip) {
+                    zip.forEach(function(relativePath, zipEntry) { // loop thruogh files
+                        if (zipEntry.name.slice(-1) != "/" && !zipEntry.name.includes("_MACOSX")) {
+                            packs[i].files[zipEntry.name] = zip.file(zipEntry.name);
+                        }
+                    });
+                }, e => alert(e));
+            } else {
+                $('uploadedholder').innerHTML += k.name + " Thrown Away<br>";
+            }
+        }
+        var froze = false;
+        for (let p of packs) {
+            if (!p.is64) {
+                if (Object.keys(p.files).length > 1000) {
+                    if (!confirm(p.name + " is very large and may crash. Would you like to still load it?")) {
+                        continue;
+                    }
+                }
+                for (let fname of Object.keys(p.files)) {
+                    await p.files[fname].async("base64").then(data => {
+                        p.files[fname] = data;
+                    });
+                }
+                if (p.files["manifest.json"] != undefined) {
+                    p.bedrock = true;
+                }
+                p.is64 = true;
+            }
+        }
+        packs = packs.filter(function(value, index, array) { // remove skipped files
+            return (value.is64);
+        });
+        render();
+    }
+    
+    function newIcon(file) {
+        if (file.name.split('.').pop() == "png") {
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                customicon = event.target.result.split(",")[1];
+                updatePackIcon();
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+    
+    function render() {
+        $('uploadedholder').innerHTML = "";
+        for (let p of packs) {
+            $('uploadedholder').innerHTML += '<div draggable="true" ondrag="swapMove(event)" ondragover="swapOver(event)" ondrop="swapDrop(event)" class="onepack draggable' + packs.indexOf(p) + '!"><img src="data:image/png;base64,' + (p.files["pack.png"] != undefined ? p.files["pack.png"] : p.files["pack_icon.png"]) + '" class="packicon draggable' + packs.indexOf(p) + '!">' + p.name + '</div>';
+        }
+        updatePackIcon();
+    }
+    
+    function updatePackIcon() {
+        if (customicon != "") {
+            $('newpackicon').src = 'data:image/png;base64,' + customicon;
+        } else if (packs.length > 0 && packs[0].files["pack.png"] != undefined) {
+            $('newpackicon').src = 'data:image/png;base64,' + packs[0].files["pack.png"];
+        } else if (packs.length > 0 && packs[0].files["pack_icon.png"] != undefined) {
+            $('newpackicon').src = 'data:image/png;base64,' + packs[0].files["pack_icon.png"];
+        } else {
+            $('newpackicon').src = "data:image/png;base64,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";
+        }
+    }
+    
+    function swapMove(e) {
+        dragging = parseInt(e.target.className.split("draggable")[1].split("!")[0]);
+    }
+    
+    function swapOver(e) {
+        e.preventDefault();
+        draggedOver = parseInt(e.target.className.split("draggable")[1].split("!")[0]);
+    }
+    
+    function swapDrop(e) {
         try {
-    		var ctr = [];
-    		packs.forEach(function(f, idx) { //iter through packs
-                
-    			JSZip.loadAsync(f).then(function(zip) { // unzip pack
-    			    
-    				if (!ctr.includes(idx)) ctr.push(idx);
-    				let mctr = 0;
-    				zip.forEach(function(relativePath, zipEntry) { // loop thruogh files
-    				    
-    					if (zipEntry.name.slice(-1) != "/" && !zipEntry.name.includes("_MACOSX")) { // if not folder or zip extra
-    					    
-    						zip.file(zipEntry.name).async("base64").then(data => {
-    							mctr++;
-    							nzip.file(zipEntry.name, data, {
-    								base64: true
-    							});
-    							if (mctr == Object.keys(zip.files).length && ctr.length == packs.length) {
-    								nzip.file("pack.mcmeta", '{"pack":{"pack_format":7,"description":[{"text":"' + $('name').value + ' Combined Pack","color":"blue"},{"text":"\\Combined by Nera","color":"green"}]}}');
-    								download();
-    							}
-    						});
-    						
-    					} else { // if unaccepted file
-    						mctr++;
-    					}
-    					
-    				});
-                
-    			}, e => alert(e));
-    
-    		}, e => alert(e));
-        }catch(e){alert(e);}
+            let temp = packs[dragging]; // hold dragged one
+            packs.splice(dragging, 1); // remove dragged one from array
+            packs.splice(draggedOver, 0, temp); // add pack back in at wanted index
+            render();
+        } catch {}
     }
     
     function download() {
-    	nzip.generateAsync({
-    		type: "base64"
-    	}).then(function(base64) { // download zip
-    		var element = document.createElement('a');
-    		element.setAttribute('href', "data:application/zip;base64," + base64);
-    		element.setAttribute('download', 'temp.zip');
-    		element.click();
-    	}, function(e) {
-    		alert(e);
-    	});
+        if (packs.length > 0) {
+            let nzip = new JSZip();
+            let iconname = "pack.png";
+            if (!packs[0].bedrock) {
+                nzip.file("pack.mcmeta", '{"pack":{"pack_format":7,"description":[{"text":"' + $('newnameinput').value + '","color":"blue"},{"text":"\\nCombined by Nera","color":"green"}]}}');
+            } else {
+                iconname = "pack_icon.png";
+                nzip.file("manifest.json", '{"format_version":2,"header":{"description":"Combined by Nera","name":"' + $('newnameinput').value + '","uuid":"6e120eda-fd77-4227-a10b-e3d86898a6a9","version":[1,0,0],"min_engine_version": [ 1, 14, 0 ]},"modules":[{"description":"Combined by Nera","type":"resources","uuid":"15e0f346-f963-4cd7-ad2a-c0d386c8995e","version":[1, 0, 0]}]}');
+            }
+    
+            if (customicon != "") {
+                nzip.file(iconname, customicon, {
+                    base64: true
+                });
+            } else if (packs[0].files[iconname] != undefined) {
+                nzip.file(iconname, packs[0].files[iconname], {
+                    base64: true
+                });
+            } else {
+                nzip.file(iconname, "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", {
+                    base64: true
+                });
+            }
+    
+            for (let p of packs) {
+                for (let fname of Object.keys(p.files)) {
+                    if (nzip.file(fname) == null) {
+                        nzip.file(fname, p.files[fname], {
+                            base64: true
+                        });
+                    }
+                }
+            }
+    
+            nzip.generateAsync({
+                type: "base64"
+            }).then(function(base64) { // download zip
+                var element = document.createElement('a');
+                element.setAttribute('href', "data:application/zip;base64," + base64);
+                element.setAttribute('download', $('newnameinput').value.split(" ").join("-") + '.zip');
+                element.click();
+                element.setAttribute('href', "");
+            }, function(e) {
+                alert(e);
+            });
+        }
+    }
+    
+    function Pack(name, files) {
+        this.name = name;
+        this.files = files;
+        this.bedrock = false;
+        this.is64 = false;
     }
     var $ = i => document.getElementById(i);
+    render();
     </script>
 </body>
 </html>
