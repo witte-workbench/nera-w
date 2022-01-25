@@ -55,7 +55,7 @@
         margin:15px;
         cursor:pointer;
     }
-    #newnameinput{
+    #newnameinput {
         background-color:black;
         border:1px solid white;
         padding:2px;
@@ -64,7 +64,7 @@
         width:calc(100% - 6px);
         float:left;
     }
-    #downloadbutton,#newiconbutton{
+    #downloadbutton, #newiconbutton, #versioninput{
         background-color:white;
         border:1px solid black;
         padding:2px;
@@ -112,9 +112,19 @@
             <div id="newpack">
                 <img src="" class="packicon" id="newpackicon">
                 <div id="newpacktext">
-                    <input type="text" id="newnameinput" placeholder="(New Pack Name)"><br><br>
-                    <input type="button" value="Download Pack" onclick="download()" id="downloadbutton">
+                    <input type="text" id="newnameinput" placeholder="(New Pack Name)"><br>
+                    <select name="versioninput" id="versioninput">
+                        <option value="8">1.18</option>
+                        <option value="7">1.17</option>
+                        <option value="6">1.16.2 – 1.16.5</option>
+                        <option value="5">1.15 – 1.16.1</option>
+                        <option value="4">1.13 – 1.14.4</option>
+                        <option value="3">1.11 – 1.12.2</option>
+                        <option value="2">1.9 – 1.10.2</option>
+                        <option value="1">1.6.1 – 1.8.9</option>
+                    </select>
                     <input type="button" value="Custom Icon" onclick="$('newiconupload').click()" id="newiconbutton">
+                    <input type="button" value="Download Pack" onclick="download()" id="downloadbutton">
                 </div>
             </div>
         </div>
@@ -240,10 +250,11 @@
             let nzip = new JSZip();
             let iconname = "pack.png";
             if (!packs[0].bedrock) {
-                nzip.file("pack.mcmeta", '{"pack":{"pack_format":7,"description":[{"text":"' + $('newnameinput').value + '","color":"blue"},{"text":"\\nCombined by Nera","color":"green"}]}}');
+                alert($('versioninput').value);
+                nzip.file("pack.mcmeta", '{"pack":{"pack_format":'+$('versioninput').value+',"description":[{"text":"' + $('newnameinput').value + '","color":"blue"},{"text":"\\nCombined by Nera","color":"green"}]}}');
             } else {
                 iconname = "pack_icon.png";
-                nzip.file("manifest.json", '{"format_version":2,"header":{"description":"Combined by Nera","name":"' + $('newnameinput').value + '","uuid":"6e120eda-fd77-4227-a10b-e3d86898a6a9","version":[1,0,0],"min_engine_version": [ 1, 14, 0 ]},"modules":[{"description":"Combined by Nera","type":"resources","uuid":"15e0f346-f963-4cd7-ad2a-c0d386c8995e","version":[1, 0, 0]}]}');
+                nzip.file("manifest.json", '{"format_version":2,"header":{"description":"Combined by Nera","name":"' + $('newnameinput').value + '","uuid":"6e120eda-fd77-4227-a10b-e3d86898a6a9","version":[1,0,0],"min_engine_version": [ 1, 0, 0 ]},"modules":[{"description":"Combined by Nera","type":"resources","uuid":"15e0f346-f963-4cd7-ad2a-c0d386c8995e","version":[1, 0, 0]}]}');
             }
     
             if (customicon != "") {
