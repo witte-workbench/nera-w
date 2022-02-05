@@ -104,10 +104,13 @@ function recolor() {
                 for (var y=0;y<c.height;y++) {
                     let imgData = ctx.getImageData(x, y, 1, 1);
                     imgData = RGBToHex(imgData.data[0],imgData.data[1],imgData.data[2]);
+                    alert(imgData);
                     let newcolor = 0;
                     if (preMain.indexOf(imgData)!=-1) {
+                        alert(preMain.indexOf(imgData));
                         newcolor = main[preMain.indexOf(imgData)];
                     } else if (preAccent.indexOf(imgData)!=-1) {
+                        alert(preAccent.indexOf(imgData));
                         newcolor = accent[preAccent.indexOf(imgData)];
                     }
                     if (newcolor!=0) {
