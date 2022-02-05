@@ -103,21 +103,18 @@ function recolor() {
             for (var x=0;x<c.width;x++) {
                 for (var y=0;y<c.height;y++) {
                     let imgData = ctx.getImageData(x, y, 1, 1);
-                    alert(imgData.data[3]);
-                    imgData = RGBToHex(imgData.data[0],imgData.data[1],imgData.data[2]);
-                    alert(imgData);
-                    let newcolor = 0;
-                    if (preMain.indexOf(imgData)!=-1) {
-                        alert(preMain.indexOf(imgData));
-                        newcolor = main[preMain.indexOf(imgData)];
-                    } else if (preAccent.indexOf(imgData)!=-1) {
-                        alert(preAccent.indexOf(imgData));
-                        newcolor = accent[preAccent.indexOf(imgData)];
-                    }
-                    if (newcolor!=0) {
-                        alert(newcolor);
-                        ctx.fillStyle = newcolor;
-                        ctx.fillRect(x,y,1,1);
+                    if (imgData.data[3]==255) {
+                        imgData = RGBToHex(imgData.data[0],imgData.data[1],imgData.data[2]);
+                        let newcolor = 0;
+                        if (preMain.indexOf(imgData)!=-1) {
+                            newcolor = main[preMain.indexOf(imgData)];
+                        } else if (preAccent.indexOf(imgData)!=-1) {
+                            newcolor = accent[preAccent.indexOf(imgData)];
+                        }
+                        if (newcolor!=0) {
+                            ctx.fillStyle = newcolor;
+                            ctx.fillRect(x,y,1,1);
+                        }
                     }
                 }
             }
