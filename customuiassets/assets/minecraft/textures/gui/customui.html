@@ -104,13 +104,11 @@ function recolor() {
             for (var x=0;x<c.width;x++) {
                 for (var y=0;y<c.height;y++) {
                     let imgData = ctx.getImageData(x, y, 1, 1);
-                    if (imgData[3]==1) { // if not transparent
-                        imgData = RGBToHex(imgData[0],imgData[1],imgData[2]);
-                        let newcolor = main[preMain.indexOf(imgData)] || accent[preAccent.indexOf(imgData)] || 0;
-                        if (newcolor!=0) {
-                            ctx.fillStyle = newcolor;
-                            ctx.fillRect(x,y,1,1);
-                        }
+                    imgData = RGBToHex(imgData[0],imgData[1],imgData[2]);
+                    let newcolor = main[preMain.indexOf(imgData)] || accent[preAccent.indexOf(imgData)] || 0;
+                    if (newcolor!=0) {
+                        ctx.fillStyle = newcolor;
+                        ctx.fillRect(x,y,1,1);
                     }
                 }
             }
