@@ -45,7 +45,7 @@ function handleImageUpload(file) {
         img.addEventListener('load', function() {
             var palette = new Vibrant(img).swatches();
             // create 7 colors from muted
-            var main = [hexToHSL(palette.Muted.getHex())];
+            main = [hexToHSL(palette.Muted.getHex())];
             while (main.length<7) main.push({...main[main.length-1]});
             main[0].l=round(point(main[0].l,99,0.6));
             main[1].l=round(point(main[1].l,99,0.3));
@@ -71,7 +71,7 @@ function handleImageUpload(file) {
             $('17').innerHTML = main[6];
             
             // create 3 colors from vibrant
-            var accent = [hexToHSL(palette.Vibrant.getHex())];
+            accent = [hexToHSL(palette.Vibrant.getHex())];
             while (accent.length<3) accent.push({...accent[accent.length-1]});
             accent[0].l=round(point(accent[0].l,99,0.4));
             accent[2].l=round(point(accent[2].l,0,0.4));
@@ -103,6 +103,7 @@ function recolor() {
             for (var x=0;x<c.width;x++) {
                 for (var y=0;y<c.height;y++) {
                     let imgData = ctx.getImageData(x, y, 1, 1);
+                    alert(imgData.data[3]);
                     imgData = RGBToHex(imgData.data[0],imgData.data[1],imgData.data[2]);
                     alert(imgData);
                     let newcolor = 0;
