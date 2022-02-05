@@ -104,7 +104,7 @@ function recolor() {
             for (var x=0;x<c.width;x++) {
                 for (var y=0;y<c.height;y++) {
                     let imgData = ctx.getImageData(x, y, 1, 1);
-                    imgData = RGBToHex(imgData[0],imgData[1],imgData[2]);
+                    imgData = RGBToHex(Math.floor(imgData[0]),Math.floor(imgData[1]),Math.floor(imgData[2]));
                     let newcolor = 0;
                     if (preMain.indexOf(imgData)!=-1) {
                         newcolor = main[preMain.indexOf(imgData)];
