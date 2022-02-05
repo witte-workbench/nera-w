@@ -94,7 +94,6 @@ function recolor() {
         texture = "https://nerawoowty.github.io/customuiassets/assets/"+texture;
         var img = document.createElement("img");
         img.onload = function() {
-            try {
             let c = document.createElement("canvas");
             document.body.appendChild(c);
             let ctx = c.getContext("2d");
@@ -104,23 +103,19 @@ function recolor() {
             for (var x=0;x<c.width;x++) {
                 for (var y=0;y<c.height;y++) {
                     let imgData = ctx.getImageData(x, y, 1, 1);
-                    alert(imgData[0]+".."+Math.floor(imgData[0])+".."+typeof imgData[0]);
-                    imgData = RGBToHex(Math.floor(imgData[0]),Math.floor(imgData[1]),Math.floor(imgData[2]));
-                    alert("imgdata:"+imgData);
+                    imgData = RGBToHex(imgData.data[0],imgData.data[1],imgData.data[2]);
                     let newcolor = 0;
                     if (preMain.indexOf(imgData)!=-1) {
                         newcolor = main[preMain.indexOf(imgData)];
                     } else if (preAccent.indexOf(imgData)!=-1) {
                         newcolor = accent[preAccent.indexOf(imgData)];
                     }
-                    alert("newcolor"+newcolor);
                     if (newcolor!=0) {
                         ctx.fillStyle = newcolor;
                         ctx.fillRect(x,y,1,1);
                     }
                 }
             }
-            }catch(e){alert(e);}
         }
         img.src = texture;
     }
