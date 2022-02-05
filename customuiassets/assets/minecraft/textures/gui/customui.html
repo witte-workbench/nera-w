@@ -104,7 +104,7 @@ function recolor() {
                 for (var y=0;y<c.height;y++) {
                     let imgData = ctx.getImageData(x, y, 1, 1);
                     if (imgData.data[3]==255) {
-                        imgData = RGBToHex(imgData.data[0],imgData.data[1],imgData.data[2]);
+                        imgData = RGBToHex(imgData.data[0],imgData.data[1],imgData.data[2]).toUpperCase();
                         let newcolor = 0;
                         if (preMain.indexOf(imgData)!=-1) {
                             newcolor = main[preMain.indexOf(imgData)];
@@ -112,7 +112,7 @@ function recolor() {
                             newcolor = accent[preAccent.indexOf(imgData)];
                         }
                         if (newcolor!=0) {
-                            ctx.fillStyle = "#ffffff";
+                            ctx.fillStyle = newcolor;
                             ctx.fillRect(x,y,1,1);
                         }
                     }
