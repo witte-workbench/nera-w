@@ -106,6 +106,7 @@ function recolor() {
                     let imgData = ctx.getImageData(x, y, 1, 1);
                     imgData = RGBToHex(imgData[0],imgData[1],imgData[2]);
                     let newcolor = main[preMain.indexOf(imgData)] || accent[preAccent.indexOf(imgData)] || 0;
+                    alert(newcolor);
                     if (newcolor!=0) {
                         ctx.fillStyle = newcolor;
                         ctx.fillRect(x,y,1,1);
