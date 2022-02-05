@@ -28,7 +28,6 @@ var accent = [];
 var complete = {};
 
 function handleImageUpload(file) {
-    try {
     var fr = new FileReader();
     fr.onload = function () {
         var img = document.createElement("img");
@@ -59,7 +58,6 @@ function handleImageUpload(file) {
         });
     }
     fr.readAsDataURL(file);
-    } catch(e) {alert(e);}
 }
 function recolor() {
     complete = 0;
@@ -93,10 +91,13 @@ function recolor() {
             }
             complete[this.src] = c.toDataUrl();
             if (Object.keys(complete).length==textures.length) { // last texture finished
+                alert(1);
+                try{
                 for (location in complete) {
                     let nzip = new JSZip();
                     nzip.file(location,complete[location],{base64:true});
                 }
+                alert(3);
                 nzip.generateAsync({
                     type: "base64"
                 }).then(function(base64) { // download zip
@@ -108,6 +109,8 @@ function recolor() {
                 }, function(e) {
                     alert(e);
                 });
+                alert(2);
+                }catch(e){alert(e);}
             }
         }
         img.src = texture;
