@@ -91,10 +91,10 @@ function handleImageUpload(file) {
 }
 function recolor() {
     for (var texture of textures) {
-        try {
         texture = "https://nerawoowty.github.io/customuiassets/assets/"+texture;
         var img = document.createElement("img");
         img.onload = function() {
+            try {
             let c = document.createElement("canvas");
             document.body.appendChild(c);
             let ctx = c.getContext("2d");
@@ -118,9 +118,9 @@ function recolor() {
                     }
                 }
             }
+            }catch(e){alert(e);}
         }
         img.src = texture;
-        }catch(e){alert(e);}
     }
 }
 function round(n) {
