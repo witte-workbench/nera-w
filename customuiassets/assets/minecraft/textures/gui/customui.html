@@ -89,6 +89,8 @@ function recolor() {
                     }
                 }
             }
+            alert(0);
+            try{
             complete[this.src] = c.toDataUrl();
             alert(Object.keys(complete).length+", "+textures.length);
             if (Object.keys(complete).length==textures.length) { // last texture finished
@@ -113,6 +115,7 @@ function recolor() {
                 alert(2);
                 }catch(e){alert(e);}
             }
+            }catch(e){alert(e);}
         }
         img.src = texture;
     }
