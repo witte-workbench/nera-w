@@ -92,7 +92,6 @@ function recolor() {
             try{
             complete[this.src] = c.toDataURL();
             if (Object.keys(complete).length==textures.length) { // last texture finished
-                try{
                 for (location in complete) {
                     let nzip = new JSZip();
                     nzip.file(location,complete[location],{base64:true});
@@ -108,8 +107,8 @@ function recolor() {
                 }, function(e) {
                     alert(e);
                 });
-                }catch(e){alert(e);}
-            }
+            } else {
+                alert(Object.keys(complete).length+', '+textures.length);
             }catch(e){alert(e);}
         }
         img.src = texture;
