@@ -25,7 +25,7 @@ var preMain = ["#FFFFFF","#C6C6C6","#8B8B8B","#7C7C7C","#555555","#373737","#000
 var preAccent = ["#8892C9","#343E75","#00073E"];
 var main = [];
 var accent = [];
-var complete = {};
+var completed = {};
 
 function handleImageUpload(file) {
     var fr = new FileReader();
@@ -90,14 +90,16 @@ function recolor() {
                 }
             }
             try{
-            complete[this.src] = c.toDataURL();
-            alert(JSON.stringify(complete));
-            alert(complete);
-            alert(complete[this.src]);
-            if (Object.keys(complete).length==textures.length) { // last texture finished
-                for (location in complete) {
+            alert(c.toDataURL());
+            alert(typeof c.toDataURL());
+            completed[this.src] = c.toDataURL();
+            alert(JSON.stringify(completed));
+            alert(completed);
+            alert(completed[this.src]);
+            if (Object.keys(completed).length==textures.length) { // last texture finished
+                for (location in completed) {
                     let nzip = new JSZip();
-                    nzip.file(location,complete[location],{base64:true});
+                    nzip.file(location,completed[location],{base64:true});
                 }
                 nzip.generateAsync({
                     type: "base64"
