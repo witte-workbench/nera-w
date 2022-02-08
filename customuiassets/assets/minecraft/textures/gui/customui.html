@@ -90,12 +90,7 @@ function recolor() {
                 }
             }
             try{
-            alert(c.toDataURL());
-            alert(typeof c.toDataURL());
             completed[this.src] = c.toDataURL();
-            alert(JSON.stringify(completed));
-            alert(completed);
-            alert(completed[this.src]);
             if (Object.keys(completed).length==textures.length) { // last texture finished
                 for (location in completed) {
                     let nzip = new JSZip();
@@ -113,7 +108,7 @@ function recolor() {
                     alert(e);
                 });
             } else {
-                alert(Object.keys(complete).length+', '+textures.length);
+                alert(Object.keys(completed).length+', '+textures.length);
             }
             }catch(e){alert(e);}
         }
