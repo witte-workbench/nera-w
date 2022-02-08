@@ -91,6 +91,9 @@ function recolor() {
             }
             try{
             complete[this.src] = c.toDataURL();
+            alert(JSON.stringify(complete));
+            alert(complete);
+            alert(complete[this.src]);
             if (Object.keys(complete).length==textures.length) { // last texture finished
                 for (location in complete) {
                     let nzip = new JSZip();
