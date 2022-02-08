@@ -89,19 +89,14 @@ function recolor() {
                     }
                 }
             }
-            alert(0);
             try{
-            alert(c);
-            complete[this.src] = c.toDataUrl();
-            alert(Object.keys(complete).length+", "+textures.length);
+            complete[this.src] = c.toDataURL();
             if (Object.keys(complete).length==textures.length) { // last texture finished
-                alert(1);
                 try{
                 for (location in complete) {
                     let nzip = new JSZip();
                     nzip.file(location,complete[location],{base64:true});
                 }
-                alert(3);
                 nzip.generateAsync({
                     type: "base64"
                 }).then(function(base64) { // download zip
@@ -113,7 +108,6 @@ function recolor() {
                 }, function(e) {
                     alert(e);
                 });
-                alert(2);
                 }catch(e){alert(e);}
             }
             }catch(e){alert(e);}
