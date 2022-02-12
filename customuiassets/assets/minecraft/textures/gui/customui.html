@@ -91,12 +91,12 @@ function recolor() {
             }
             try{
             completed[this.src.replace("https://nerawoowty.github.io/customuiassets/","")] = c.toDataURL();
-            navigator.clipboard.writeText(c.toDataURL());
+            alert("1: "+completed[this.src.replace("https://nerawoowty.github.io/customuiassets/","")]);
             if (Object.keys(completed).length==textures.length) { // last texture finished
                 let nzip = new JSZip();
                 for (var loc in completed) {
+                    alert("2: "+completed[loc]);
                     nzip.file(loc,completed[loc],{base64:true});
-                    navigator.clipboard.writeText(completed[loc]);
                 }
                 nzip.generateAsync({
                     type: "base64"
