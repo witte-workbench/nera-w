@@ -25,6 +25,7 @@
 <input type="color" id="accent0" onchange="readPickers()">
 <input type="color" id="accent1" onchange="readPickers()">
 <input type="color" id="accent2" onchange="readPickers()">
+<canvas id="showcaseCanv"></canvas>
 <p id="percent">0% Done</p>
 <button id="downloadbtn" onclick="genAndDownload()">Download</button>
 
@@ -83,6 +84,7 @@ function writePickers() {
     $('accent0').value = accent[0];
     $('accent1').value = accent[1];
     $('accent2').value = accent[2];
+    showShowcase();
 }
 function readPickers() {
     main[0] = $('main0').value;
@@ -95,6 +97,36 @@ function readPickers() {
     accent[0] = $('accent0').value;
     accent[1] = $('accent1').value;
     accent[2] = $('accent2').value;
+    showShowcase();
+}
+function showShowcase() {
+    var img = document.createElement("img");
+    img.onload = function() {
+        let c = $('showcaseCanv');
+        let ctx = c.getContext("2d");
+        c.width = this.width;
+        c.height = this.height;
+        ctx.drawImage(this,0,0);
+        for (var x=0;x<c.width;x++) {
+            for (var y=0;y<c.height;y++) {
+                let imgData = ctx.getImageData(x, y, 1, 1);
+                if (imgData.data[3]==255) {
+                    imgData = RGBToHex(imgData.data[0],imgData.data[1],imgData.data[2]).toUpperCase();
+                    let newcolor = 0;
+                    if (preMain.indexOf(imgData)!=-1) {
+                        newcolor = main[preMain.indexOf(imgData)];
+                    } else if (preAccent.indexOf(imgData)!=-1) {
+                        newcolor = accent[preAccent.indexOf(imgData)];
+                    }
+                    if (newcolor!=0) {
+                        ctx.fillStyle = newcolor;
+                        ctx.fillRect(x,y,1,1);
+                    }
+                }
+            }
+        }
+    }
+    img.src = "https://nerawoowty.github.io/customuiassets/showcase.png";
 }
 
 function genAndDownload() {
@@ -145,7 +177,7 @@ function genAndDownload() {
                     alert(e);
                 });
             } else {
-                $('percent').innerHTML = Math.floor((Object.keys(completed).length/textures.length)*100)+"% Done";
+                $('percent').innerHTML = Math.floor((Object.keys(completed).length/textures.length)*100)/100+"% Done";
             }
             }catch(e){alert(e);}
         }
