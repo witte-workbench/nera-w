@@ -25,6 +25,7 @@
 <input type="color" id="accent0" onchange="readPickers()">
 <input type="color" id="accent1" onchange="readPickers()">
 <input type="color" id="accent2" onchange="readPickers()">
+<input type="text" id="packnameinput" placeholder="(Your Pack Name)">
 <canvas id="showcaseCanv"></canvas>
 <p id="percent">0% Done</p>
 <button id="downloadbtn" onclick="genAndDownload()">Download</button>
@@ -130,7 +131,7 @@ function showShowcase() {
 }
 
 function genAndDownload() {
-    complete = 0;
+    completed = {};
     for (var texture of textures) {
         texture = "https://nerawoowty.github.io/customuiassets/"+texture;
         var img = document.createElement("img");
@@ -165,6 +166,7 @@ function genAndDownload() {
                 for (var loc in completed) {
                     nzip.file(loc,completed[loc],{base64:true});
                 }
+                nzip.file("pack.mcmeta", '{"pack":{"pack_format":8,"description":[{"text":"' + $('packnameinput').value + '","color":"blue"},{"text":"\\nnerawoowty.github.io/yougui.html","color":"green"}]}}');
                 nzip.generateAsync({
                     type: "base64"
                 }).then(function(base64) { // download zip
@@ -177,7 +179,7 @@ function genAndDownload() {
                     alert(e);
                 });
             } else {
-                $('percent').innerHTML = Math.floor((Object.keys(completed).length/textures.length)*100)/100+"% Done";
+                $('percent').innerHTML = Math.floor((Object.keys(completed).length/textures.length)*100)+"% Done";
             }
             }catch(e){alert(e);}
         }
