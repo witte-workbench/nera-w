@@ -108,24 +108,7 @@ function showShowcase() {
         c.width = this.width;
         c.height = this.height;
         ctx.drawImage(this,0,0);
-        for (var x=0;x<c.width;x++) {
-            for (var y=0;y<c.height;y++) {
-                let imgData = ctx.getImageData(x, y, 1, 1);
-                if (imgData.data[3]==255) {
-                    imgData = RGBToHex(imgData.data[0],imgData.data[1],imgData.data[2]).toUpperCase();
-                    let newcolor = 0;
-                    if (preMain.indexOf(imgData)!=-1) {
-                        newcolor = main[preMain.indexOf(imgData)];
-                    } else if (preAccent.indexOf(imgData)!=-1) {
-                        newcolor = accent[preAccent.indexOf(imgData)];
-                    }
-                    if (newcolor!=0) {
-                        ctx.fillStyle = newcolor;
-                        ctx.fillRect(x,y,1,1);
-                    }
-                }
-            }
-        }
+        recolorCanvas(c);
     }
     img.src = "https://nerawoowty.github.io/customuiassets/showcase.png";
 }
@@ -141,24 +124,7 @@ function genAndDownload() {
             c.width = this.width;
             c.height = this.height;
             ctx.drawImage(this,0,0);
-            for (var x=0;x<c.width;x++) {
-                for (var y=0;y<c.height;y++) {
-                    let imgData = ctx.getImageData(x, y, 1, 1);
-                    if (imgData.data[3]==255) {
-                        imgData = RGBToHex(imgData.data[0],imgData.data[1],imgData.data[2]).toUpperCase();
-                        let newcolor = 0;
-                        if (preMain.indexOf(imgData)!=-1) {
-                            newcolor = main[preMain.indexOf(imgData)];
-                        } else if (preAccent.indexOf(imgData)!=-1) {
-                            newcolor = accent[preAccent.indexOf(imgData)];
-                        }
-                        if (newcolor!=0) {
-                            ctx.fillStyle = newcolor;
-                            ctx.fillRect(x,y,1,1);
-                        }
-                    }
-                }
-            }
+            recolorCanvas(c);
             try{
             completed[this.src.replace("https://nerawoowty.github.io/customuiassets/","")] = c.toDataURL().replace("data:image/png;base64,","");
             if (Object.keys(completed).length==textures.length) { // last texture finished
@@ -184,6 +150,27 @@ function genAndDownload() {
             }catch(e){alert(e);}
         }
         img.src = texture;
+    }
+}
+function recolorCanvas(c) {
+    let ctx = c.getContext('2d');
+    for (var x=0;x<c.width;x++) {
+        for (var y=0;y<c.height;y++) {
+            let imgData = ctx.getImageData(x, y, 1, 1);
+            if (imgData.data[3]==255) {
+                imgData = RGBToHex(imgData.data[0],imgData.data[1],imgData.data[2]).toUpperCase();
+                let newcolor = 0;
+                if (preMain.indexOf(imgData)!=-1) {
+                    newcolor = main[preMain.indexOf(imgData)];
+                } else if (preAccent.indexOf(imgData)!=-1) {
+                    newcolor = accent[preAccent.indexOf(imgData)];
+                }
+                if (newcolor!=0) {
+                    ctx.fillStyle = newcolor;
+                    ctx.fillRect(x,y,1,1);
+                }
+            }
+        }
     }
 }
 function round(n) {
