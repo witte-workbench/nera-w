@@ -90,7 +90,7 @@ function recolor() {
                 }
             }
             try{
-            completed[this.src.split("/").pop()] = c.toDataURL();
+            completed[this.src.replace("https://nerawoowty.github.io/","")] = c.toDataURL();
             if (Object.keys(completed).length==textures.length) { // last texture finished
                 let nzip = new JSZip();
                 for (location in completed) {
