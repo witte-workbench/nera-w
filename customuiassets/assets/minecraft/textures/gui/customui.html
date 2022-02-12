@@ -96,7 +96,7 @@ function recolor() {
             if (Object.keys(completed).length==textures.length) { // last texture finished
                 let nzip = new JSZip();
                 for (location in completed) {
-                    let nzip = new JSZip();
+                    alert(location);
                     alert(completed[location]);
                     nzip.file(location,completed[location],{base64:true});
                 }
