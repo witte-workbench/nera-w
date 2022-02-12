@@ -95,7 +95,7 @@ function recolor() {
                 let nzip = new JSZip();
                 for (var loc in completed) {
                     alert(loc);
-                    //nzip.file(location,completed[location],{base64:true});
+                    nzip.file(loc,completed[loc],{base64:true});
                 }
                 /*nzip.generateAsync({
                     type: "base64"
