@@ -145,7 +145,7 @@ function genAndDownload() {
                     alert(e);
                 });
             } else {
-                $('percent').innerHTML = Math.floor((Object.keys(completed).length/textures.length)*100)/100+"% Done";
+                $('percent').innerHTML = Math.floor((Object.keys(completed).length/textures.length)*100)+"% Done";
             }
             }catch(e){alert(e);}
         }
