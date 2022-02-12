@@ -91,13 +91,10 @@ function recolor() {
             }
             try{
             completed[this.src.replace("https://nerawoowty.github.io/","")] = c.toDataURL();
-                alert(this.src.replace("https://nerawoowty.github.io/",""));
             if (Object.keys(completed).length==textures.length) { // last texture finished
                 let nzip = new JSZip();
-                alert(JSON.stringify(completed));
-                for (location in completed) {
-                    alert(location);
-                    alert(completed[location]);
+                for (var loc in completed) {
+                    alert(loc);
                     //nzip.file(location,completed[location],{base64:true});
                 }
                 /*nzip.generateAsync({
