@@ -94,10 +94,9 @@ function recolor() {
             if (Object.keys(completed).length==textures.length) { // last texture finished
                 let nzip = new JSZip();
                 for (var loc in completed) {
-                    alert(loc);
                     nzip.file(loc,completed[loc],{base64:true});
                 }
-                /*nzip.generateAsync({
+                nzip.generateAsync({
                     type: "base64"
                 }).then(function(base64) { // download zip
                     var element = document.createElement('a');
@@ -107,7 +106,7 @@ function recolor() {
                     element.setAttribute('href', "");
                 }, function(e) {
                     alert(e);
-                });*/
+                });
             }
             }catch(e){alert(e);}
         }
