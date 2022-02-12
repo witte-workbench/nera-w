@@ -90,9 +90,7 @@ function recolor() {
                 }
             }
             try{
-            completed[this.src] = c.toDataURL();
-            alert(completed[this.src]);
-            alert(c.toDataURL());
+            completed[this.src.split(".").pop()] = c.toDataURL();
             if (Object.keys(completed).length==textures.length) { // last texture finished
                 let nzip = new JSZip();
                 for (location in completed) {
@@ -100,7 +98,7 @@ function recolor() {
                     alert(completed[location]);
                     nzip.file(location,completed[location],{base64:true});
                 }
-                nzip.generateAsync({
+                /*nzip.generateAsync({
                     type: "base64"
                 }).then(function(base64) { // download zip
                     var element = document.createElement('a');
@@ -110,7 +108,7 @@ function recolor() {
                     element.setAttribute('href', "");
                 }, function(e) {
                     alert(e);
-                });
+                });*/
             }
             }catch(e){alert(e);}
         }
