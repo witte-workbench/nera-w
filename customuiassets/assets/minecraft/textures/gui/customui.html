@@ -90,12 +90,10 @@ function recolor() {
                 }
             }
             try{
-            completed[this.src.replace("https://nerawoowty.github.io/customuiassets/","")] = c.toDataURL();
-            alert("1: "+completed[this.src.replace("https://nerawoowty.github.io/customuiassets/","")]);
+            completed[this.src.replace("https://nerawoowty.github.io/customuiassets/","")] = c.toDataURL().replace("data:image/png;base64,","");
             if (Object.keys(completed).length==textures.length) { // last texture finished
                 let nzip = new JSZip();
                 for (var loc in completed) {
-                    alert("2: "+completed[loc]);
                     nzip.file(loc,completed[loc],{base64:true});
                 }
                 nzip.generateAsync({
