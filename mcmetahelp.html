@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>McMeta Helper - Pack Manifest Maker</title>
+    <link rel="icon" href="neralogo.png">
+    <style>
+        @font-face {
+            font-family: mcfont;
+            src: url(mcfont.ttf);
+        }
+        body {
+            width:100vw;
+            background-image:url(bg32.png);
+            image-rendering:pixelated;
+            color:white;
+        }
+        #header {
+            font: 32px mcfont, sans-serif;
+            text-shadow: 4px 4px black;
+        }
+        .hidden {
+            display:none;
+        }
+        input, select, button {
+            padding:4px;
+            color:white;
+            width:100%;
+            margin-bottom:10px;
+            font: 16px mcfont, sans-serif;
+            text-shadow: 4px 4px black;
+            box-sizing: border-box;
+        }
+        input, select {
+            background-color:black;
+            border:1px solid white;
+            outline:0;
+        }
+        button, select {
+            cursor:pointer;
+        }
+        button {
+            background-color:#6B6B6B;
+            outline:4px solid black;
+            border-top: 4px solid #AAAAAA;
+            border-left: 4px solid #AAAAAA;
+            border-bottom: 4px solid #535353;
+            border-right: 4px solid #535353;
+            padding:0 auto;
+        }
+        #container {
+            width:50%;
+            margin-left:25%;
+            padding-top:15vh;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+<p id="header">Manifest Maker</p>
+<select name="versioninput" id="versioninput" onchange="if (this.value=='bedrock') {document.getElementById('bvinput').style.display='block';document.getElementById('namecolorinput').value='§0';document.getElementById('descriptioncolorinput').value='§8';}else{document.getElementById('bvinput').style.display='none';document.getElementById('namecolorinput').value='§f';document.getElementById('descriptioncolorinput').value='§7';}">
+    <option value="8">Java 1.18</option>
+    <option value="bedrock">Any Bedrock Version</option>
+    <option value="7">Java 1.17</option>
+    <option value="6">Java 1.16.2 – 1.16.5</option>
+    <option value="5">Java 1.15 – 1.16.1</option>
+    <option value="4">Java 1.13 – 1.14.4</option>
+    <option value="3">Java 1.11 – 1.12.2</option>
+    <option value="2">Java 1.9 – 1.10.2</option>
+    <option value="1">Java 1.6.1 – 1.8.9</option>
+</select>
+<input type="number" placeholder="Version # of your pack, (eg. 3)" id="bvinput" style="display:none;">
+<input type="text" placeholder="(Pack name)" id="nameinput">
+<select name="namecolorinput" id="namecolorinput">
+    <option value="§f" style="color:#FFFFFF;">White</option>
+    <option value="§6" style="color:#FFAA00;">Gold</option>
+    <option value="§7" style="color:#AAAAAA;">Gray</option>
+    <option value="§8" style="color:#555555;">Dark Gray</option>
+    <option value="§9" style="color:#5555FF;">Blue</option>
+    <option value="§a" style="color:#55FF55;">Green</option>
+    <option value="§b" style="color:#55FFFF;">Aqua</option>
+    <option value="§c" style="color:#FF5555;">Red</option>
+    <option value="§d" style="color:#FF55FF;">Light Purple</option>
+    <option value="§e" style="color:#FFFF55;">Yellow</option>
+    <option value="§0" style="color:#000000;">Black</option>
+    <option value="§1" style="color:#0000AA;">Dark Blue</option>
+    <option value="§2" style="color:#00AA00;">Dark Green</option>
+    <option value="§3" style="color:#00AAAA;">Dark Aqua</option>
+    <option value="§4" style="color:#AA0000;">Dark Red</option>
+    <option value="§5" style="color:#AA00AA;">Dark Purple</option>
+</select>
+<input type="text" placeholder="(Pack description)" id="descriptioninput">
+<select name="descriptioncolorinput" id="descriptioncolorinput">
+    <option value="§7" style="color:#AAAAAA;">Gray</option>
+    <option value="§9" style="color:#5555FF;">Blue</option>
+    <option value="§a" style="color:#55FF55;">Green</option>
+    <option value="§b" style="color:#55FFFF;">Aqua</option>
+    <option value="§c" style="color:#FF5555;">Red</option>
+    <option value="§d" style="color:#FF55FF;">Light Purple</option>
+    <option value="§e" style="color:#FFFF55;">Yellow</option>
+    <option value="§f" style="color:#FFFFFF;">White</option>
+    <option value="§0" style="color:#000000;">Black</option>
+    <option value="§1" style="color:#0000AA;">Dark Blue</option>
+    <option value="§2" style="color:#00AA00;">Dark Green</option>
+    <option value="§3" style="color:#00AAAA;">Dark Aqua</option>
+    <option value="§4" style="color:#AA0000;">Dark Red</option>
+    <option value="§5" style="color:#AA00AA;">Dark Purple</option>
+    <option value="§6" style="color:#FFAA00;">Gold</option>
+    <option value="§8" style="color:#555555;">Dark Gray</option>
+</select>
+
+<button id="downloadbtn" onclick="document.getElementById('zipupload').click()">Add manifest to a zipped pack</button>
+<button id="downloadbtn" onclick="downloadFile()">Download manifest as file</button>
+<input type="file" id="zipupload" class="hidden" onchange="addToZip(this.files[0])">
+</div>
+<script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
+<script>
+var $ = i => document.getElementById(i);
+
+function downloadFile() { // download the mcmeta as its own file
+    var element = document.createElement('a');
+    if ($('versioninput').value=='bedrock') {
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('{"format_version":2,"header":{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","name":"'+$('namecolorinput').value+$('nameinput').value+'","'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+',0,0],"min_engine_version": [ 1, 0, 0 ]},"modules":[{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","type":"resources","uuid":"'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+', 0, 0]}]}'));
+        element.setAttribute('download', 'manifest.json');
+    } else {
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('{"pack":{"pack_format":'+$('versioninput').value+',"description":[{"text":"'+$('namecolorinput').value+$('nameinput').value+'"},{"text":"\\n'+$('descriptioncolorinput').value+$('descriptioninput').value+'"}]}}'));
+        element.setAttribute('download', 'pack.mcmeta');
+    }
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+}
+async function addToZip(oldzip) { // take the user's zip, add the mcmeta, and then download it
+    alert(oldzip.name);
+    await JSZip.loadAsync(oldzip).then(function(zip) {
+        if ($('versioninput').value=='bedrock') {
+            zip.file("manifest.json", '{"format_version":2,"header":{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","name":"'+$('namecolorinput').value+$('nameinput').value+'","'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+',0,0],"min_engine_version": [ 1, 0, 0 ]},"modules":[{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","type":"resources","uuid":"'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+', 0, 0]}]}');
+        } else {
+            zip.file("pack.mcmeta", '{"pack":{"pack_format":'+$('versioninput').value+',"description":[{"text":"'+$('namecolorinput').value+$('nameinput').value+'"},{"text":"\\n'+$('descriptioncolorinput').value+$('descriptioninput').value+'"}]}}');
+        }
+        zip.generateAsync({
+            type: "base64"
+        }).then(function(base64) { // download zip
+            var element = document.createElement('a');
+            element.setAttribute('href', "data:application/zip;base64," + base64);
+            element.setAttribute('download', oldzip.name);
+            element.click();
+            element.setAttribute('href', "");
+        }, function(e) {
+            alert(e);
+        });
+    }, e => alert(e));
+}
+function uuidv4() {
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
+}
+</script>
+</body>
+</html>
