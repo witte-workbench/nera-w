@@ -56,11 +56,6 @@
         #percentbar {
             height:25pt;
             width:100%;
-            background-color:grey;
-        }
-        #donepercentbar {
-            background-color:green;
-            width:0;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,7 +76,7 @@
         <p class="title">Pick reference colors</p>
         <input type="color" id="mainR" onchange="extrapolateColors(document.getElementById('mainR').value,document.getElementById('accentR').value)">
         <input type="color" id="accentR" onchange="extrapolateColors(document.getElementById('mainR').value,document.getElementById('accentR').value)">
-        <br>
+        <br><br><br>
         <p onclick="toPage(3)">Next</p>
     </div>
     <div id="page3" class="hidden pages">
@@ -96,18 +91,18 @@
         <input type="color" id="accent0" onchange="readPickers()">
         <input type="color" id="accent1" onchange="readPickers()">
         <input type="color" id="accent2" onchange="readPickers()">
-        <br>
+        <br><br><br>
         <p onclick="toPage(4)">Next</p>
     </div>
     <div id="page4" class="hidden pages">
         <p class="title">Pick a pack name</p>
         <input type="text" id="packnameinput" placeholder="(Your Pack Name)">
-        <br>
+        <br><br><br>
         <p onclick="toPage(5);genAndDownload();">Download</p>
     </div>
     <div id="page5" class="hidden pages">
         <p class="title" id="packtitle">Pack is downloading...</p>
-        <div id="percentbar"><div id="donepercentbar"></div></div>
+        <div id="percentbar"></div>
         <p id="percent">0%</p>
     </div>
     <canvas id="showcaseCanv"></canvas>
@@ -247,7 +242,7 @@ function genAndDownload() {
                 });
             } else { // set percent done
                 $('percent').innerHTML = Math.floor((Object.keys(completed).length/textures.length)*100)+"%";
-                $('donepercentbar').style.width = Math.floor((Object.keys(completed).length/textures.length)*100)+"%";
+                $('percentbar').style.background = "linear-gradient(90deg, #56bf36 "+$('percent').innerHTML+", #757575 "+$('percent').innerHTML+")";
             }
             }catch(e){alert(e);}
         }
