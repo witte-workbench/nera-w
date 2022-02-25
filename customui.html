@@ -241,6 +241,8 @@ function genAndDownload() {
                 }, function(e) {
                     alert(e);
                 });
+                $('percent').innerHTML = "100%";
+                $('percentbar').style.background = "linear-gradient(90deg, #56bf36 100%, #757575 100%)";
             } else { // set percent done
                 $('percent').innerHTML = Math.floor((Object.keys(completed).length/textures.length)*100)+"%";
                 $('percentbar').style.background = "linear-gradient(90deg, #56bf36 "+$('percent').innerHTML+", #757575 "+$('percent').innerHTML+")";
