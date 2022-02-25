@@ -15,7 +15,7 @@
             height:100%;
             object-fit:contain;
             box-sizing: border-box;
-            padding:15px;
+            padding:45px;
         }
         p {
             font: 25pt 'Nunito';
@@ -36,20 +36,31 @@
             width:60%;
             height:100%;
             float:left;
-            padding:15px;
-            padding-top:45px;
+            padding:45px;
+            padding-left:10vh;
+            padding-top:100px;
             box-sizing: border-box;
         }
         #container {
-            height:90vh;
+            height:80vh;
             width:100%;
         }
         #logo {
             font-size:8vh;
             margin:0;
-            padding:15px;
+            margin-top:10vh;
+            padding-left:10vh;
             height:10vh;
             box-sizing: border-box;
+        }
+        #percentbar {
+            height:25pt;
+            width:100%;
+            background-color:grey;
+        }
+        #donepercentbar {
+            background-color:green;
+            width:0;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,6 +81,7 @@
         <p class="title">Pick reference colors</p>
         <input type="color" id="mainR" onchange="extrapolateColors(document.getElementById('mainR').value,document.getElementById('accentR').value)">
         <input type="color" id="accentR" onchange="extrapolateColors(document.getElementById('mainR').value,document.getElementById('accentR').value)">
+        <br>
         <p onclick="toPage(3)">Next</p>
     </div>
     <div id="page3" class="hidden pages">
@@ -84,16 +96,19 @@
         <input type="color" id="accent0" onchange="readPickers()">
         <input type="color" id="accent1" onchange="readPickers()">
         <input type="color" id="accent2" onchange="readPickers()">
+        <br>
         <p onclick="toPage(4)">Next</p>
     </div>
     <div id="page4" class="hidden pages">
         <p class="title">Pick a pack name</p>
         <input type="text" id="packnameinput" placeholder="(Your Pack Name)">
+        <br>
         <p onclick="toPage(5);genAndDownload();">Download</p>
     </div>
     <div id="page5" class="hidden pages">
-        <p class="title">Pack is downloading...</p>
-        <p id="percent">0% Done</p>
+        <p class="title" id="packtitle">Pack is downloading...</p>
+        <div id="pecrentbar"><div id="donepercentbar"></div></div>
+        <p id="percent">0%</p>
     </div>
     <canvas id="showcaseCanv"></canvas>
 </div>
@@ -199,6 +214,7 @@ function showShowcase() {
 }
 
 function genAndDownload() {
+    $('packtitle').innerHTML = $('packnameinput').value + ' is downloading...';
     completed = {};
     for (var texture of textures) {
         texture = "https://nerawoowty.github.io/customuiassets/"+texture;
@@ -230,7 +246,8 @@ function genAndDownload() {
                     alert(e);
                 });
             } else { // set percent done
-                $('percent').innerHTML = Math.floor((Object.keys(completed).length/textures.length)*100)+"% Done";
+                $('percent').innerHTML = Math.floor((Object.keys(completed).length/textures.length)*100)+"%";
+                $('donepercentbar').style.width = Math.floor((Object.keys(completed).length/textures.length)*100)+"%";
             }
             }catch(e){alert(e);}
         }
