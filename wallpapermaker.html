@@ -122,7 +122,7 @@
         
         var zip = new JSZip(); // set up zip files
         if (ver=="j") {
-            zip.file("pack.mcmeta", '{"pack":{"pack_format":7,"description":[{"text":"'+filename+'","color":"blue"},{"text":"\\nWallpapers by Nera","color":"green"}]}}');
+            zip.file("pack.mcmeta", '{"pack":{"pack_format":8,"description":[{"text":"'+filename+'","color":"blue"},{"text":"\\nWallpapers by Nera","color":"green"}]}}');
             zip.file("assets/minecraft/textures/gui/title/background/panorama_overlay.png", bgdata, {base64: true});
             zip.file("pack.png", "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAfElEQVQ4T2NMmfLwPwMVASPIwN3ddlQx0rX0EAPtDQTZguxiZD6IjQ7Q1WK4EKYJpBCZDTII3TJ0w7F6GaYJnR58BsK8gx6G+FIEXi/jMpDkSKEkQQ7hdIgvYeOSgyUrrAkblqiRaZgGkiNlaCRskLeolpcHZzqkxFXoegEAGez1V4I26AAAAABJRU5ErkJggg==", {base64: true});
         } else if (ver=="b") {
