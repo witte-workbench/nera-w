@@ -336,7 +336,7 @@
 			<button class="key" data-key="M">M</button>
 			<button data-delete class="key large">
 				<svg data-delete-sub xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-					<path fill="var(--color-tone-1)" d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"></path>
+					<path data-delete-sub-sub fill="var(--color-tone-1)" d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"></path>
 				</svg>
 			</button>
 			<button data-new-word class="key full">New Word</button>
@@ -371,7 +371,7 @@
                 pressKey(e.target.dataset.key);
             } else if (e.target.matches("[data-enter]")) {
                 submitGuess();
-            } else if (e.target.matches("[data-delete]") || e.target.matches("[data-delete-sub]")) {
+            } else if (e.target.matches("[data-delete]") || e.target.matches("[data-delete-sub]") || e.target.matches("[data-delete-sub-sub]")) {
                 deleteKey();
             } else if (e.target.matches("[data-new-word]")) {
                 showAlert('The word was '+targetWord.toUpperCase());
@@ -472,7 +472,7 @@
             return guessGrid.querySelectorAll('[data-state="active"]');
         }
         
-        function showAlert(message, duration = 1000) {
+        function showAlert(message, duration = 3000) {
             const alert = document.createElement("div");
             alert.textContent = message;
             alert.classList.add("alert");
@@ -512,7 +512,7 @@
         
             const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])");
             if (remainingTiles.length === 0) {
-                showAlert("The word was "+targetWord.toUpperCase(), 3000);
+                showAlert("The word was "+targetWord.toUpperCase());
                 stopInteraction();
             }
         }
