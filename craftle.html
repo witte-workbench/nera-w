@@ -368,6 +368,7 @@
                 deleteKey();
             } else if (e.target.matches("[data-new-word]")) {
                 showAlert('The word was '+targetWord.toUpperCase());
+                resize();
                 pickWord();
             }
         }
