@@ -395,7 +395,6 @@
         function deleteKey() {
             const activeTiles = getActiveTiles();
             const lastTile = activeTiles[activeTiles.length - 1];
-            alert(lastTile);
             if (lastTile === null) return;
             lastTile.textContent = "";
             delete lastTile.dataset.state;
