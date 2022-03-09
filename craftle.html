@@ -46,7 +46,7 @@
             .slider:focus {
             	outline:none;
             }
-            .slider::-webkit-slider-thumb {
+            .slider::-webkit-slider-thumb, .slider::-moz-range-thumb {
             	-webkit-appearance: none;
             	-moz-appearance: none;
             	appearance: none;
@@ -57,12 +57,6 @@
             	border-left: 0.25em solid white;
             	border-bottom: 0.25em solid #373737;
             	border-right: 0.25em solid #373737;
-            	cursor: pointer;
-            }
-            .slider::-moz-range-thumb {
-            	width: 25px; 
-            	height: 25px;
-            	background: #04AA6D; 
             	cursor: pointer;
             }
             .keyboard {
