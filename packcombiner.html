@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -114,6 +116,8 @@
                 <div id="newpacktext">
                     <input type="text" id="newnameinput" placeholder="(New Pack Name)"><br>
                     <select name="versioninput" id="versioninput">
+                        <option value="b">Bedrock</option>
+                        <option value="9">1.19</option>
                         <option value="8">1.18</option>
                         <option value="7">1.17</option>
                         <option value="6">1.16.2 – 1.16.5</option>
@@ -122,6 +126,12 @@
                         <option value="3">1.11 – 1.12.2</option>
                         <option value="2">1.9 – 1.10.2</option>
                         <option value="1">1.6.1 – 1.8.9</option>
+                        <option value="10">1.20</option>
+                        <option value="11">1.21</option>
+                        <option value="12">1.22</option>
+                        <option value="13">1.23</option>
+                        <option value="14">1.24</option>
+                        <option value="15">1.25</option>
                     </select>
                     <input type="button" value="Custom Icon" onclick="$('newiconupload').click()" id="newiconbutton">
                     <input type="button" value="Download Pack" onclick="download()" id="downloadbutton">
@@ -181,9 +191,6 @@
                     await p.files[fname].async("base64").then(data => {
                         p.files[fname] = data;
                     });
-                }
-                if (p.files["manifest.json"] != undefined) {
-                    p.bedrock = true;
                 }
                 p.is64 = true;
             }
@@ -249,8 +256,7 @@
         if (packs.length > 0) {
             let nzip = new JSZip();
             let iconname = "pack.png";
-            if (!packs[0].bedrock) {
-                alert($('versioninput').value);
+            if ($('versioninput').value!="b") {
                 nzip.file("pack.mcmeta", '{"pack":{"pack_format":'+$('versioninput').value+',"description":[{"text":"' + $('newnameinput').value + '","color":"blue"},{"text":"\\nCombined by Nera","color":"green"}]}}');
             } else {
                 iconname = "pack_icon.png";
@@ -298,7 +304,6 @@
     function Pack(name, files) {
         this.name = name;
         this.files = files;
-        this.bedrock = false;
         this.is64 = false;
     }
     var $ = i => document.getElementById(i);
