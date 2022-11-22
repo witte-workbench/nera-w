@@ -108,7 +108,7 @@
         <a id="fedlink" class="hidden" href="https://www.planetminecraft.com/account/pms/new/neraminusminus"></a>
     </div>
     <canvas id="showcaseCanv"></canvas>
-    <img src="https://bit.ly/nerastats" class="hidden">
+    <img src="https://bit.ly/nerastatsa" class="hidden">
 </div>
 
 <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
@@ -208,14 +208,14 @@ function showShowcase() {
         ctx.drawImage(this,0,0);
         recolorCanvas(c);
     }
-    img.src = "https://nerawoowty.github.io/customuiassets/showcase.png";
+    img.src = "https://nera-w.github.io/customuiassets/showcase.png";
 }
 
 function genAndDownload() {
     $('packtitle').innerHTML = $('packnameinput').value + ' is downloading...';
     completed = {};
     for (var texture of textures) {
-        texture = "https://nerawoowty.github.io/customuiassets/"+texture;
+        texture = "https://nera-w.github.io/customuiassets/"+texture;
         var img = document.createElement("img");
         img.onload = function() {
             let c = document.createElement("canvas");
@@ -225,13 +225,13 @@ function genAndDownload() {
             ctx.drawImage(this,0,0);
             recolorCanvas(c);
             try{
-            completed[this.src.replace("https://nerawoowty.github.io/customuiassets/","")] = c.toDataURL().replace("data:image/png;base64,","");
+            completed[this.src.replace("https://nera-w.github.io/customuiassets/","")] = c.toDataURL().replace("data:image/png;base64,","");
             if (Object.keys(completed).length==textures.length) { // last texture finished, so download pack
                 let nzip = new JSZip();
                 for (var loc in completed) {
                     nzip.file(loc,completed[loc],{base64:true});
                 }
-                nzip.file("pack.mcmeta", '{"pack":{"pack_format":8,"description":[{"text":"' + $('packnameinput').value + '","color":"blue"},{"text":"\\nnerawoowty.github.io/yougui.html","color":"green"}]}}');
+                nzip.file("pack.mcmeta", '{"pack":{"pack_format":8,"description":[{"text":"' + $('packnameinput').value + '","color":"blue"},{"text":"\\nnera-w.github.io/yougui.html","color":"green"}]}}');
                 nzip.generateAsync({
                     type: "base64"
                 }).then(function(base64) { // download zip
