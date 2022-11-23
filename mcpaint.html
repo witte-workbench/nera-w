@@ -51,7 +51,7 @@
         <button id="loaddefault">Load Showcase</button>
         <button id="genatlas">Generate Atlas</button>
         <button id="download">Download Canvas</button>
-        <button id="help" onclick="window.location='https://nerawoowty.github.io/painthelp.html';">Help</button>
+        <button id="help" onclick="window.location='https://nera-w.github.io/painthelp.html';">Help</button>
         <img src="https://bit.ly/nerapaintstats">
         <canvas id="cropcanvas" width="16" height="16"></canvas>
     </div>
@@ -64,7 +64,7 @@
     var drag = false;
     var zip = new JSZip();
     var defaultpack;
-    fetch('https://nerawoowty.github.io/default-blocks.zip')
+    fetch('https://nera-w.github.io/default-blocks.zip')
         .then(response => response.blob())
         .then(function(data){defaultpack = data;handleZip(defaultpack);});
     //event listeners
