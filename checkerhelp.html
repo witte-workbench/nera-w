@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pack Checker Tool</title>
+    <link rel="icon" href="neralogo.png">
+</head>
+<body>
+    <br>
+    <input type="file" id="input">
+    <div id="packtype">
+        <select name="typepick" id="typepick">
+            <option value="Auto" id="autopick">Pack Type: Auto</option>
+            <option value="Java">Pack Type: Java</option>
+            <option value="Bedrock">Pack Type: Bedrock</option>
+            <option value="1.8.9">Pack Type: 1.8.9</option>
+        </select>
+    </div>
+    <div class="content" id="red"></div>
+    
+    <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
+    <script>
+    var ctprefix;
+    var outputVals = [];
+    var ver;
+    var zip = new JSZip();
+    
+    $('input').onchange = dozip;
+    $('typepick').onchange = dozip;
+    function dozip() {
+        if ($("input").files.length>0) {
+            var f = $("input").files[0];
+            $('red').innerHTML = "";
+            // filter through files and hold them
+            JSZip.loadAsync(f).then(async function(zip) { // load zip
+                if (zip.file(/pack.mcmeta/).length==0) { // check if pack.mcmeta exists
+                    return(["No mcmeta",zip]);
+                } else {
+                    let ret = await zip.file(/pack.mcmeta/)[0].async('text'); // load pack.mcmeta data
+                    return([ret,zip]);
+                }
+            },function(e){alert(e);}).then(function(returned){
+                // determine which game version
+                let zip = returned[1];
+                if (returned[0]=="No mcmeta" || f.name.split(".").pop()=="mcpack" || zip.folder(/assets\/minecraft\//).length==0) { // beckrock because mcpack or no /assets/minecraft/ folder
+                    ver = "Bedrock";
+                } else if (JSON.parse(returned[0])["pack"]["pack_format"]==1){ // if 
+                    ver = "1.8.9";
+                } else {
+                    ver = "Java";
+                }
+                $('autopick').innerHTML = "Pack Type: Auto ("+ver+")";
+                if ($('typepick').value!="Auto") { // manual override pack type
+                    ver = $('typepick').value;
+                }
+                if (ver=="Bedrock") {
+                    ctprefix = "textures/";
+                } else {
+                    ctprefix = "assets/minecraft/textures/";
+                }
+                for (zipEntry of Object.keys(zip.files)) { // loop through uploaded files
+                    if (zipEntry.includes(ctprefix) && ["png","tga","jpg","jpeg"].includes(zipEntry.split(".").pop()) && !zipEntry.includes("MACOSX")) { // filter checkable textures
+                        zipEntry = ("f"+zipEntry).split(ctprefix)[1]; // remove useless prefix
+                        outputVals.push(zipEntry);
+                    }
+                }
+                $('red').innerHTML=JSON.stringify(outputVals);
+            },function(e){alert(e);});
+        }
+    }
+    function $(id) {
+        return(document.getElementById(id));
+    }
+    </script>
+</body>
+</html>
