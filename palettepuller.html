@@ -163,6 +163,7 @@ function go() {
         
         colors.sort(function(a, b) {return parseInt(b) - parseInt(a);});
         pc.width = colors.length;
+        document.getElementById("outputdiv").innerHTML='<p>Length: '+colors.length+'</p>';
         for (var i=0;i<colors.length;i++) {
             let sel = colors[i].split("|")[1];
             document.getElementById("outputdiv").innerHTML += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
@@ -222,7 +223,7 @@ document.getElementById("paletteCanvas").addEventListener('mouseup',function(e){
     this.getContext("2d").fillStyle = rgbToHex(down.data[0],down.data[1],down.data[2],down.data[3]);
     this.getContext("2d").fillRect(x,0,1,1);
     [colors[x], colors[downIdx]] = [colors[downIdx], colors[x]];
-    document.getElementById("outputdiv").innerHTML="";
+    document.getElementById("outputdiv").innerHTML='<p>Length: '+colors.length+'</p>';
     for (var i=0;i<colors.length;i++) {
         let sel = colors[i].split("|")[1];
         document.getElementById("outputdiv").innerHTML += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
