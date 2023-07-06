@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pack Stolen Checker</title>
+    <link rel="icon" href="neralogo.png">
+    <style>
+    .adiv {
+        width:90%;
+        display: flex;
+        margin-top:1vw;
+        border-top:1px solid black;
+    }
+    .mdiv {
+        height:100%;
+        flex: 1;
+        overflow:scroll;
+        display:inline-block;
+    }
+    .asset {
+        width:7vw;
+        height:7vw;
+        image-rendering:pixelated;
+        padding-right:1vw;
+    }
+    p, h3 {
+        font-family: 'Verdana', sans-serif;
+        white-space: nowrap;
+        margin:0;
+        padding:0;
+    }
+    .bar {
+        width:15vw;
+        height:0.5vw;
+        background-color: white;
+        border:1px solid black;
+    }
+    .hidden {
+        display:none;
+    }
+    </style>
+</head>
+<body>
+    <input type="file" multiple id="packupload" class="hidden" onchange="handleZips(event.target.files)"><br>
+    Indexing: <div id="indexing" class="bar"></div>
+    Decoding: <div id="decoding" class="bar"></div>
+    <textarea id="filt"></textarea>
+    <input type="button" value="Download JSON" onclick="download()">
+    <div id="out"></div>
+    <img src="https://bit.ly/nerastatsa" class="hidden">
+    <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
+    <script>
+    var packs = [];
+    var finishedlist = {};
+    /*
+    [
+        {
+            "data":"IOWEJKLDVJAKLEJF"
+            1:["dirt","green"],
+            2:["dirt","green"]
+        },
+        {
+            "data":"IOWEJKLDVJAKLEJF"
+            1:["dirt","green"],
+            2:["dirt","green"]
+        }
+    ]
+    */
+    var n = 0;
+    
+    async function handleZips(files) {
+        packs = [];
+        var i = packs.length - 1;
+        var pct = 0;
+        // add to array
+        for (let k of files) {
+            if (['zip', 'mcpack'].includes(k.name.split('.').pop())) {
+                i++;
+                packs[i] = new Pack(k.name, {});
+                await JSZip.loadAsync(k).then(function(zip) {
+                    zip.forEach(function(path, zipEntry) { // loop thruogh files
+                        if (path.split(".").slice(-1) == "png") {
+                            packs[i].files[path] = zip.file(path);
+                        }
+                    });
+                }, e => alert(e));
+                pct = ((i+1)/files.length)*100;
+                $('indexing').style.background = "linear-gradient(90deg, #38c736 0% "+pct+"%, white "+pct+"% "+(100-pct)+"%)";
+            } else {
+                alert(k.name + "was thrown away");
+            }
+        }
+        // 64ify
+        for (let p of packs) {
+            if (!p.is64) {
+                for (let fname of Object.keys(p.files)) {
+                    await p.files[fname].async("base64").then(data => {
+                        p.files[fname] = data;
+                    });
+                }
+                p.is64 = true;
+            }
+        }
+        packs = packs.filter(function(value, index, array) { // remove skipped files
+            return (value.is64);
+        });
+        
+        // canvasify
+        var len = 0;
+        for (var cpack of packs) {
+            len += Object.keys(cpack.files).length;
+            for (var image of Object.keys(cpack.files)) {
+                let tempimg = new Image();
+                tempimg.src = 'data:image/png;base64,'+cpack.files[image];
+                tempimg.loading = "eager";
+                tempimg.pname = cpack.name;
+                tempimg.fname = image;
+                tempimg.onload = function() {
+                    let b64 = getBase64Image(this);
+                    if (!finishedlist[b64]) {
+                        finishedlist[b64] = {};
+                    }
+                    if (!finishedlist[b64][this.pname]) {
+                        finishedlist[b64][this.pname] = [];
+                    }
+                    finishedlist[b64][this.pname].push(this.fname);
+                    n++;
+                    $('decoding').style.background = "linear-gradient(90deg, #38c736 0% "+((n/len)*100)+"%, white "+((n/len)*100)+"% "+(100-((n/len)*100))+"%)";
+                    if (n==len) {
+                        check();
+                    }
+                }
+            }
+        }
+        
+        
+        //alert(packs.length + " packs are finished.");
+    }
+    
+    function check() {
+        try {
+        let filtered = [];
+        for (let key of Object.keys(finishedlist)) {
+            if ((Object.keys(finishedlist[key]).length>1 || Object.values(finishedlist[key])[0].length>1) && key!="Too_Big") {
+                filtered.push({...finishedlist[key]});
+                filtered[filtered.length-1].data = key;
+            }
+        }
+        filtered.sort((a,b) => {return Object.keys(b).length-Object.keys(a).length;});
+        
+        let out = "";
+        filtered.forEach(function(wan){
+            for (const [key, value] of Object.entries(wan)) {
+                if (key!="data") {
+                    for (var k of value) {
+                        out+=key+"/"+k+", ";
+                    }
+                }
+            }
+            out = out.slice(0,-2)+"\n";
+        });
+        $('filt').innerHTML = out;
+        
+        let str = "";
+        for (let m of filtered) {
+            str += '<div class="adiv"><img class="asset" loading="lazy" src="data:image/png;base64,'+m.data+'">';
+            for (let k of Object.keys(m)) {
+                if (k!="data") {
+                    str+= '<div class="mdiv"><h3>'+k+'</h3><p>'+m[k].join("</p><p>")+'</p></div>';
+                }
+            }
+            
+            str += '</div>';
+        }
+        $('out').innerHTML=str;
+        if (filtered.length==0) {
+            $('out').innerHTML="No duplicates found";
+        }
+        }catch(e){alert(e);}
+    }
+    function download() {
+        var element = document.createElement('a');
+        var dlt = JSON.stringify(finishedlist,null,2);
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(dlt));
+        element.setAttribute('download', 'filematches.json');
+        
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        
+        element.click();
+        
+        document.body.removeChild(element);
+    }
+    
+    function getBase64Image(img) {
+        try {
+        if (img.width*img.height>17000) return("Too_Big");
+        var canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+        return canvas.toDataURL("image/png").replace(/^data:image\/(png|jpg);base64,/, "");
+        } catch(e){alert(e);}
+    }
+    
+    function Pack(name, files) {
+        this.name = name;
+        this.files = files;
+        this.is64 = false;
+    }
+    var $ = i => document.getElementById(i);
+    </script>
+</body>
+</html>
