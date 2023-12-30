@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Palette Puller</title>
+    <title>nera - Palette Puller</title>
     <link rel="icon" href="neralogo.png">
     <style>
         body {
@@ -65,171 +65,193 @@
         #problemtext {
             color:#962020;
         }
+        #baricon {
+            max-with:6vw;
+            max-height:6vh;
+            position:absolute;
+            top:15px;
+            left:15px;
+            background: #262626; 
+            -moz-border-radius: 3vh; 
+            -webkit-border-radius: 3vh;
+            border-radius: 3vh;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
-<div id="inputdiv">
-<canvas id="imgCanvas" width="256" height="256">Your browser does not support the HTML5 canvas tag.</canvas><br>
-<input type="file" id="imageLoader" name="imageLoader"/><br>
-<a download="download" href="" id="downloadbtn">Download Palette</a><br>
-<canvas id="paletteCanvas" width="0" height="1"></canvas>
-<p id="problemtext"></p>
-</div>
-<div id="outputdiv"></div><img src="https://bit.ly/nerastatsa" class="hidden">
-
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DJPSM88KS"></script>
 <script>
-var c = document.getElementById("imgCanvas");
-var ctx = c.getContext("2d");
-var pc = document.getElementById("paletteCanvas");
-var pctx = pc.getContext("2d");
-var downloadbtn = document.getElementById("downloadbtn");
-var colors = [];
-var problems = [];
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-function go() {
-    function getScore(r,g,b) {
-        r /= 255;
-        g /= 255;
-        b /= 255;
-        let cmin = Math.min(r,g,b),
-            cmax = Math.max(r,g,b),
-            delta = cmax - cmin,
-            h = 0,
-            s = 0,
-            f = 0,
-            l = 0;
-        if (delta == 0)
-            h = 0;
-        else if (cmax == r)
-            h = ((g - b) / delta) % 6;
-        else if (cmax == g)
-            h = (b - r) / delta + 2;
-        else
-            h = (r - g) / delta + 4;
-        h = Math.round(h * 60);
-        if (h < 0)
-            h += 360;
-        l = (cmax + cmin) / 2;
-        s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
-        s = +(s * 100).toFixed(1);
-        l = +(l * 100).toFixed(1);
-        if (h>15 && h<40) {
-            f=2;
-        } else if (h<70) {
-            f=3;
-        } else if (h<150) {
-            f=4;
-        } else if (h<190) {
-            f=5;
-        } else if (h<215) {
-            f=6;
-        } else if (h<260) {
-            f=7;
-        } else if (h<285) {
-            f=8;
-        } else if (h<330) {
-            f=9;
+  gtag('config', 'G-5DJPSM88KS');
+</script>
+<body>
+    <a href="index.html"><img id="baricon" src="neralogo.png"></a>
+    <div id="inputdiv">
+    <canvas id="imgCanvas" width="256" height="256">Your browser does not support the HTML5 canvas tag.</canvas><br>
+    <input type="file" id="imageLoader" name="imageLoader"/><br>
+    <a download="download" href="" id="downloadbtn">Download Palette</a><br>
+    <canvas id="paletteCanvas" width="0" height="1"></canvas>
+    <p id="problemtext"></p>
+    </div>
+
+    <script>
+    var c = document.getElementById("imgCanvas");
+    var ctx = c.getContext("2d");
+    var pc = document.getElementById("paletteCanvas");
+    var pctx = pc.getContext("2d");
+    var downloadbtn = document.getElementById("downloadbtn");
+    var colors = [];
+    var problems = [];
+
+    function go() {
+        function getScore(r,g,b) {
+            r /= 255;
+            g /= 255;
+            b /= 255;
+            let cmin = Math.min(r,g,b),
+                cmax = Math.max(r,g,b),
+                delta = cmax - cmin,
+                h = 0,
+                s = 0,
+                f = 0,
+                l = 0;
+            if (delta == 0)
+                h = 0;
+            else if (cmax == r)
+                h = ((g - b) / delta) % 6;
+            else if (cmax == g)
+                h = (b - r) / delta + 2;
+            else
+                h = (r - g) / delta + 4;
+            h = Math.round(h * 60);
+            if (h < 0)
+                h += 360;
+            l = (cmax + cmin) / 2;
+            s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+            s = +(s * 100).toFixed(1);
+            l = +(l * 100).toFixed(1);
+            if (h>15 && h<40) {
+                f=2;
+            } else if (h<70) {
+                f=3;
+            } else if (h<150) {
+                f=4;
+            } else if (h<190) {
+                f=5;
+            } else if (h<215) {
+                f=6;
+            } else if (h<260) {
+                f=7;
+            } else if (h<285) {
+                f=8;
+            } else if (h<330) {
+                f=9;
+            } else {
+                f=1;
+            }
+            if (s==0) {
+                f=11;
+            }
+            return(f+l.toString());
+        }
+        document.getElementById("outputdiv").innerHTML = "";
+        if (c.width>300 || c.height>300) {
+            alert("Image is too large! (Max res of 300x300)");
         } else {
-            f=1;
-        }
-        if (s==0) {
-            f=11;
-        }
-        return(f+l.toString());
-    }
-    document.getElementById("outputdiv").innerHTML = "";
-    if (c.width>300 || c.height>300) {
-        alert("Image is too large! (Max res of 300x300)");
-    } else {
-        document.getElementById('problemtext').innerHTML = "";
-        colors = [];
-        for (var x=0;x<c.width;x++) {
-            for (var y=0;y<c.height;y++) { // loop through x and y of image
-                let imgData = ctx.getImageData(x, y, 1, 1);
-                let pickedColor = getScore(imgData.data[0],imgData.data[1],imgData.data[2]) +"|"+ rgbToHex(imgData.data[0],imgData.data[1],imgData.data[2],imgData.data[3]);
-                if (document.getElementById('problemtext').innerHTML=="" && pickedColor.slice(-2)!="00" && parseInt(pickedColor.slice(-2),16)<32) {
-                    document.getElementById('problemtext').innerHTML = "Warning: Ghost Pixels";
-                }
-                if (pickedColor.slice(-2)=="ff") { // remove full opacity suffix
-                    pickedColor = pickedColor.slice(0,-2);
-                }
-                if (colors.indexOf(pickedColor)==-1 && imgData.data[3]!=0) {
-                    colors.push(pickedColor);
+            document.getElementById('problemtext').innerHTML = "";
+            colors = [];
+            for (var x=0;x<c.width;x++) {
+                for (var y=0;y<c.height;y++) { // loop through x and y of image
+                    let imgData = ctx.getImageData(x, y, 1, 1);
+                    let pickedColor = getScore(imgData.data[0],imgData.data[1],imgData.data[2]) +"|"+ rgbToHex(imgData.data[0],imgData.data[1],imgData.data[2],imgData.data[3]);
+                    if (document.getElementById('problemtext').innerHTML=="" && pickedColor.slice(-2)!="00" && parseInt(pickedColor.slice(-2),16)<32) {
+                        document.getElementById('problemtext').innerHTML = "Warning: Ghost Pixels";
+                    }
+                    if (pickedColor.slice(-2)=="ff") { // remove full opacity suffix
+                        pickedColor = pickedColor.slice(0,-2);
+                    }
+                    if (colors.indexOf(pickedColor)==-1 && imgData.data[3]!=0) {
+                        colors.push(pickedColor);
+                    }
                 }
             }
+            
+            colors.sort(function(a, b) {return parseInt(b) - parseInt(a);});
+            pc.width = colors.length;
+            let output = '<p>Length: '+colors.length+'</p>';
+            for (var i=0;i<colors.length;i++) {
+                let sel = colors[i].split("|")[1];
+                output += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
+                // set download canvas
+                pctx.fillStyle = sel;
+                pctx.fillRect(i,0,1,1);
+            }
+            document.getElementById("outputdiv").innerHTML=output;
+            // set download button
+            let name = document.getElementById('imageLoader').value.split("\\");
+            name = name[name.length-1].split(".").slice(0,-1).join(".") + "_palette.png";
+            downloadbtn.download = name;
+            downloadbtn.href = pc.toDataURL();
         }
-        
-        colors.sort(function(a, b) {return parseInt(b) - parseInt(a);});
-        pc.width = colors.length;
-        document.getElementById("outputdiv").innerHTML='<p>Length: '+colors.length+'</p>';
+    }
+
+    function componentToHex(c) {
+      var hex = c.toString(16);
+      return hex.length == 1 ? "0" + hex : hex;
+    }
+    function rgbToHex(r, g, b, a) {
+      return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b) + componentToHex(a);
+    }
+    function stringColor(r,g,b,a) {
+        return(rgbToHex(r,g,b)+" ("+(a/2.55)+"%)");
+    }
+
+    document.getElementById('imageLoader').addEventListener('change', function(e){ //image upload handling
+        var reader = new FileReader();
+        reader.onload = function(event){
+            var img = new Image();
+            img.onload = function(){
+                c.width = img.width;
+                c.height = img.height;
+                ctx.drawImage(img,0,0);
+                go();
+            }
+            img.src = event.target.result;
+        }
+        reader.readAsDataURL(e.target.files[0]);
+    }, false);
+
+    var down;
+    var downIdx;
+    //moving colors
+    document.getElementById("paletteCanvas").addEventListener('mousedown',function(e){
+        let x = Math.floor((e.x-this.offsetLeft)/(window.innerHeight*0.5)*this.width);
+        down = this.getContext("2d").getImageData(x, 0, 1, 1);
+        downIdx = x;
+    });
+    document.getElementById("paletteCanvas").addEventListener('mouseup',function(e){
+        let x = Math.floor((e.x-this.offsetLeft)/(window.innerHeight*0.5)*this.width);
+        let holder = this.getContext("2d").getImageData(x, 0, 1, 1);
+        this.getContext("2d").clearRect(downIdx, 0, 1, 1);
+        this.getContext("2d").fillStyle = rgbToHex(holder.data[0],holder.data[1],holder.data[2],holder.data[3]);
+        this.getContext("2d").fillRect(downIdx,0,1,1);
+        this.getContext("2d").clearRect(x, 0, 1, 1);
+        this.getContext("2d").fillStyle = rgbToHex(down.data[0],down.data[1],down.data[2],down.data[3]);
+        this.getContext("2d").fillRect(x,0,1,1);
+        [colors[x], colors[downIdx]] = [colors[downIdx], colors[x]];
+        let output = '<p>Length: '+colors.length+'</p>';
         for (var i=0;i<colors.length;i++) {
             let sel = colors[i].split("|")[1];
-            document.getElementById("outputdiv").innerHTML += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
-            // set download canvas
-            pctx.fillStyle = sel;
-            pctx.fillRect(i,0,1,1);
+            output += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
         }
-        // set download button
-        let name = document.getElementById('imageLoader').value.split("\\");
-        name = name[name.length-1].split(".").slice(0,-1).join(".") + "_palette.png";
-        downloadbtn.download = name;
+        document.getElementById("outputdiv").innerHTML=output;
         downloadbtn.href = pc.toDataURL();
-    }
-}
-
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
-}
-function rgbToHex(r, g, b, a) {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b) + componentToHex(a);
-}
-function stringColor(r,g,b,a) {
-    return(rgbToHex(r,g,b)+" ("+(a/2.55)+"%)");
-}
-
-document.getElementById('imageLoader').addEventListener('change', function(e){ //image upload handling
-    var reader = new FileReader();
-    reader.onload = function(event){
-        var img = new Image();
-        img.onload = function(){
-            c.width = img.width;
-            c.height = img.height;
-            ctx.drawImage(img,0,0);
-            go();
-        }
-        img.src = event.target.result;
-    }
-    reader.readAsDataURL(e.target.files[0]);
-}, false);
-
-var down;
-var downIdx;
-//moving colors
-document.getElementById("paletteCanvas").addEventListener('mousedown',function(e){
-    let x = Math.floor((e.x-this.offsetLeft)/(window.innerHeight*0.5)*this.width);
-    down = this.getContext("2d").getImageData(x, 0, 1, 1);
-    downIdx = x;
-});
-document.getElementById("paletteCanvas").addEventListener('mouseup',function(e){
-    let x = Math.floor((e.x-this.offsetLeft)/(window.innerHeight*0.5)*this.width);
-    let holder = this.getContext("2d").getImageData(x, 0, 1, 1);
-    this.getContext("2d").clearRect(downIdx, 0, 1, 1);
-    this.getContext("2d").fillStyle = rgbToHex(holder.data[0],holder.data[1],holder.data[2],holder.data[3]);
-    this.getContext("2d").fillRect(downIdx,0,1,1);
-    this.getContext("2d").clearRect(x, 0, 1, 1);
-    this.getContext("2d").fillStyle = rgbToHex(down.data[0],down.data[1],down.data[2],down.data[3]);
-    this.getContext("2d").fillRect(x,0,1,1);
-    [colors[x], colors[downIdx]] = [colors[downIdx], colors[x]];
-    document.getElementById("outputdiv").innerHTML='<p>Length: '+colors.length+'</p>';
-    for (var i=0;i<colors.length;i++) {
-        let sel = colors[i].split("|")[1];
-        document.getElementById("outputdiv").innerHTML += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
-    }
-    downloadbtn.href = pc.toDataURL();
-});
-</script>
+    });
+    </script>
 </body>
 </html>
