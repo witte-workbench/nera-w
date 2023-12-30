@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>McMeta Helper - Pack Manifest Maker</title>
+    <title>nera - Pack Manifest Maker</title>
     <link rel="icon" href="neralogo.png">
     <style>
         @font-face {
@@ -52,111 +52,132 @@
             margin-left:25%;
             padding-top:15vh;
         }
+        #baricon {
+            max-with:6vw;
+            max-height:6vh;
+            position:absolute;
+            top:15px;
+            left:15px;
+        }
     </style>
 </head>
-<body>
-<div id="container">
-<p id="header">Manifest Maker</p>
-<select name="versioninput" id="versioninput" onchange="if (this.value=='bedrock') {document.getElementById('bvinput').style.display='block';document.getElementById('namecolorinput').value='§0';document.getElementById('descriptioncolorinput').value='§8';}else{document.getElementById('bvinput').style.display='none';document.getElementById('namecolorinput').value='§f';document.getElementById('descriptioncolorinput').value='§7';}">
-    <option value="9">Java 1.19</option>
-    <option value="bedrock">Any Bedrock Version</option>
-    <option value="8">Java 1.18</option>
-    <option value="7">Java 1.17</option>
-    <option value="6">Java 1.16.2 – 1.16.5</option>
-    <option value="5">Java 1.15 – 1.16.1</option>
-    <option value="4">Java 1.13 – 1.14.4</option>
-    <option value="3">Java 1.11 – 1.12.2</option>
-    <option value="2">Java 1.9 – 1.10.2</option>
-    <option value="1">Java 1.6.1 – 1.8.9</option>
-</select>
-<input type="number" placeholder="Version # of your pack, (eg. 3)" id="bvinput" style="display:none;">
-<input type="text" placeholder="(Pack name)" id="nameinput">
-<select name="namecolorinput" id="namecolorinput">
-    <option value="§f" style="color:#FFFFFF;">White</option>
-    <option value="§6" style="color:#FFAA00;">Gold</option>
-    <option value="§7" style="color:#AAAAAA;">Gray</option>
-    <option value="§8" style="color:#555555;">Dark Gray</option>
-    <option value="§9" style="color:#5555FF;">Blue</option>
-    <option value="§a" style="color:#55FF55;">Green</option>
-    <option value="§b" style="color:#55FFFF;">Aqua</option>
-    <option value="§c" style="color:#FF5555;">Red</option>
-    <option value="§d" style="color:#FF55FF;">Light Purple</option>
-    <option value="§e" style="color:#FFFF55;">Yellow</option>
-    <option value="§0" style="color:#000000;">Black</option>
-    <option value="§1" style="color:#0000AA;">Dark Blue</option>
-    <option value="§2" style="color:#00AA00;">Dark Green</option>
-    <option value="§3" style="color:#00AAAA;">Dark Aqua</option>
-    <option value="§4" style="color:#AA0000;">Dark Red</option>
-    <option value="§5" style="color:#AA00AA;">Dark Purple</option>
-</select>
-<input type="text" placeholder="(Pack description)" id="descriptioninput">
-<select name="descriptioncolorinput" id="descriptioncolorinput">
-    <option value="§7" style="color:#AAAAAA;">Gray</option>
-    <option value="§9" style="color:#5555FF;">Blue</option>
-    <option value="§a" style="color:#55FF55;">Green</option>
-    <option value="§b" style="color:#55FFFF;">Aqua</option>
-    <option value="§c" style="color:#FF5555;">Red</option>
-    <option value="§d" style="color:#FF55FF;">Light Purple</option>
-    <option value="§e" style="color:#FFFF55;">Yellow</option>
-    <option value="§f" style="color:#FFFFFF;">White</option>
-    <option value="§0" style="color:#000000;">Black</option>
-    <option value="§1" style="color:#0000AA;">Dark Blue</option>
-    <option value="§2" style="color:#00AA00;">Dark Green</option>
-    <option value="§3" style="color:#00AAAA;">Dark Aqua</option>
-    <option value="§4" style="color:#AA0000;">Dark Red</option>
-    <option value="§5" style="color:#AA00AA;">Dark Purple</option>
-    <option value="§6" style="color:#FFAA00;">Gold</option>
-    <option value="§8" style="color:#555555;">Dark Gray</option>
-</select>
-
-<button id="downloadbtn" onclick="document.getElementById('zipupload').click()">Add manifest to a zipped pack</button>
-<button id="downloadbtn" onclick="downloadFile()">Download manifest as file</button>
-<input type="file" id="zipupload" class="hidden" onchange="addToZip(this.files[0])">
-</div>
-<script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DJPSM88KS"></script>
 <script>
-var $ = i => document.getElementById(i);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-function downloadFile() { // download the mcmeta as its own file
-    var element = document.createElement('a');
-    if ($('versioninput').value=='bedrock') {
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('{"format_version":2,"header":{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","name":"'+$('namecolorinput').value+$('nameinput').value+'","'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+',0,0],"min_engine_version": [ 1, 0, 0 ]},"modules":[{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","type":"resources","uuid":"'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+', 0, 0]}]}'));
-        element.setAttribute('download', 'manifest.json');
-    } else {
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('{"pack":{"pack_format":'+$('versioninput').value+',"description":[{"text":"'+$('namecolorinput').value+$('nameinput').value+'"},{"text":"\\n'+$('descriptioncolorinput').value+$('descriptioninput').value+'"}]}}'));
-        element.setAttribute('download', 'pack.mcmeta');
-    }
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
-}
-async function addToZip(oldzip) { // take the user's zip, add the mcmeta, and then download it
-    alert(oldzip.name);
-    await JSZip.loadAsync(oldzip).then(function(zip) {
-        if ($('versioninput').value=='bedrock') {
-            zip.file("manifest.json", '{"format_version":2,"header":{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","name":"'+$('namecolorinput').value+$('nameinput').value+'","'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+',0,0],"min_engine_version": [ 1, 0, 0 ]},"modules":[{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","type":"resources","uuid":"'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+', 0, 0]}]}');
-        } else {
-            zip.file("pack.mcmeta", '{"pack":{"pack_format":'+$('versioninput').value+',"description":[{"text":"'+$('namecolorinput').value+$('nameinput').value+'"},{"text":"\\n'+$('descriptioncolorinput').value+$('descriptioninput').value+'"}]}}');
-        }
-        zip.generateAsync({
-            type: "base64"
-        }).then(function(base64) { // download zip
-            var element = document.createElement('a');
-            element.setAttribute('href', "data:application/zip;base64," + base64);
-            element.setAttribute('download', oldzip.name);
-            element.click();
-            element.setAttribute('href', "");
-        }, function(e) {
-            alert(e);
-        });
-    }, e => alert(e));
-}
-function uuidv4() {
-    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-    );
-}
+  gtag('config', 'G-5DJPSM88KS');
 </script>
+<body>
+    <a href="index.html"><img id="baricon" src="neralogo.png"></a>
+    <div id="container">
+    <p id="header">Manifest Maker</p>
+    <select name="versioninput" id="versioninput" onchange="if (this.value=='bedrock') {document.getElementById('bvinput').style.display='block';document.getElementById('namecolorinput').value='§0';document.getElementById('descriptioncolorinput').value='§8';}else{document.getElementById('bvinput').style.display='none';document.getElementById('namecolorinput').value='§f';document.getElementById('descriptioncolorinput').value='§7';}">
+        <option value="18">1.20.2</option>
+        <option value="15">1.20 - 1.20.1</option>
+        <option value="13">1.19.4</option>
+        <option value="12">1.19.3</option>
+        <option value="9">1.19 - 1.19.2</option>
+        <option value="8">1.18</option>
+        <option value="7">1.17</option>
+        <option value="6">1.16.2 – 1.16.5</option>
+        <option value="5">1.15 – 1.16.1</option>
+        <option value="4">1.13 – 1.14.4</option>
+        <option value="3">1.11 – 1.12.2</option>
+        <option value="2">1.9 – 1.10.2</option>
+        <option value="1">1.6.1 – 1.8.9</option>
+        <option value="bedrock">Any Bedrock Version</option>
+    </select>
+    <input type="number" placeholder="Version # of your pack, (eg. 3)" id="bvinput" style="display:none;">
+    <input type="text" placeholder="(Pack name)" id="nameinput">
+    <select name="namecolorinput" id="namecolorinput">
+        <option value="§f" style="color:#FFFFFF;">White</option>
+        <option value="§6" style="color:#FFAA00;">Gold</option>
+        <option value="§7" style="color:#AAAAAA;">Gray</option>
+        <option value="§8" style="color:#555555;">Dark Gray</option>
+        <option value="§9" style="color:#5555FF;">Blue</option>
+        <option value="§a" style="color:#55FF55;">Green</option>
+        <option value="§b" style="color:#55FFFF;">Aqua</option>
+        <option value="§c" style="color:#FF5555;">Red</option>
+        <option value="§d" style="color:#FF55FF;">Light Purple</option>
+        <option value="§e" style="color:#FFFF55;">Yellow</option>
+        <option value="§0" style="color:#000000;">Black</option>
+        <option value="§1" style="color:#0000AA;">Dark Blue</option>
+        <option value="§2" style="color:#00AA00;">Dark Green</option>
+        <option value="§3" style="color:#00AAAA;">Dark Aqua</option>
+        <option value="§4" style="color:#AA0000;">Dark Red</option>
+        <option value="§5" style="color:#AA00AA;">Dark Purple</option>
+    </select>
+    <input type="text" placeholder="(Pack description)" id="descriptioninput">
+    <select name="descriptioncolorinput" id="descriptioncolorinput">
+        <option value="§7" style="color:#AAAAAA;">Gray</option>
+        <option value="§9" style="color:#5555FF;">Blue</option>
+        <option value="§a" style="color:#55FF55;">Green</option>
+        <option value="§b" style="color:#55FFFF;">Aqua</option>
+        <option value="§c" style="color:#FF5555;">Red</option>
+        <option value="§d" style="color:#FF55FF;">Light Purple</option>
+        <option value="§e" style="color:#FFFF55;">Yellow</option>
+        <option value="§f" style="color:#FFFFFF;">White</option>
+        <option value="§0" style="color:#000000;">Black</option>
+        <option value="§1" style="color:#0000AA;">Dark Blue</option>
+        <option value="§2" style="color:#00AA00;">Dark Green</option>
+        <option value="§3" style="color:#00AAAA;">Dark Aqua</option>
+        <option value="§4" style="color:#AA0000;">Dark Red</option>
+        <option value="§5" style="color:#AA00AA;">Dark Purple</option>
+        <option value="§6" style="color:#FFAA00;">Gold</option>
+        <option value="§8" style="color:#555555;">Dark Gray</option>
+    </select>
+
+    <button id="downloadbtn" onclick="document.getElementById('zipupload').click()">Add manifest to a zipped pack</button>
+    <button id="downloadbtn" onclick="downloadFile()">Download manifest as file</button>
+    <input type="file" id="zipupload" class="hidden" onchange="addToZip(this.files[0])">
+    </div>
+    <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
+    <script>
+    var $ = i => document.getElementById(i);
+
+    function downloadFile() { // download the mcmeta as its own file
+        var element = document.createElement('a');
+        if ($('versioninput').value=='bedrock') {
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('{"format_version":2,"header":{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","name":"'+$('namecolorinput').value+$('nameinput').value+'","'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+',0,0],"min_engine_version": [ 1, 0, 0 ]},"modules":[{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","type":"resources","uuid":"'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+', 0, 0]}]}'));
+            element.setAttribute('download', 'manifest.json');
+        } else {
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('{"pack":{"pack_format":'+$('versioninput').value+',"description":[{"text":"'+$('namecolorinput').value+$('nameinput').value+'"},{"text":"\\n'+$('descriptioncolorinput').value+$('descriptioninput').value+'"}]}}'));
+            element.setAttribute('download', 'pack.mcmeta');
+        }
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    }
+    async function addToZip(oldzip) { // take the user's zip, add the mcmeta, and then download it
+        alert(oldzip.name);
+        await JSZip.loadAsync(oldzip).then(function(zip) {
+            if ($('versioninput').value=='bedrock') {
+                zip.file("manifest.json", '{"format_version":2,"header":{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","name":"'+$('namecolorinput').value+$('nameinput').value+'","'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+',0,0],"min_engine_version": [ 1, 0, 0 ]},"modules":[{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","type":"resources","uuid":"'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+', 0, 0]}]}');
+            } else {
+                zip.file("pack.mcmeta", '{"pack":{"pack_format":'+$('versioninput').value+',"description":[{"text":"'+$('namecolorinput').value+$('nameinput').value+'"},{"text":"\\n'+$('descriptioncolorinput').value+$('descriptioninput').value+'"}]}}');
+            }
+            zip.generateAsync({
+                type: "base64"
+            }).then(function(base64) { // download zip
+                var element = document.createElement('a');
+                element.setAttribute('href', "data:application/zip;base64," + base64);
+                element.setAttribute('download', oldzip.name);
+                element.click();
+                element.setAttribute('href', "");
+            }, function(e) {
+                alert(e);
+            });
+        }, e => alert(e));
+    }
+    function uuidv4() {
+        return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+            (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+        );
+    }
+    </script>
 </body>
 </html>
