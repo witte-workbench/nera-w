@@ -50,11 +50,32 @@
         #bigarrow {
             font-size:90px;
         }
+        #baricon {
+            max-with:6vw;
+            max-height:6vh;
+            position:absolute;
+            top:15px;
+            left:15px;
+            background: #262626; 
+            -moz-border-radius: 3vh; 
+            -webkit-border-radius: 3vh;
+            border-radius: 3vh;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DJPSM88KS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5DJPSM88KS');
+</script>
 <body>
+    <a href="index.html"><img id="baricon" src="neralogo.png"></a>
     <div class="half">
         <canvas id="canvasOne" width="16" height="16">Your browser does not support the HTML5 canvas tag.</canvas><br>
         <input type="file" id="One" name="loaderOne" class="loader"><br>
@@ -72,7 +93,6 @@
         <canvas id="paletteCanvasTwo" width="0" height="1" oncontextmenu="return false;"></canvas>
         <p id="outTwo"></p>
     </div>
-    <img src="https://bit.ly/nerastatsa" class="hidden">
 
     <script>
     var colorsOne = [];
