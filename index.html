@@ -1,63 +1,252 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>nera</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="neralogo.png">
-    </head
-        ><!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DJPSM88KS"></script>
+<head>
+    <title>nera - Palette Puller</title>
+    <link rel="icon" href="neralogo.png">
+    <style>
+        body {
+            background-color:#8B8B8B;
+            font:50px 'Nanum Gothic', sans-serif;
+            margin:0px;
+            padding:0px;
+            width:100vw;
+            overflow:hidden;
+        }
+        #imgCanvas {
+            border:10px solid #373737;
+            border-bottom:10px solid white;
+            border-right:10px solid white;
+        }
+        canvas {
+            width:50vh;
+            height:auto;
+            image-rendering:pixelated;
+        }
+        p {
+            font:50px 'Nanum Gothic', sans-serif;
+            padding:0px;
+            margin:0px;
+        }
+        input, input::file-selector-button, #downloadbtn {
+            padding:0 5px 3px 5px;
+            font: 20px 'Nanum Gothic', sans-serif;
+        }
+        #inputdiv, #outputdiv {
+            width:calc(50vw - 20px);
+            height:calc(100vh - 20px);
+            padding:20px 10px 0px 10px;
+            text-align:center;
+            float:left;
+        }
+        #inputdiv {
+            overflow:scroll;
+        }
+        #outputdiv {
+            overflow:scroll;
+        }
+        #downloadbtn {
+            text-decoration:none;
+            color:black;
+            background-color:#EFEFEF;
+            border:2px solid #767676;
+            border-radius:3px;
+        }
+        #downloadbtn:hover {
+            background-color: #E5E5E5;
+            border:2px solid #4F4F4F;
+        }
+        #downloadbtn:active {
+            background-color:#F5F5F5;
+            border:2px solid #F5F5F5;
+        }
+        #inputdiv::-webkit-scrollbar, #outputdiv::-webkit-scrollbar, .hidden {
+            display:none;
+        }
+        #problemtext {
+            color:#962020;
+        }
+        #baricon {
+            max-with:6vw;
+            max-height:6vh;
+            position:absolute;
+            top:15px;
+            left:15px;
+            background: #262626; 
+            -moz-border-radius: 3vh; 
+            -webkit-border-radius: 3vh;
+            border-radius: 3vh;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DJPSM88KS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5DJPSM88KS');
+</script>
+<body>
+    <a href="index.html"><img id="baricon" src="neralogo.png"></a>
+    <div id="inputdiv">
+    <canvas id="imgCanvas" width="256" height="256">Your browser does not support the HTML5 canvas tag.</canvas><br>
+    <input type="file" id="imageLoader" name="imageLoader"/><br>
+    <a download="download" href="" id="downloadbtn">Download Palette</a><br>
+    <canvas id="paletteCanvas" width="0" height="1"></canvas>
+    <p id="problemtext"></p>
+    </div>
+    <div id="outputdiv"></div>
+
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-5DJPSM88KS');
+    var c = document.getElementById("imgCanvas");
+    var ctx = c.getContext('2d', { willReadFrequently: true });
+    var pc = document.getElementById("paletteCanvas");
+    var pctx = pc.getContext("2d");
+    var downloadbtn = document.getElementById("downloadbtn");
+    var colors = [];
+    var problems = [];
+
+    function go() {
+        function getScore(r,g,b) {
+            r /= 255;
+            g /= 255;
+            b /= 255;
+            let cmin = Math.min(r,g,b),
+                cmax = Math.max(r,g,b),
+                delta = cmax - cmin,
+                h = 0,
+                s = 0,
+                f = 0,
+                l = 0;
+            if (delta == 0)
+                h = 0;
+            else if (cmax == r)
+                h = ((g - b) / delta) % 6;
+            else if (cmax == g)
+                h = (b - r) / delta + 2;
+            else
+                h = (r - g) / delta + 4;
+            h = Math.round(h * 60);
+            if (h < 0)
+                h += 360;
+            l = (cmax + cmin) / 2;
+            s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+            s = +(s * 100).toFixed(1);
+            l = +(l * 100).toFixed(1);
+            if (h>15 && h<40) {
+                f=2;
+            } else if (h<70) {
+                f=3;
+            } else if (h<150) {
+                f=4;
+            } else if (h<190) {
+                f=5;
+            } else if (h<215) {
+                f=6;
+            } else if (h<260) {
+                f=7;
+            } else if (h<285) {
+                f=8;
+            } else if (h<330) {
+                f=9;
+            } else {
+                f=1;
+            }
+            if (s==0) {
+                f=11;
+            }
+            return(f+l.toString());
+        }
+        document.getElementById("outputdiv").innerHTML = "";
+        document.getElementById('problemtext').innerHTML = "";
+        colors = [];
+        let imgData = ctx.getImageData(0, 0, c.width, c.height).data;
+        for (var i=0;i<imgData.length;i+=4) {
+            let pickedColor = getScore(imgData[i],imgData[i+1],imgData[i+2]) +"|"+ rgbToHex(imgData[i+0],imgData[i+1],imgData[i+2],imgData[i+3]);
+            if (document.getElementById('problemtext').innerHTML=="" && pickedColor.slice(-2)!="00" && parseInt(pickedColor.slice(-2),16)<32) {
+                document.getElementById('problemtext').innerHTML = "Warning: Ghost Pixels";
+            }
+            if (pickedColor.slice(-2)=="ff") { // remove full opacity suffix
+                pickedColor = pickedColor.slice(0,-2);
+            }
+            if (colors.indexOf(pickedColor)==-1 && imgData[i+3]!=0) {
+                colors.push(pickedColor);
+            }
+        }
+        
+        colors.sort(function(a, b) {return parseInt(b) - parseInt(a);});
+        pc.width = colors.length;
+        let output = '<p>Length: '+colors.length+'</p>';
+        for (var i=0;i<colors.length;i++) {
+            let sel = colors[i].split("|")[1];
+            output += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
+            // set download canvas
+            pctx.fillStyle = sel;
+            pctx.fillRect(i,0,1,1);
+        }
+        document.getElementById("outputdiv").innerHTML=output;
+        // set download button
+        let name = document.getElementById('imageLoader').value.split("\\");
+        name = name[name.length-1].split(".").slice(0,-1).join(".") + "_palette.png";
+        downloadbtn.download = name;
+        downloadbtn.href = pc.toDataURL();
+    }
+
+    function componentToHex(c) {
+      var hex = c.toString(16);
+      return hex.length == 1 ? "0" + hex : hex;
+    }
+    function rgbToHex(r, g, b, a) {
+      return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b) + componentToHex(a);
+    }
+    function stringColor(r,g,b,a) {
+        return(rgbToHex(r,g,b)+" ("+(a/2.55)+"%)");
+    }
+
+    document.getElementById('imageLoader').addEventListener('change', function(e){ //image upload handling
+        var reader = new FileReader();
+        reader.onload = function(event){
+            var img = new Image();
+            img.onload = function(){
+                c.width = img.width;
+                c.height = img.height;
+                ctx.drawImage(img,0,0);
+                go();
+            }
+            img.src = event.target.result;
+        }
+        reader.readAsDataURL(e.target.files[0]);
+    }, false);
+
+    var down;
+    var downIdx;
+    //moving colors
+    document.getElementById("paletteCanvas").addEventListener('mousedown',function(e){
+        let x = Math.floor((e.x-this.offsetLeft)/(window.innerHeight*0.5)*this.width);
+        down = this.getContext("2d").getImageData(x, 0, 1, 1);
+        downIdx = x;
+    });
+    document.getElementById("paletteCanvas").addEventListener('mouseup',function(e){
+        let x = Math.floor((e.x-this.offsetLeft)/(window.innerHeight*0.5)*this.width);
+        let holder = this.getContext("2d").getImageData(x, 0, 1, 1);
+        this.getContext("2d").clearRect(downIdx, 0, 1, 1);
+        this.getContext("2d").fillStyle = rgbToHex(holder.data[0],holder.data[1],holder.data[2],holder.data[3]);
+        this.getContext("2d").fillRect(downIdx,0,1,1);
+        this.getContext("2d").clearRect(x, 0, 1, 1);
+        this.getContext("2d").fillStyle = rgbToHex(down.data[0],down.data[1],down.data[2],down.data[3]);
+        this.getContext("2d").fillRect(x,0,1,1);
+        [colors[x], colors[downIdx]] = [colors[downIdx], colors[x]];
+        let output = '<p>Length: '+colors.length+'</p>';
+        for (var i=0;i<colors.length;i++) {
+            let sel = colors[i].split("|")[1];
+            output += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
+        }
+        document.getElementById("outputdiv").innerHTML=output;
+        downloadbtn.href = pc.toDataURL();
+    });
     </script>
-    <body id="body">
-        <div id="wrapper">
-            <div id="top-nav">
-                <a href="index.html"><img id="logo" src="neralogo.png"></a>
-            </div>
-            <div id="small-nav">
-                <a href="https://www.planetminecraft.com/member/nera_w/"><p>pmc</p></a>
-            </div>
-            <div id="small-nav">
-                <a href="https://nera-w.github.io/customui.html"><p>mc you gui</p></a>
-            </div>
-            <div id="small-nav">
-                <a href="https://nera-w.github.io/craftle.html"><p>craftle</p></a>
-            </div>
-            <div id="small-nav">
-                <a href="https://nera-w.github.io/palettepuller.html"><p>palette puller</p></a>
-            </div>
-            <div id="small-nav">
-                <a href="https://nera-w.github.io/paletteswapper.html"><p>palette swapper</p></a>
-            </div>
-            <div id="small-nav">
-                <a href="https://nera-w.github.io/mcmetahelp.html"><p>mcmeta maker</p></a>
-            </div>
-            <div id="small-nav">
-                <a href="https://nera-w.github.io/pack_format.html"><p>mcmeta updater</p></a>
-            </div>
-            <div id="small-nav">
-                <a href="https://nera-w.github.io/stolencheck.html"><p>pack comparer</p></a>
-            </div>
-            <div id="small-nav">
-                <a href="https://nera-w.github.io/packchecker.html"><p>pack checker</p></a>
-            </div>
-            <div id="small-nav">
-                <a href="https://nera-w.github.io/packcombiner.html"><p>pack combiner</p></a>
-            </div>
-            <div id="small-nav">
-                <a href="https://nera-w.github.io/wallpapermaker.html"><p>mcwallpaper</p></a>
-            </div>
-            <div id="small-nav">
-                <a href="https://nera-w.github.io/mcpaint.html"><p>mcpaint</p></a>
-            </div>
-            <div id="small-nav">
-                <a href="https://nera-w.github.io/painthelp.html"><p>mcpaint help</p></a>
-            </div>
-        </div>
-    </body>
+</body>
 </html>
