@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Texture Tiling Tester</title>
+    <title>nera - Texture Tiling Tester</title>
     <link rel="icon" href="neralogo.png">
     <style>
         @font-face {
@@ -59,106 +59,126 @@
             padding:0 auto;
             margin-bottom:32px;
         }
+        #baricon {
+            max-with:6vw;
+            max-height:6vh;
+            position:relative;
+            margin-bottom:32px;
+            background: #262626; 
+            -moz-border-radius: 3vh; 
+            -webkit-border-radius: 3vh;
+            border-radius: 3vh;
+        }
     </style>
 </head>
-<body>
-<div id="half">
-    <button id="uploadbtn" onclick="document.getElementById('imageupload').click()">Upload Texture</button>
-    <button id="rotatebtn">Randomly Rotate: OFF</button>
-    <label for="size">Size: </label>
-    <input type="number" value="5" name="size" id="size">
-    <input type="file" accept="image/*" id="imageupload" onchange="handleFile(event)" class="hidden">
-</div>
-
-<div id="half">
-    <canvas id="tilecanvas"></canvas>
-</div>
-    
-<script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DJPSM88KS"></script>
 <script>
-var $ = i => document.getElementById(i);
-var c = $('tilecanvas');
-var ctx = c.getContext('2d');
-var timg;
-var rotate = false;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-function handleFile(e) {
-    try {
-    var reader = new FileReader();
-    reader.onload = function(event){
-        var img = new Image();
-        img.onload = function(){
-            timg = img;
-            update();
-        }
-        img.src = event.target.result;
-    }
-    if (e.target.files!=undefined) {
-        reader.readAsDataURL(e.target.files[0]);
-    } else {
-        if (e.dataTransfer.items) {
-            reader.readAsDataURL(e.dataTransfer.items[0]);
-        } else {
-            reader.readAsDataURL(e.dataTransfer.files[0]);
-        }
-    }
-    }catch(e){}
-}
-$('rotatebtn').onclick = function() {
-    try{
-    if (rotate===true) {
-        rotate=false;
-    } else {
-        rotate=true;
-    }
-    $('rotatebtn').innerHTML = "Randomly Rotate: "+(rotate===true ? "ON" : "OFF");
-    update();
-    }catch(e){}
-}
-$('size').onchange = function() {
-    this.value=Math.abs(this.value);
-    update();
-}
-function update() {
-    try{
-    if (rotate===true) {
-        drawImageRotated();
-    } else {
-        drawImageNormal();
-    }
-    }catch(e){}
-}
-function drawImageNormal() {
-    try{
-    var size = parseInt($('size').value);
-    c.width = timg.width*size;
-    c.height = timg.height*size;
-    
-    for (var x=0;x<c.width;x+=timg.width) {
-        for (var y=0;y<c.width;y+=timg.height) {
-            ctx.drawImage(timg, x, y);
-        }
-    }
-    }catch(e){}
-}
-function drawImageRotated() {
-    try{
-    var size = parseInt($('size').value);
-    c.width = timg.width*size;
-    c.height = timg.height*size;
-    var i=0;
-    for (var x=timg.width/2;x<c.width;x+=timg.width) {
-        for (var y=timg.height/2;y<c.width;y+=timg.height) {
-            let angle = Math.PI*(Math.floor(Math.random()*4)/2);
-            ctx.translate(x, y);
-            ctx.rotate(angle);
-            ctx.drawImage(timg, -timg.width / 2, -timg.height / 2, timg.width, timg.height);
-            ctx.rotate(-angle);
-            ctx.translate(-x, -y);
-        }
-    }
-    }catch(e){}
-}
+  gtag('config', 'G-5DJPSM88KS');
 </script>
+<body>
+    <div id="half">
+        <a href="index.html"><img id="baricon" src="neralogo.png"></a>
+        <button id="uploadbtn" onclick="document.getElementById('imageupload').click()">Upload Texture</button>
+        <button id="rotatebtn">Randomly Rotate: OFF</button>
+        <label for="size">Size: </label>
+        <input type="number" value="5" name="size" id="size">
+        <input type="file" accept="image/*" id="imageupload" onchange="handleFile(event)" class="hidden">
+    </div>
+
+    <div id="half">
+        <canvas id="tilecanvas"></canvas>
+    </div>
+        
+    <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
+    <script>
+    var $ = i => document.getElementById(i);
+    var c = $('tilecanvas');
+    var ctx = c.getContext('2d');
+    var timg;
+    var rotate = false;
+
+    function handleFile(e) {
+        try {
+        var reader = new FileReader();
+        reader.onload = function(event){
+            var img = new Image();
+            img.onload = function(){
+                timg = img;
+                update();
+            }
+            img.src = event.target.result;
+        }
+        if (e.target.files!=undefined) {
+            reader.readAsDataURL(e.target.files[0]);
+        } else {
+            if (e.dataTransfer.items) {
+                reader.readAsDataURL(e.dataTransfer.items[0]);
+            } else {
+                reader.readAsDataURL(e.dataTransfer.files[0]);
+            }
+        }
+        }catch(e){}
+    }
+    $('rotatebtn').onclick = function() {
+        try{
+        if (rotate===true) {
+            rotate=false;
+        } else {
+            rotate=true;
+        }
+        $('rotatebtn').innerHTML = "Randomly Rotate: "+(rotate===true ? "ON" : "OFF");
+        update();
+        }catch(e){}
+    }
+    $('size').onchange = function() {
+        this.value=Math.abs(this.value);
+        update();
+    }
+    function update() {
+        try{
+        if (rotate===true) {
+            drawImageRotated();
+        } else {
+            drawImageNormal();
+        }
+        }catch(e){}
+    }
+    function drawImageNormal() {
+        try{
+        var size = parseInt($('size').value);
+        c.width = timg.width*size;
+        c.height = timg.height*size;
+        
+        for (var x=0;x<c.width;x+=timg.width) {
+            for (var y=0;y<c.width;y+=timg.height) {
+                ctx.drawImage(timg, x, y);
+            }
+        }
+        }catch(e){}
+    }
+    function drawImageRotated() {
+        try{
+        var size = parseInt($('size').value);
+        c.width = timg.width*size;
+        c.height = timg.height*size;
+        var i=0;
+        for (var x=timg.width/2;x<c.width;x+=timg.width) {
+            for (var y=timg.height/2;y<c.width;y+=timg.height) {
+                let angle = Math.PI*(Math.floor(Math.random()*4)/2);
+                ctx.translate(x, y);
+                ctx.rotate(angle);
+                ctx.drawImage(timg, -timg.width / 2, -timg.height / 2, timg.width, timg.height);
+                ctx.rotate(-angle);
+                ctx.translate(-x, -y);
+            }
+        }
+        }catch(e){}
+    }
+    </script>
 </body>
 </html>
