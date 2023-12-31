@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pack Checker</title>
+    <title>nera - Pack Checker</title>
     <link rel="icon" href="neralogo.png">
     <style>
     body {
@@ -88,9 +88,26 @@
         background-color: #636569;
         outline:3px solid #494a4d;
     }
+    #baricon {
+        max-with:6vw;
+        max-height:6vh;
+        position:absolute;
+        top:15px;
+        left:15px;
+    }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DJPSM88KS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5DJPSM88KS');
+</script>
 <body>
+    <a href="index.html"><img id="baricon" src="neralogo.png"></a>
     <br>
     <button onclick="$('input').click()" id="fakebutton">Upload Pack</button><br><br>
     <div id="packtype">
@@ -112,7 +129,6 @@
     <div id="barholder">
         <p id="percenttext">0% Textures Changed</p>
     </div>
-    <img src="https://bit.ly/nerastatsa">
     <input type="file" id="input">
     
     <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
