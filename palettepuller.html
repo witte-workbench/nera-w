@@ -163,19 +163,17 @@
         document.getElementById("outputdiv").innerHTML = "";
         document.getElementById('problemtext').innerHTML = "";
         colors = [];
-        for (var x=0;x<c.width;x++) {
-            for (var y=0;y<c.height;y++) { // loop through x and y of image
-                let imgData = ctx.getImageData(x, y, 1, 1);
-                let pickedColor = getScore(imgData.data[0],imgData.data[1],imgData.data[2]) +"|"+ rgbToHex(imgData.data[0],imgData.data[1],imgData.data[2],imgData.data[3]);
-                if (document.getElementById('problemtext').innerHTML=="" && pickedColor.slice(-2)!="00" && parseInt(pickedColor.slice(-2),16)<32) {
-                    document.getElementById('problemtext').innerHTML = "Warning: Ghost Pixels";
-                }
-                if (pickedColor.slice(-2)=="ff") { // remove full opacity suffix
-                    pickedColor = pickedColor.slice(0,-2);
-                }
-                if (colors.indexOf(pickedColor)==-1 && imgData.data[3]!=0) {
-                    colors.push(pickedColor);
-                }
+        let imgData = ctx.getImageData(x, y, c.width, c.height).data;
+        for (var x=0;x<imgData.length;x+=4) {
+            let pickedColor = getScore(imgData[i],imgData[i+1],imgData[i+2]) +"|"+ rgbToHex(imgData[i+0],imgData[i+1],imgData[i+2],imgData[i+3]);
+            if (document.getElementById('problemtext').innerHTML=="" && pickedColor.slice(-2)!="00" && parseInt(pickedColor.slice(-2),16)<32) {
+                document.getElementById('problemtext').innerHTML = "Warning: Ghost Pixels";
+            }
+            if (pickedColor.slice(-2)=="ff") { // remove full opacity suffix
+                pickedColor = pickedColor.slice(0,-2);
+            }
+            if (colors.indexOf(pickedColor)==-1 && imgData[i+3]!=0) {
+                colors.push(pickedColor);
             }
         }
         
