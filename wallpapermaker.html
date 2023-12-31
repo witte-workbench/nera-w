@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MC Wallpaper</title>
+    <title>nera - MC Wallpaper</title>
     <link rel="icon" href="neralogo.png">
     <style>
     body {
@@ -14,6 +14,7 @@
     }
     #input {
         display:none;
+        z-index: 2;
     }
     .center {
         position:fixed;
@@ -26,15 +27,19 @@
         background-color:#2e2e2e;
         color:#f0f0f0;
         cursor:pointer;
+        z-index: 2;
     }
     label {
         color:#f0f0f0;
+        z-index: 2;
     }
     #fakeinput {
         top:5px;
+        z-index: 2;
     }
     #downloaddiv {
         bottom:5px;
+        z-index: 2;
     }
     #canvas {
         image-rendering:pixelated;
@@ -44,6 +49,7 @@
         right:0;
         left:0;
         margin:auto;
+        z-index: 1;
     }
     #overlay {
         image-rendering:pixelated;
@@ -54,14 +60,36 @@
         left:0;
         margin:auto;
         display:none;
+        z-index: 1;
+    }
+    #baricon {
+        max-with:6vw;
+        max-height:6vh;
+        position:absolute;
+        top:15px;
+        left:15px;
+        background: #262626; 
+        -moz-border-radius: 3vh; 
+        -webkit-border-radius: 3vh;
+        border-radius: 3vh;
+        z-index: 2;
     }
     #hidden {
         display:none;
     }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DJPSM88KS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5DJPSM88KS');
+</script>
 <body>
-    <img src="http://bit.ly/nerastatsa" class="hidden">
+    <a href="index.html"><img id="baricon" src="neralogo.png"></a>
     <canvas id="canvas"></canvas>
     <img src="javaoverlay.png" id='overlay'>
     <button onclick="$('input').click()" id="fakeinput" class="center">Upload Wallpaper</button>
