@@ -37,16 +37,36 @@
     .hidden {
         display:none;
     }
+    #baricon {
+        max-with:6vw;
+        max-height:6vh;
+        position:absolute;
+        top:15px;
+        right:15px;
+        background: #262626; 
+        -moz-border-radius: 3vh; 
+        -webkit-border-radius: 3vh;
+        border-radius: 3vh;
+    }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DJPSM88KS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5DJPSM88KS');
+</script>
 <body>
+    <a href="index.html"><img id="baricon" src="neralogo.png"></a>
     <input type="file" multiple id="packupload" onchange="handleZips(event.target.files)"><br>
     Indexing: <div id="indexing" class="bar"></div>
     Decoding: <div id="decoding" class="bar"></div>
     <textarea id="filt"></textarea>
     <input type="button" value="Download JSON" onclick="download()">
     <div id="out"></div>
-    <img src="https://bit.ly/nerastatsa" class="hidden">
     <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
     <script>
     var packs = [];
