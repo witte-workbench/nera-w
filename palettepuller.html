@@ -98,10 +98,11 @@
     <canvas id="paletteCanvas" width="0" height="1"></canvas>
     <p id="problemtext"></p>
     </div>
+    <div id="outputdiv"></div>
 
     <script>
     var c = document.getElementById("imgCanvas");
-    var ctx = c.getContext("2d");
+    var ctx = c.getContext('2d', { willReadFrequently: true });
     var pc = document.getElementById("paletteCanvas");
     var pctx = pc.getContext("2d");
     var downloadbtn = document.getElementById("downloadbtn");
@@ -160,44 +161,40 @@
             return(f+l.toString());
         }
         document.getElementById("outputdiv").innerHTML = "";
-        if (c.width>300 || c.height>300) {
-            alert("Image is too large! (Max res of 300x300)");
-        } else {
-            document.getElementById('problemtext').innerHTML = "";
-            colors = [];
-            for (var x=0;x<c.width;x++) {
-                for (var y=0;y<c.height;y++) { // loop through x and y of image
-                    let imgData = ctx.getImageData(x, y, 1, 1);
-                    let pickedColor = getScore(imgData.data[0],imgData.data[1],imgData.data[2]) +"|"+ rgbToHex(imgData.data[0],imgData.data[1],imgData.data[2],imgData.data[3]);
-                    if (document.getElementById('problemtext').innerHTML=="" && pickedColor.slice(-2)!="00" && parseInt(pickedColor.slice(-2),16)<32) {
-                        document.getElementById('problemtext').innerHTML = "Warning: Ghost Pixels";
-                    }
-                    if (pickedColor.slice(-2)=="ff") { // remove full opacity suffix
-                        pickedColor = pickedColor.slice(0,-2);
-                    }
-                    if (colors.indexOf(pickedColor)==-1 && imgData.data[3]!=0) {
-                        colors.push(pickedColor);
-                    }
+        document.getElementById('problemtext').innerHTML = "";
+        colors = [];
+        for (var x=0;x<c.width;x++) {
+            for (var y=0;y<c.height;y++) { // loop through x and y of image
+                let imgData = ctx.getImageData(x, y, 1, 1);
+                let pickedColor = getScore(imgData.data[0],imgData.data[1],imgData.data[2]) +"|"+ rgbToHex(imgData.data[0],imgData.data[1],imgData.data[2],imgData.data[3]);
+                if (document.getElementById('problemtext').innerHTML=="" && pickedColor.slice(-2)!="00" && parseInt(pickedColor.slice(-2),16)<32) {
+                    document.getElementById('problemtext').innerHTML = "Warning: Ghost Pixels";
+                }
+                if (pickedColor.slice(-2)=="ff") { // remove full opacity suffix
+                    pickedColor = pickedColor.slice(0,-2);
+                }
+                if (colors.indexOf(pickedColor)==-1 && imgData.data[3]!=0) {
+                    colors.push(pickedColor);
                 }
             }
-            
-            colors.sort(function(a, b) {return parseInt(b) - parseInt(a);});
-            pc.width = colors.length;
-            let output = '<p>Length: '+colors.length+'</p>';
-            for (var i=0;i<colors.length;i++) {
-                let sel = colors[i].split("|")[1];
-                output += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
-                // set download canvas
-                pctx.fillStyle = sel;
-                pctx.fillRect(i,0,1,1);
-            }
-            document.getElementById("outputdiv").innerHTML=output;
-            // set download button
-            let name = document.getElementById('imageLoader').value.split("\\");
-            name = name[name.length-1].split(".").slice(0,-1).join(".") + "_palette.png";
-            downloadbtn.download = name;
-            downloadbtn.href = pc.toDataURL();
         }
+        
+        colors.sort(function(a, b) {return parseInt(b) - parseInt(a);});
+        pc.width = colors.length;
+        let output = '<p>Length: '+colors.length+'</p>';
+        for (var i=0;i<colors.length;i++) {
+            let sel = colors[i].split("|")[1];
+            output += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
+            // set download canvas
+            pctx.fillStyle = sel;
+            pctx.fillRect(i,0,1,1);
+        }
+        document.getElementById("outputdiv").innerHTML=output;
+        // set download button
+        let name = document.getElementById('imageLoader').value.split("\\");
+        name = name[name.length-1].split(".").slice(0,-1).join(".") + "_palette.png";
+        downloadbtn.download = name;
+        downloadbtn.href = pc.toDataURL();
     }
 
     function componentToHex(c) {
