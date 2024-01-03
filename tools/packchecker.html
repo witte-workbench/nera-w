@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nera - Pack Checker (tool)</title>
+    <style>
+    #input {
+        display:none;
+        position:fixed;
+        left:200vw;
+    }
+    textarea {
+        width:80vw;
+        height:50vh;
+    }
+    </style>
+</head>
+<body>
+    <button onclick="$('input').click()" id="fakebutton">Upload Pack</button><br><br>
+    <div id="renames"></div>
+    <h2>Textures</h2>
+    <textarea id="red"> </textarea>
+    <input type="file" id="input" multiple>
+    
+    <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
+    <script>
+    function $(id) {
+        return(document.getElementById(id));
+    }
+    var ctprefix;
+    var ver;
+    var textureNames = {};
+    var zip = new JSZip();
+    $('input').onchange = dozip;
+    
+    async function dozip() {
+        textureNames = {};
+        for (var f of $("input").files) {
+            $('fakebutton').innerHTML = "Upload Pack: "+f.name;
+            $('red').innerHTML = "";
+            // filter through files and hold them
+            await JSZip.loadAsync(f).then(async function(zip) { // load zip
+                if (zip.file(/pack.mcmeta/).length==0) { // check if pack.mcmeta exists
+                    return(["No mcmeta",zip,f.name]);
+                } else {
+                    let ret = await zip.file(/pack.mcmeta/)[0].async('text'); // load pack.mcmeta data
+                    return([ret,zip,f.name]);
+                }
+            },function(e){alert(e);}).then(function(returned){
+                // determine which game version
+                let zip = returned[1];
+                let zipname = returned[2];
+                if (returned[0]=="No mcmeta" || f.name.split(".").pop()=="mcpack" || zip.folder(/assets\/minecraft\//).length==0)
+                    ver = "Bedrock";
+                else if (JSON.parse(returned[0])["pack"]["pack_format"]==1)
+                    ver = "1.8.9";
+                else
+                    ver = "Java";
+
+                if (ver=="Bedrock")
+                    ctprefix = "textures/";
+                else
+                    ctprefix = "assets/minecraft/textures/";
+                if ($(zipname)===null)
+                    $('renames').innerHTML+=zipname+" ("+ver+") "+'<input type="text" id="'+zipname+'" onchange="dozip()" value="'+ver+'"><br>';
+                textureNames[$(zipname).value] = [];
+                // loop through uploaded files
+                for (zipEntry of Object.keys(zip.files)) { 
+                    if (zipEntry.includes(ctprefix) && ["png","tga","jpg","jpeg"].includes(zipEntry.split(".").pop()) && !zipEntry.includes("MACOSX")) { // filter checkable textures
+                        zipEntry = ("f"+zipEntry).split(ctprefix)[1]; // remove useless prefix
+                        textureNames[$(zipname).value].push(zipEntry);
+                    }
+                }
+            },function(e){alert(e);});
+        }
+        console.log(textureNames);
+        let currentDate = new Date().toJSON().slice(0, 10);
+        $('red').innerHTML="//last updated "+currentDate+"\nvar idxs = "+JSON.stringify(textureNames)+";";
+    }
+    
+    </script>
+</body>
+</html>
