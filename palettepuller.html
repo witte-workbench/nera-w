@@ -167,7 +167,7 @@
         let ghost = false;
         for (var i=0;i<imgData.length;i+=4) {
             let pickedColor = getScore(imgData[i],imgData[i+1],imgData[i+2]) +"|"+ rgbToHex(imgData[i+0],imgData[i+1],imgData[i+2],imgData[i+3]);
-            if (imgData[i+3]<32) {
+            if (imgData[i+3]!=0 && imgData[i+3]<32) {
                 ghost = true;
             }
             if (pickedColor.slice(-2)=="ff") { // remove full opacity suffix
