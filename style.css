@@ -28,13 +28,28 @@ t {
     top:2vh;
     left:calc(50vw - 8vh);
 }
-#small-nav {
-    width:33vw;
-    height:20vh;
-    display:inline-block;
-}
 #big-nav {
     width:calc(100% - 60px);
     padding:30px;
     display:inline-block;
+}
+.link-cont {
+    width:25vw;
+    height:24vh;
+    padding: 8vh 0 0 0;
+    margin:0;
+    float: left;
+}
+.link-cont-img {
+    width:calc(100% - 6vw);
+    height: 19vh;
+    object-fit:cover;
+    border-radius: 16px;
+    margin: 0 3vw;
+}
+.link-cont-text {
+    margin:0;
+    height: 5vh;
+    line-height: 5vh;
+    width:100%;
 }
