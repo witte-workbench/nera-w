@@ -53,7 +53,7 @@
             padding-top:15vh;
         }
         #baricon {
-            max-with:6vw;
+            max-width:6vw;
             max-height:6vh;
             position:absolute;
             top:15px;
@@ -74,7 +74,7 @@
     <a href="index.html"><img id="baricon" src="neralogo.png"></a>
     <div id="container">
     <p id="header">Manifest Maker</p>
-    <select name="versioninput" id="versioninput" onchange="if (this.value=='bedrock') {document.getElementById('bvinput').style.display='block';document.getElementById('namecolorinput').value='§0';document.getElementById('descriptioncolorinput').value='§8';}else{document.getElementById('bvinput').style.display='none';document.getElementById('namecolorinput').value='§f';document.getElementById('descriptioncolorinput').value='§7';}">
+    <select name="versioninput" id="versioninput">
         <option value="34">1.21</option>
         <option value="32">1.20.5 - 1.20.6</option>
         <option value="22">1.20.3 - 1.20.4</option>
@@ -85,17 +85,18 @@
         <option value="9">1.19 - 1.19.2</option>
         <option value="8">1.18</option>
         <option value="7">1.17</option>
-        <option value="6">1.16.2 – 1.16.5</option>
-        <option value="5">1.15 – 1.16.1</option>
-        <option value="4">1.13 – 1.14.4</option>
-        <option value="3">1.11 – 1.12.2</option>
-        <option value="2">1.9 – 1.10.2</option>
-        <option value="1">1.6.1 – 1.8.9</option>
+        <option value="6">1.16.2 - 1.16.5</option>
+        <option value="5">1.15 - 1.16.1</option>
+        <option value="4">1.13 - 1.14.4</option>
+        <option value="3">1.11 - 1.12.2</option>
+        <option value="2">1.9 - 1.10.2</option>
+        <option value="1">1.6.1 - 1.8.9</option>
         <option value="bedrock">Any Bedrock Version</option>
+        <option value="custom">Custom Java Version</option>
     </select>
-    <input type="number" placeholder="Version # of your pack, (eg. 3)" id="bvinput" style="display:none;">
+    <input type="number" placeholder="Version # of your pack, (eg. 3)" id="cvinput" style="display:none;">
     <input type="text" placeholder="(Pack name)" id="nameinput">
-    <select name="namecolorinput" id="namecolorinput">
+    <select name="namecolorinput" id="namecolorinput" style="color:#FFFFFF;">
         <option value="§f" style="color:#FFFFFF;">White</option>
         <option value="§6" style="color:#FFAA00;">Gold</option>
         <option value="§7" style="color:#AAAAAA;">Gray</option>
@@ -114,7 +115,7 @@
         <option value="§5" style="color:#AA00AA;">Dark Purple</option>
     </select>
     <input type="text" placeholder="(Pack description)" id="descriptioninput">
-    <select name="descriptioncolorinput" id="descriptioncolorinput">
+    <select name="descriptioncolorinput" id="descriptioncolorinput" style="color:#AAAAAA;">
         <option value="§7" style="color:#AAAAAA;">Gray</option>
         <option value="§9" style="color:#5555FF;">Blue</option>
         <option value="§a" style="color:#55FF55;">Green</option>
@@ -141,13 +142,96 @@
     <script>
     var $ = i => document.getElementById(i);
 
+    $("versioninput").onchange = function() {
+        if ($("versioninput").value=='bedrock' || $("versioninput").value=='custom') {
+            document.getElementById('cvinput').style.display='block';
+        } else {
+            document.getElementById('cvinput').style.display='none';
+        }
+        if ($("versioninput").value=='bedrock') {
+            document.getElementById('namecolorinput').value='§0';
+            document.getElementById('descriptioncolorinput').value='§8';
+        } else {
+            document.getElementById('namecolorinput').value='§f';
+            document.getElementById('descriptioncolorinput').value='§7';
+        }
+    };
+
+    $("namecolorinput").onchange = function() {
+        $("namecolorinput").style.color = document.querySelector(`#namecolorinput option[value='${$("namecolorinput").value}']`).style.color;
+    }
+
+    $("descriptioncolorinput").onchange = function() {
+        $("descriptioncolorinput").style.color = document.querySelector(`#descriptioncolorinput option[value='${$("descriptioncolorinput").value}']`).style.color;
+    }
+
+    function getVersion() {
+        if ($("versioninput").value=='bedrock' || $("versioninput").value=='custom') {
+            return parseInt($('cvinput').value);
+        } else {
+            return parseInt($("versioninput").value);
+        }
+    }
+
+    function generateJSON() {
+        let name = $('namecolorinput').value+$('nameinput').value;
+        let description = $('descriptioncolorinput').value+$('descriptioninput').value;
+        let version = getVersion();
+
+        if ($('versioninput').value=='bedrock') {
+            return(JSON.stringify({
+                "format_version":2,
+                "header":{
+                    "description": description,
+                    "name": name,
+                    "uuid": uuidv4(),
+                    "version":[
+                        version,
+                        0,
+                        0
+                    ],
+                    "min_engine_version":[
+                        1,
+                        0,
+                        0
+                    ]
+                },
+                "modules":[
+                    {
+                        "description": description,
+                        "type":"resources",
+                        "uuid":uuidv4(),
+                        "version":[
+                            version,
+                            0,
+                            0
+                        ]
+                    }
+                ]
+            }, null, 4));
+        } else {
+            return(JSON.stringify({
+                "pack":{
+                    "pack_format": version,
+                    "description":[
+                        {
+                            "text": name
+                        },
+                        {
+                            "text": description
+                        }
+                    ]
+                }
+            }, null, 4));
+        }
+    }
+
     function downloadFile() { // download the mcmeta as its own file
         var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(generateJSON()));
         if ($('versioninput').value=='bedrock') {
-            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('{"format_version":2,"header":{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","name":"'+$('namecolorinput').value+$('nameinput').value+'","'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+',0,0],"min_engine_version": [ 1, 0, 0 ]},"modules":[{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","type":"resources","uuid":"'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+', 0, 0]}]}'));
             element.setAttribute('download', 'manifest.json');
         } else {
-            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('{"pack":{"pack_format":'+$('versioninput').value+',"description":[{"text":"'+$('namecolorinput').value+$('nameinput').value+'"},{"text":"\\n'+$('descriptioncolorinput').value+$('descriptioninput').value+'"}]}}'));
             element.setAttribute('download', 'pack.mcmeta');
         }
         element.style.display = 'none';
@@ -156,13 +240,8 @@
         document.body.removeChild(element);
     }
     async function addToZip(oldzip) { // take the user's zip, add the mcmeta, and then download it
-        alert(oldzip.name);
         await JSZip.loadAsync(oldzip).then(function(zip) {
-            if ($('versioninput').value=='bedrock') {
-                zip.file("manifest.json", '{"format_version":2,"header":{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","name":"'+$('namecolorinput').value+$('nameinput').value+'","'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+',0,0],"min_engine_version": [ 1, 0, 0 ]},"modules":[{"description":"'+$('descriptioncolorinput').value+$('descriptioninput').value+'","type":"resources","uuid":"'+uuidv4()+'","version":['+Math.floor($('bvinput').value)+', 0, 0]}]}');
-            } else {
-                zip.file("pack.mcmeta", '{"pack":{"pack_format":'+$('versioninput').value+',"description":[{"text":"'+$('namecolorinput').value+$('nameinput').value+'"},{"text":"\\n'+$('descriptioncolorinput').value+$('descriptioninput').value+'"}]}}');
-            }
+            zip.file($('versioninput').value=='bedrock' ? "manifest.json" : "pack.mcmeta", generateJSON());
             zip.generateAsync({
                 type: "base64"
             }).then(function(base64) { // download zip
