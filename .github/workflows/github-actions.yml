@@ -17,6 +17,8 @@ jobs:
       # 2. Generate sitemap (defaults: path-to-root=".", sitemap-format="xml", include-html/pdf=true, etc.)
       - name: Generate sitemap
         uses: cicirello/generate-sitemap@v1.10.0
+        with:
+          base-url-path: https://nera-w.github.io/
 
       # 3. Commit the updated sitemap.xml back to the repo root
       - name: Commit sitemap.xml
