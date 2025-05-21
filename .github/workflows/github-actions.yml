@@ -1,0 +1,28 @@
+# .github/workflows/sitemap.yml
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out your code
+      - uses: actions/checkout@v4
+
+      # 2. Generate sitemap (defaults: path-to-root=".", sitemap-format="xml", include-html/pdf=true, etc.)
+      - name: Generate sitemap
+        uses: cicirello/generate-sitemap@v1.10.0
+
+      # 3. Commit the updated sitemap.xml back to the repo root
+      - name: Commit sitemap.xml
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: 'sitemap.xml'
+          message: 'chore: update sitemap'
+          author_name: 'github-actions[bot]'
+          author_email: 'github-actions[bot]@users.noreply.github.com'
