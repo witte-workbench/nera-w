@@ -5,9 +5,42 @@
     <title>Palette Swapper</title>
     <link rel="icon" href="neralogo.png">
     <style>
+        @font-face {
+            font-family: mcfont;
+            src: url(mcfont.ttf);
+        }
+        input, select, button, #downloadbtn {
+            padding:4px;
+            color:white;
+            width:100%;
+            margin:24px 0;
+            font: 16px mcfont, sans-serif;
+            text-shadow: 2px 2px black;
+            box-sizing: border-box;
+        }
+        input, select {
+            background-color:black;
+            border:1px solid white;
+            outline:0;
+        }
+        button, select {
+            cursor:pointer;
+        }
+        button, #downloadbtn {
+            background-color:#6B6B6B;
+            outline:4px solid black;
+            border-top: 4px solid #AAAAAA;
+            border-left: 4px solid #AAAAAA;
+            border-bottom: 4px solid #535353;
+            border-right: 4px solid #535353;
+            padding:0 auto;
+            text-decoration: none;
+        }
+
+
         body {
+            font: 16px mcfont, sans-serif;
             background-color:#8B8B8B;
-            font:50px 'Nanum Gothic', sans-serif;
             width:100%;
             margin:0;
             overflow:hidden;
@@ -39,13 +72,8 @@
             image-rendering:pixelated;
         }
         p {
-            font:20px 'Nanum Gothic', sans-serif;
             padding:0px;
             margin:0px;
-        }
-        input, input::file-selector-button, button {
-            padding:0 5px 3px 5px;
-            font: 20px 'Nanum Gothic', sans-serif;
         }
         #bigarrow {
             font-size:90px;
@@ -61,9 +89,10 @@
             -webkit-border-radius: 3vh;
             border-radius: 3vh;
         }
+        #One, #Two {
+            display: none;
+        }
     </style>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DJPSM88KS"></script>
     <script>
@@ -78,6 +107,7 @@
     <a href="index.html"><img id="baricon" src="neralogo.png"></a>
     <div class="half">
         <canvas id="canvasOne" width="16" height="16">Your browser does not support the HTML5 canvas tag.</canvas><br>
+        <button id="FakeOne" onclick="document.getElementById('One').click()">Upload Texture</button>
         <input type="file" id="One" name="loaderOne" class="loader"><br>
         <canvas id="paletteCanvasOne" width="0" height="1" oncontextmenu="return false;"></canvas>
         <p id="outOne"></p>
@@ -89,6 +119,7 @@
     </div>
     <div class="half">
         <canvas id="canvasTwo" width="16" height="16">Your browser does not support the HTML5 canvas tag.</canvas><br>
+        <button id="FakeTwo" onclick="document.getElementById('Two').click()">Upload Texture</button>
         <input type="file" id="Two" name="loaderTwo" class="loader"><br>
         <canvas id="paletteCanvasTwo" width="0" height="1" oncontextmenu="return false;"></canvas>
         <p id="outTwo"></p>
@@ -202,8 +233,8 @@
                 var img = new Image();
                 img.onload = function(){
                     eval("colors"+id+" = go(id,img);");
-                    $("outOne").innerHTML = colorsOne.join(", ");
-                    $("outTwo").innerHTML = colorsTwo.join(", ");
+                    $("outOne").innerHTML = "Length: " + colorsOne.length + "<br>" + colorsOne.join(", ");
+                    $("outTwo").innerHTML = "Length: " + colorsTwo.length + "<br>" + colorsTwo.join(", ");
                     if (id=="Two") {
                         imghold=img;
                     }
