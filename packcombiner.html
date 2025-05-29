@@ -16,6 +16,36 @@
     
     <link rel="icon" href="neralogo.png">
     <style>
+    @font-face {
+        font-family: mcfont;
+        src: url(mcfont.ttf);
+    }
+    input, select, button {
+        padding:4px;
+        color:white;
+        width:100%;
+        margin-bottom:10px;
+        font: 16px mcfont, sans-serif;
+        text-shadow: 2px 2px black;
+        box-sizing: border-box;
+    }
+    input, select {
+        background-color:black;
+        border:1px solid white;
+        outline:0;
+    }
+    button, select {
+        cursor:pointer;
+    }
+    button {
+        background-color:#6B6B6B;
+        outline:4px solid black;
+        border-top: 4px solid #AAAAAA;
+        border-left: 4px solid #AAAAAA;
+        border-bottom: 4px solid #535353;
+        border-right: 4px solid #535353;
+        padding:0 auto;
+    }
     body{
         background-image:url(bg32.png);
         image-rendering:pixelated;
@@ -54,6 +84,7 @@
         align-items:center;
     }
     .onepack{
+        font: 16px mcfont, sans-serif;
         cursor:grab;
     }
     .packicon{
@@ -62,34 +93,8 @@
         width:calc(14vh - 10px);
         padding:5px;
     }
-    #fakebutton{
-        width:calc(100% - 30px);
-        margin:15px;
-        cursor:pointer;
-    }
-    #newnameinput {
-        background-color:black;
-        border:1px solid white;
-        padding:2px;
-        outline:0;
-        color:white;
-        width:calc(100% - 6px);
-        float:left;
-    }
-    #downloadbutton, #newiconbutton, #versioninput{
-        background-color:white;
-        border:1px solid black;
-        padding:2px;
-        outline:0;
-        color:black;
-        width:100%;
-        float:left;
-    }
     #newpacktext{
         width:calc(34vw - 14vh - 5px);
-    }
-    input[type=button]{
-        cursor:pointer;
     }
     .hidden{
         display:none;
@@ -113,6 +118,14 @@
         top:15px;
         left:15px;
     }
+    #arrow {
+        font: 90px mcfont, sans-serif;
+        color: white;
+        position: fixed;
+        left: 50vw;
+        top: 50vh;
+        transform: translate(-50%, -50%);
+    }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DJPSM88KS"></script>
@@ -130,12 +143,13 @@
     <input type="file" id="newiconupload" class="hidden" onchange="newIcon(event.target.files[0])">
     <div class="half">
         <div id="packholder">
-            <input type="button" id="fakebutton" onclick="$('packupload').click()" value="Upload Packs">
+            <button id="fakebutton" onclick="$('packupload').click()">Upload Packs</button>
             <div id="uploadedholder">
                 
             </div>
         </div>
     </div>
+    <div id="arrow">→</div>
     <div class="half">
         <div id="downloadholder">
             <div id="newpack">
@@ -146,8 +160,8 @@
                         <option value="j">Java</option>
                         <option value="b">Bedrock</option>
                     </select>
-                    <input type="button" value="Custom Icon" onclick="$('newiconupload').click()" id="newiconbutton">
-                    <input type="button" value="Download Pack" onclick="download()" id="downloadbutton">
+                    <button onclick="$('newiconupload').click()" id="newiconbutton">Custom Icon</button>
+                    <button onclick="download()" id="downloadbutton">Download Pack</button>
                 </div>
             </div>
         </div>
@@ -285,50 +299,56 @@
     
     function download() {
         if (packs.length > 0) {
-            let nzip = new JSZip();
-            let iconname = "pack.png";
-            if ($('versioninput').value=="j") {
-                nzip.file("pack.mcmeta", '{"pack":{"pack_format":'+biggestVersion+',"description":[{"text":"' + $('newnameinput').value + '","color":"blue"},{"text":"\\nCombined by Nera","color":"green"}]}}');
-            } else {
-                iconname = "pack_icon.png";
-                nzip.file("manifest.json", '{"format_version":2,"header":{"description":"Combined by Nera","name":"' + $('newnameinput').value + '","uuid":"6e120eda-fd77-4227-a10b-e3d86898a6a9","version":[1,0,0],"min_engine_version": [ 1, '+biggestVersion+', 0 ]},"modules":[{"description":"Combined by Nera","type":"resources","uuid":"15e0f346-f963-4cd7-ad2a-c0d386c8995e","version":[1, 0, 0]}]}');
-            }
-    
-            if (customicon != "") {
-                nzip.file(iconname, customicon, {
-                    base64: true
-                });
-            } else if (packs[0].files[iconname] != undefined) {
-                nzip.file(iconname, packs[0].files[iconname], {
-                    base64: true
-                });
-            } else {
-                nzip.file(iconname, "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", {
-                    base64: true
-                });
-            }
-    
-            for (let p of packs) {
-                for (let fname of Object.keys(p.files)) {
-                    if (nzip.file(fname) == null) {
-                        nzip.file(fname, p.files[fname], {
-                            base64: true
-                        });
+            document.getElementById("downloadbutton").textContent = "Downloading...";
+            setTimeout(() => {
+                document.getElementById("downloadbutton").textContent = "Download Pack";
+            }, 5000);
+            setTimeout(() => {
+                let nzip = new JSZip();
+                let iconname = "pack.png";
+                if ($('versioninput').value=="j") {
+                    nzip.file("pack.mcmeta", '{"pack":{"pack_format":'+biggestVersion+',"description":[{"text":"' + $('newnameinput').value + '","color":"blue"},{"text":"\\nCombined by Nera","color":"green"}]}}');
+                } else {
+                    iconname = "pack_icon.png";
+                    nzip.file("manifest.json", '{"format_version":2,"header":{"description":"Combined by Nera","name":"' + $('newnameinput').value + '","uuid":"6e120eda-fd77-4227-a10b-e3d86898a6a9","version":[1,0,0],"min_engine_version": [ 1, '+biggestVersion+', 0 ]},"modules":[{"description":"Combined by Nera","type":"resources","uuid":"15e0f346-f963-4cd7-ad2a-c0d386c8995e","version":[1, 0, 0]}]}');
+                }
+        
+                if (customicon != "") {
+                    nzip.file(iconname, customicon, {
+                        base64: true
+                    });
+                } else if (packs[0].files[iconname] != undefined) {
+                    nzip.file(iconname, packs[0].files[iconname], {
+                        base64: true
+                    });
+                } else {
+                    nzip.file(iconname, "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", {
+                        base64: true
+                    });
+                }
+        
+                for (let p of packs) {
+                    for (let fname of Object.keys(p.files)) {
+                        if (nzip.file(fname) == null) {
+                            nzip.file(fname, p.files[fname], {
+                                base64: true
+                            });
+                        }
                     }
                 }
-            }
-    
-            nzip.generateAsync({
-                type: "base64"
-            }).then(function(base64) { // download zip
-                var element = document.createElement('a');
-                element.setAttribute('href', "data:application/zip;base64," + base64);
-                element.setAttribute('download', $('newnameinput').value.split(" ").join("-") + '.zip');
-                element.click();
-                element.setAttribute('href', "");
-            }, function(e) {
-                alert(e);
-            });
+        
+                nzip.generateAsync({
+                    type: "base64"
+                }).then(function(base64) { // download zip
+                    var element = document.createElement('a');
+                    element.setAttribute('href', "data:application/zip;base64," + base64);
+                    element.setAttribute('download', $('newnameinput').value.split(" ").join("-") + '.zip');
+                    element.click();
+                    element.setAttribute('href', "");
+                }, function(e) {
+                    alert(e);
+                });
+            }, 20);
         }
     }
     
