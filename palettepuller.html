@@ -4,9 +4,42 @@
     <title>nera - Palette Puller</title>
     <link rel="icon" href="neralogo.png">
     <style>
+        @font-face {
+            font-family: mcfont;
+            src: url(mcfont.ttf);
+        }
+
+        input, select, button, #downloadbtn {
+            padding:4px;
+            color:white;
+            width:100%;
+            margin:24px 0;
+            font: 16px mcfont, sans-serif;
+            text-shadow: 2px 2px black;
+            box-sizing: border-box;
+        }
+        input, select {
+            background-color:black;
+            border:1px solid white;
+            outline:0;
+        }
+        button, select {
+            cursor:pointer;
+        }
+        button, #downloadbtn {
+            background-color:#6B6B6B;
+            outline:4px solid black;
+            border-top: 4px solid #AAAAAA;
+            border-left: 4px solid #AAAAAA;
+            border-bottom: 4px solid #535353;
+            border-right: 4px solid #535353;
+            padding:0 auto;
+            text-decoration: none;
+        }
+
+
         body {
             background-color:#8B8B8B;
-            font:50px 'Nanum Gothic', sans-serif;
             margin:0px;
             padding:0px;
             width:100vw;
@@ -23,13 +56,9 @@
             image-rendering:pixelated;
         }
         p {
-            font:50px 'Nanum Gothic', sans-serif;
+            font: 32px mcfont, sans-serif;
             padding:0px;
             margin:0px;
-        }
-        input, input::file-selector-button, #downloadbtn {
-            padding:0 5px 3px 5px;
-            font: 20px 'Nanum Gothic', sans-serif;
         }
         #inputdiv, #outputdiv {
             width:calc(50vw - 20px);
@@ -43,21 +72,6 @@
         }
         #outputdiv {
             overflow:scroll;
-        }
-        #downloadbtn {
-            text-decoration:none;
-            color:black;
-            background-color:#EFEFEF;
-            border:2px solid #767676;
-            border-radius:3px;
-        }
-        #downloadbtn:hover {
-            background-color: #E5E5E5;
-            border:2px solid #4F4F4F;
-        }
-        #downloadbtn:active {
-            background-color:#F5F5F5;
-            border:2px solid #F5F5F5;
         }
         #inputdiv::-webkit-scrollbar, #outputdiv::-webkit-scrollbar, .hidden {
             display:none;
@@ -76,9 +90,13 @@
             -webkit-border-radius: 3vh;
             border-radius: 3vh;
         }
+        #imageLoader {
+            display: none;
+        }
+        #paletteCanvas {
+            padding-top: 20px;
+        }
     </style>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DJPSM88KS"></script>
     <script>
@@ -93,6 +111,7 @@
     <a href="index.html"><img id="baricon" src="neralogo.png"></a>
     <div id="inputdiv">
     <canvas id="imgCanvas" width="256" height="256">Your browser does not support the HTML5 canvas tag.</canvas><br>
+    <button id="fakeImageLoader" onclick="document.getElementById('imageLoader').click()">Upload Texture</button>
     <input type="file" id="imageLoader" name="imageLoader"/><br>
     <a download="download" href="" id="downloadbtn">Download Palette</a><br>
     <canvas id="paletteCanvas" width="0" height="1"></canvas>
@@ -110,10 +129,12 @@
     var problems = [];
 
     function go() {
-        function getScore(r,g,b) {
-            r /= 255;
-            g /= 255;
-            b /= 255;
+        function getScore(hex) {
+            let temp = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex.slice(0,7));
+            let r = parseInt(temp[1], 16)/255;
+            let g = parseInt(temp[2], 16)/255;
+            let b = parseInt(temp[3], 16)/255;
+
             let cmin = Math.min(r,g,b),
                 cmax = Math.max(r,g,b),
                 delta = cmax - cmin,
@@ -166,27 +187,29 @@
         let imgData = ctx.getImageData(0, 0, c.width, c.height).data;
         let ghost = false;
         for (var i=0;i<imgData.length;i+=4) {
-            let pickedColor = getScore(imgData[i],imgData[i+1],imgData[i+2]) +"|"+ rgbToHex(imgData[i+0],imgData[i+1],imgData[i+2],imgData[i+3]);
-            if (imgData[i+3]!=0 && imgData[i+3]<32) {
+            let pickedColor = rgbToHex(imgData[i+0],imgData[i+1],imgData[i+2],imgData[i+3]);
+            if (imgData[i+3]==0) continue;
+            if (!ghost && imgData[i+3]<32) {
                 ghost = true;
             }
             if (pickedColor.slice(-2)=="ff") { // remove full opacity suffix
                 pickedColor = pickedColor.slice(0,-2);
             }
-            if (colors.indexOf(pickedColor)==-1 && imgData[i+3]!=0) {
+            if (!colors.includes(pickedColor)) {
                 colors.push(pickedColor);
             }
         }
+        console.log(colors);
         if (ghost == true) {
             document.getElementById('problemtext').innerHTML = "Warning: Ghost Pixels";
         }
         
-        colors.sort(function(a, b) {return parseInt(b) - parseInt(a);});
+        colors.sort(function(a, b) {return getScore(b) - getScore(a);});
         pc.width = colors.length;
-        let output = '<p>Length: '+colors.length+'</p>';
+        let output = '<p>Length: '+colors.length+'</p><br>';
         for (var i=0;i<colors.length;i++) {
-            let sel = colors[i].split("|")[1];
-            output += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
+            let sel = colors[i];
+            output += '<p style="color:'+sel+'; !important">■'+sel+'</p>';
             // set download canvas
             pctx.fillStyle = sel;
             pctx.fillRect(i,0,1,1);
@@ -245,7 +268,7 @@
         [colors[x], colors[downIdx]] = [colors[downIdx], colors[x]];
         let output = '<p>Length: '+colors.length+'</p>';
         for (var i=0;i<colors.length;i++) {
-            let sel = colors[i].split("|")[1];
+            let sel = colors[i];
             output += '<p style="color:'+sel+'; !important">▣'+sel+'</p>';
         }
         document.getElementById("outputdiv").innerHTML=output;
