@@ -15,13 +15,17 @@
         </script>
     </head>
     <body id="body">
+        <div id="top-nav">
+            <span id="logoSpan"><img id="logo" src="neralogo.png"> nera</span>
+        </div>
         <div id="wrapper">
-            <div id="top-nav">
-                <a href="index.html"><img id="logo" src="neralogo.png"></a>
-            </div>
             <div class="link-cont"><a href="https://www.planetminecraft.com/member/nera_w/">
                 <img class="link-cont-img" src="screenshots/pmc.png">
                 <p class="link-cont-text">pmc</p>
+            </a></div>
+            <div class="link-cont"><a href="https://nera-w.github.io/packcombiner.html">
+                <img class="link-cont-img" src="screenshots/pack_combiner.png">
+                <p class="link-cont-text">pack combiner</p>
             </a></div>
             <div class="link-cont"><a href="https://nera-w.github.io/customui.html">
                 <img class="link-cont-img" src="screenshots/mc_you_gui.png">
@@ -31,6 +35,10 @@
                 <img class="link-cont-img" src="screenshots/craftle.png">
                 <p class="link-cont-text">craftle</p>
             </a></div>
+            <div class="link-cont"><a href="https://nera-w.github.io/mcpaint.html">
+                <img class="link-cont-img" src="screenshots/mc_paint.png">
+                <p class="link-cont-text">mcpaint</p>
+            </a></div>
             <div class="link-cont"><a href="https://nera-w.github.io/palettepuller.html">
                 <img class="link-cont-img" src="screenshots/palette_puller.png">
                 <p class="link-cont-text">palette puller</p>
@@ -38,6 +46,14 @@
             <div class="link-cont"><a href="https://nera-w.github.io/paletteswapper.html">
                 <img class="link-cont-img" src="screenshots/palette_swapper.png">
                 <p class="link-cont-text">palette swapper</p>
+            </a></div>
+            <div class="link-cont"><a href="https://nera-w.github.io/wallpapermaker.html">
+                <img class="link-cont-img" src="screenshots/mc_wallpaper.png">
+                <p class="link-cont-text">mcwallpaper</p>
+            </a></div>
+            <div class="link-cont"><a href="https://nera-w.github.io/tiletest.html">
+                <img class="link-cont-img" src="screenshots/tile_test.png">
+                <p class="link-cont-text">tile tester</p>
             </a></div>
             <div class="link-cont"><a href="https://nera-w.github.io/mcmetahelp.html">
                 <img class="link-cont-img" src="screenshots/mcmeta_maker.png">
@@ -55,19 +71,21 @@
                 <img class="link-cont-img" src="screenshots/pack_checker.png">
                 <p class="link-cont-text">pack checker</p>
             </a></div>
-            <div class="link-cont"><a href="https://nera-w.github.io/packcombiner.html">
-                <img class="link-cont-img" src="screenshots/pack_combiner.png">
-                <p class="link-cont-text">pack combiner</p>
+            <div class="link-cont"><a href="https://github.com/nera-w">
+                <img class="link-cont-img" src="screenshots/github.png">
+                <p class="link-cont-text">github</p>
             </a></div>
-            <div class="link-cont"><a href="https://nera-w.github.io/wallpapermaker.html">
-                <img class="link-cont-img" src="screenshots/mc_wallpaper.png">
-                <p class="link-cont-text">mcwallpaper</p>
-            </a></div>
-            <div class="link-cont"><a href="https://nera-w.github.io/mcpaint.html">
-                <img class="link-cont-img" src="screenshots/mc_paint.png">
-                <p class="link-cont-text">mcpaint</p>
-            </a></div>
-            <div id="spacer" style="height:10vh;float:left;width: 100vw;"></div>
+            <div id="spacer" style="height:16vh;float:left;width: 100vw;"></div>
         </div>
+        <script>
+            let logo = document.getElementById('logoSpan');
+            logo.addEventListener('click', () => {
+            logo.classList.add('pop');
+            logo.addEventListener('animationend', () => {
+                logo.classList.remove('pop');
+            }, { once: true });
+            });
+
+        </script>
     </body>
 </html>
