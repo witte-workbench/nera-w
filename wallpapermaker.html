@@ -5,6 +5,39 @@
     <title>nera - MC Wallpaper</title>
     <link rel="icon" href="neralogo.png">
     <style>
+
+    @font-face {
+        font-family: mcfont;
+        src: url(mcfont.ttf);
+    }
+    input:not(#bedrock), select, button {
+        padding:4px;
+        color:white;
+        width:100%;
+        margin-bottom:10px;
+        font: 16px mcfont, sans-serif;
+        text-shadow: 2px 2px black;
+        box-sizing: border-box;
+        margin: 12px 0;
+    }
+    input, select {
+        background-color:black;
+        border:1px solid white;
+        outline:0;
+    }
+    button, select {
+        cursor:pointer;
+    }
+    button {
+        background-color:#6B6B6B;
+        outline:4px solid black;
+        border-top: 4px solid #AAAAAA;
+        border-left: 4px solid #AAAAAA;
+        border-bottom: 4px solid #535353;
+        border-right: 4px solid #535353;
+        padding:0 auto;
+    }
+
     body {
         margin:0px;
         padding:0px;
@@ -12,30 +45,9 @@
         overflow:hidden;
         background-color:#1f1f1f;
     }
-    #input {
-        display:none;
-        z-index: 2;
-    }
-    .center {
-        position:fixed;
-        left:50%;
-        transform: translate(-50%, 0);
-    }
-    button{
-        border:3px solid #f0f0f0;
-        border-radius:5px;
-        background-color:#2e2e2e;
-        color:#f0f0f0;
-        cursor:pointer;
-        z-index: 2;
-    }
     label {
-        color:#f0f0f0;
-        z-index: 2;
-    }
-    #fakeinput {
-        top:5px;
-        z-index: 2;
+        color: white;
+        margin-left: 8px;
     }
     #downloaddiv {
         bottom:5px;
@@ -65,17 +77,25 @@
     #baricon {
         max-width:6vw;
         max-height:6vh;
-        position:absolute;
-        top:15px;
-        left:15px;
-        background: #262626; 
         -moz-border-radius: 3vh; 
         -webkit-border-radius: 3vh;
         border-radius: 3vh;
         z-index: 2;
     }
-    #hidden {
+    .hidden {
         display:none;
+    }
+    #controlBar {
+        font: 16px mcfont, sans-serif;
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        background-color: black;
+        z-index: 3;
+        max-width: fit-content;
+        outline: 1px solid white;
+        border-radius: 8px;
+        padding: 16px;
     }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -89,15 +109,17 @@
     </script>
 </head>
 <body>
-    <a href="index.html"><img id="baricon" src="neralogo.png"></a>
+    <div id="controlBar">
+        <a href="index.html"><img id="baricon" src="neralogo.png"></a><br>
+        <button onclick="document.getElementById('input').click()" id="fakeinput">Upload Wallpaper</button><br>
+        <input type="checkbox" id="bedrock" name="bedrock" value="bedrock" onchange="changever(this.checked)"><label for="bedrock">Bedrock Edition</label><br>
+        <button onclick="download()" id="download">Download Pack</button>
+        <input type="file" class="hidden" id="input" accept="image/png, image/jpeg, image/jpg">
+    </div>
+    
     <canvas id="canvas"></canvas>
     <img src="javaoverlay.png" id='overlay'>
-    <button onclick="$('input').click()" id="fakeinput" class="center">Upload Wallpaper</button>
-    <div class="center" id='downloaddiv'>
-        <button onclick="download()" id="download">Download Pack</button>
-        <input type="checkbox" id="bedrock" name="bedrock" value="bedrock" onchange="changever(this.checked)"><label for="bedrock">Bedrock Edition</label>
-    </div>
-    <input type="file" id="input" accept="image/png, image/jpeg, image/jpg">
+    
     
     <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
     <script>
