@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nera - Craftle (tool)</title>
+</head>
+<body>
+    Lang files: <input type="file" id="upload">
+    <textarea id="out"></textarea>
+    <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
+    <script>
+    function $(id) {
+        return(document.getElementById(id));
+    }
+    var output = {};
+    var zip = new JSZip();
+    $('upload').onchange = function() {
+        var fr = new FileReader();
+
+        fr.onload = function(e) { 
+            var result = JSON.parse(e.target.result);
+            console.log(result);
+            for (let key in result) {
+                if (
+                    key.startsWith('block.') ||
+                    key.startsWith('death.') ||
+                    key.startsWith('container.') ||
+                    key.startsWith('advancements.') ||
+                    key.startsWith('biome.') ||
+                    key.startsWith('color.') ||
+                    key.startsWith('createWorld.') ||
+                    key.startsWith('deathScreen.') ||
+                    key.startsWith('effect.') ||
+                    key.startsWith('enchantment.') ||
+                    key.startsWith('entity.') ||
+                    key.startsWith('gamerule.') ||
+                    key.startsWith('item.') ||
+                    key.startsWith('itemGroup.') ||
+                    key.startsWith('jukebox_song.') ||
+                    key.startsWith('key.') ||
+                    key.startsWith('menu.') ||
+                    key.startsWith('merchant.') ||
+                    key.startsWith('options.') ||
+                    key.startsWith('painting.') ||
+                    key.startsWith('soundCategory.') ||
+                    key.startsWith('spectatorMenu.') ||
+                    key.startsWith('stat.') ||
+                    key.startsWith('structure.') ||
+                    key.startsWith('subtitles.') ||
+                    key.startsWith('telemetry.') ||
+                    key.startsWith('trim_material.') ||
+                    key.startsWith('tutorial.')
+                ) {
+                    let value = result[key];
+                    value = value
+                            .replace(/[^a-z ]/gi, '')
+                            .replace(/ +(?= )/g,'')
+                            .toLowerCase();
+                    if (value.replaceAll(" ","").length<3) continue;
+                    let words = value
+                            .split(" ")
+                            .filter(a => a.length > 2);
+                    words.push(value.replaceAll(" ",""));
+
+                    for (let word of words) {
+                        if (word in output) {
+                            output[word].push(result[key]);
+                        } else {
+                            output[word] = [result[key]];
+                        }
+                    }
+                }
+            }
+            Object.keys(output).forEach(
+                k => output[k] = output[k].reduce(
+                    (a, b) =>
+                    // pick b if it's shorter, or same length but a has '%' and b doesn't
+                    b.length < a.length ||
+                    (b.length === a.length && a.includes('%') && !b.includes('%'))
+                        ? b
+                        : a
+                )
+            );
+            let outputSorted = {};
+            let i=0;
+
+            for (let key in output) {
+                if (output[key].length>25 || key.length>20) {
+                    continue;
+                }
+                i++;
+                if (!(key.length in outputSorted)) {
+                    outputSorted[key.length] = {};
+                }
+                outputSorted[key.length][key] = output[key];
+            }
+
+            alert(i+" found");
+            $('out').value = JSON.stringify(outputSorted);
+        }
+
+        fr.readAsText($('upload').files[0]);
+    }
+    
+    </script>
+</body>
+</html>
