@@ -226,14 +226,14 @@
             ctx.drawImage(this,0,0);
             recolorCanvas(c);
         }
-        img.src = "https://nera-w.github.io/customuiassets/showcase.png";
+        img.src = "https://nera-w.com/customuiassets/showcase.png";
     }
 
     function genAndDownload() {
         $('packtitle').innerHTML = $('packnameinput').value + ' is downloading...';
         completed = {};
         for (var texture of textures) {
-            texture = "https://nera-w.github.io/customuiassets/"+texture;
+            texture = "https://nera-w.com/customuiassets/"+texture;
             var img = document.createElement("img");
             img.onload = function() {
                 let c = document.createElement("canvas");
@@ -243,13 +243,13 @@
                 ctx.drawImage(this,0,0);
                 recolorCanvas(c);
                 try{
-                completed[this.src.replace("https://nera-w.github.io/customuiassets/","")] = c.toDataURL().replace("data:image/png;base64,","");
+                completed[this.src.replace("https://nera-w.com/customuiassets/","")] = c.toDataURL().replace("data:image/png;base64,","");
                 if (Object.keys(completed).length==textures.length) { // last texture finished, so download pack
                     let nzip = new JSZip();
                     for (var loc in completed) {
                         nzip.file(loc,completed[loc],{base64:true});
                     }
-                    nzip.file("pack.mcmeta", '{"pack":{"pack_format":8,"description":[{"text":"' + $('packnameinput').value + '","color":"blue"},{"text":"\\nnera-w.github.io/yougui.html","color":"green"}]}}');
+                    nzip.file("pack.mcmeta", '{"pack":{"pack_format":8,"description":[{"text":"' + $('packnameinput').value + '","color":"blue"},{"text":"\\nnera-w.com/yougui.html","color":"green"}]}}');
                     nzip.generateAsync({
                         type: "base64"
                     }).then(function(base64) { // download zip
