@@ -118,7 +118,7 @@
     </div>
     
     <canvas id="canvas"></canvas>
-    <img src="javaoverlay.png" id='overlay'>
+    <img src="ui_icons/javaoverlay.png" id='overlay'>
     
     
     <script src="https://cdn.rawgit.com/Stuk/jszip/v3.0.0/dist/jszip.min.js"></script>
@@ -202,10 +202,10 @@
     }
     function changever(val) {
         if (val===true) { // bedrock on
-            $('overlay').src='bedrockoverlay.png';
+            $('overlay').src='ui_icons/bedrockoverlay.png';
             ver = 'b';
         } else { // java on
-            $('overlay').src='javaoverlay.png';
+            $('overlay').src='ui_icons/javaoverlay.png';
             ver = 'j';
         }
     }
