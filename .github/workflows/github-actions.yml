@@ -1,6 +1,10 @@
 # .github/workflows/sitemap.yml
 name: Generate Sitemap
 
+# 1) Explicitly grant write permissions for contents (so “add-and-commit” can push)
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -11,16 +15,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Check out your code
+      # 2) Check out the repo
       - uses: actions/checkout@v4
 
-      # 2. Generate sitemap (defaults: path-to-root=".", sitemap-format="xml", include-html/pdf=true, etc.)
+      # 3) Generate sitemap
       - name: Generate sitemap
         uses: cicirello/generate-sitemap@v1.10.0
         with:
-          base-url-path: https://nera-w.github.io/
+          base-url-path: https://nera-w.com/
 
-      # 3. Commit the updated sitemap.xml back to the repo root
+      # 4) Commit sitemap.xml back (now that GITHUB_TOKEN has write perms)
       - name: Commit sitemap.xml
         uses: EndBug/add-and-commit@v7
         with:
