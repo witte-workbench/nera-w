@@ -16,56 +16,52 @@
     $('upload').onchange = function() {
         var fr = new FileReader();
 
-        fr.onload = function(e) { 
+        fr.onload = async function(e) { 
+
+
             var result = JSON.parse(e.target.result);
             console.log(result);
             for (let key in result) {
                 if (
-                    key.startsWith('block.') ||
-                    key.startsWith('death.') ||
-                    key.startsWith('container.') ||
-                    key.startsWith('advancements.') ||
-                    key.startsWith('biome.') ||
-                    key.startsWith('color.') ||
-                    key.startsWith('createWorld.') ||
-                    key.startsWith('deathScreen.') ||
-                    key.startsWith('effect.') ||
-                    key.startsWith('enchantment.') ||
-                    key.startsWith('entity.') ||
-                    key.startsWith('gamerule.') ||
-                    key.startsWith('item.') ||
-                    key.startsWith('itemGroup.') ||
-                    key.startsWith('jukebox_song.') ||
-                    key.startsWith('key.') ||
-                    key.startsWith('menu.') ||
-                    key.startsWith('merchant.') ||
-                    key.startsWith('options.') ||
-                    key.startsWith('painting.') ||
-                    key.startsWith('soundCategory.') ||
-                    key.startsWith('spectatorMenu.') ||
-                    key.startsWith('stat.') ||
-                    key.startsWith('structure.') ||
-                    key.startsWith('subtitles.') ||
-                    key.startsWith('telemetry.') ||
-                    key.startsWith('trim_material.') ||
-                    key.startsWith('tutorial.')
+                    key.startsWith('block.')
+                    || key.startsWith('death.')
+                    || key.startsWith('container.')
+                    || key.startsWith('advancements.')
+                    || key.startsWith('biome.')
+                    || key.startsWith('color.')
+                    || key.startsWith('createWorld.')
+                    || key.startsWith('deathScreen.')
+                    || key.startsWith('effect.')
+                    || key.startsWith('enchantment.')
+                    || key.startsWith('entity.')
+                    || key.startsWith('item.')
+                    || key.startsWith('itemGroup.')
+                    || key.startsWith('jukebox_song.')
+                    || key.startsWith('key.')
+                    || key.startsWith('merchant.')
+                    || key.startsWith('painting.')
+                    || key.startsWith('soundCategory.')
+                    || key.startsWith('spectatorMenu.')
+                    || key.startsWith('stat.')
+                    || key.startsWith('structure.')
+                    || key.startsWith('subtitles.')
+                    || key.startsWith('trim_material.')
+                    || key.startsWith('tutorial.')
                 ) {
-                    let value = result[key];
-                    value = value
-                            .replace(/[^a-z ]/gi, '')
-                            .replace(/ +(?= )/g,'')
-                            .toLowerCase();
-                    if (value.replaceAll(" ","").length<3) continue;
-                    let words = value
-                            .split(" ")
-                            .filter(a => a.length > 2);
-                    words.push(value.replaceAll(" ",""));
+                    let fullPhrase = result[key];
+                    let cleanedPhrase = fullPhrase.toLowerCase();
+                    let words = cleanedPhrase.split(" ");
+                    words.push(cleanedPhrase.replaceAll(" ","")); // add entire phrase with spaces removed (eg craftingtable)
+                    let cleanedWords = words.filter(w => !w.includes("%") && !w.includes("$"))
+                                            .map(w => w.replace(/[^a-z ]/g, ''));
 
-                    for (let word of words) {
-                        if (word in output) {
-                            output[word].push(result[key]);
-                        } else {
-                            output[word] = [result[key]];
+                    for (let cleanword of cleanedWords) {
+                        if (cleanword.length > 2) {
+                            if (cleanword in output) {
+                                output[cleanword].push(result[key]);
+                            } else {
+                                output[cleanword] = [result[key]];
+                            }
                         }
                     }
                 }
@@ -75,7 +71,7 @@
                     (a, b) =>
                     // pick b if it's shorter, or same length but a has '%' and b doesn't
                     b.length < a.length ||
-                    (b.length === a.length && a.includes('%') && !b.includes('%'))
+                    (b.length === a.length && a.includes('%') && !b.includes('%') && a.includes('$') && !b.includes('$'))
                         ? b
                         : a
                 )
@@ -96,10 +92,15 @@
 
             alert(i+" found");
             $('out').value = JSON.stringify(outputSorted);
+            for (let numLetters in outputSorted) {
+                console.log(numLetters + ": " + Object.keys(outputSorted[numLetters]).length)
+            }
         }
 
         fr.readAsText($('upload').files[0]);
     }
+
+    
     
     </script>
 </body>
